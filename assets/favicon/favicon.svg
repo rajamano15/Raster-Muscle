@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 16 12.71" width="16" height="12.71"><metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><rdf:Description><dc:creator>RealFaviconGenerator</dc:creator><dc:source>https://realfavicongenerator.net</dc:source></rdf:Description></rdf:RDF></metadata><defs>
+    <style>
+      .cls-1 {
+        fill: #00a87b;
+      }
+    </style>
+  </defs><g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <path class="cls-1" d="M2.53.08s.05-.07.09-.07h9.53c.7-.01,1.38.1,1.98.34,1.05.42,2.19,1.33,1.79,3.3-.71,3.44-4.76,3.84-4.76,3.84l-6.45,1-.84,4.15s-.05.07-.09.07H.09c-.06,0-.1-.04-.09-.09l.87-4.22s.41-2.59,3.89-3.12,6.85-1.06,6.85-1.06c0,0,.4-.08.47-.42s-.18-.5-.4-.5c-.21,0-8.65,0-9.7,0-.06,0-.1-.04-.09-.09L2.53.08Z"></path>
+      <path class="cls-1" d="M10.52,9.11l-3.72.62c-.1.02-.15.1-.12.18l1.26,2.71c.02.05.08.08.15.08h4.02c.11,0,.19-.1.15-.19l-1.57-3.33c-.03-.06-.1-.09-.18-.08Z"></path>
+    </g>
+  </g><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>
