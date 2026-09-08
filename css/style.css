@@ -1962,7 +1962,10 @@ body.dialog-open { overflow: hidden; }
     width: min(100%, 420px);
   }
   .orb-float { animation: none; }
+  /* the button stretches to the column width here, so the caret would otherwise
+     hug the label mid-row instead of the right end of the pill */
   .orb-btn { width: 100%; }
+  .orb-caret { margin-left: auto; }
   .orb-panel, .orb-up .orb-panel {
     position: static;
     width: 100%;
@@ -2001,7 +2004,6 @@ body.dialog-open { overflow: hidden; }
 
 @media (max-width: 720px) {
   .topbar { display: none; }
-  .hero { padding-top: 136px; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .sol-grid { grid-template-columns: 1fr; }
   .vm-grid { grid-template-columns: 1fr; }
@@ -2021,7 +2023,7 @@ body.dialog-open { overflow: hidden; }
   .topbar-links a { font-size: 12px; }
   .brand img { height: 24px; }
   .navbar-inner { height: 66px; }
-  .hero { padding-top: 158px; }
+  .hero { padding-top: 112px; }
   .footer-bottom { flex-direction: column; }
 }
 
