@@ -1,0 +1,78 @@
+[
+ {
+  "slug": "communication-workshop-2023",
+  "title": "Communication Workshop – 2023",
+  "date": "12 December 2023",
+  "iso": "2023-12-12",
+  "image": "communication-workshop-2023",
+  "excerpt": "An engaging in-house workshop for our employees, built around activities that sharpen interpersonal skills and open up dialogue across the team.",
+  "body": [
+    "At Raster Images, fostering effective communication is paramount. Recently, we conducted an engaging Communication Workshop for our dedicated employees. The workshop featured a series of activities designed to enhance interpersonal skills, encourage open dialogue, and refine communication strategies within our team.",
+    "It was a dynamic session aimed at cultivating a more cohesive and communicative work environment, empowering each member to excel in their interactions and collaborations. We are committed to continual growth, and this workshop was a step towards nurturing stronger connections and clearer communication across our organisation."
+  ],
+  "gallery": [
+    {"file": "communication-workshop-2023", "caption": "Workshop session in progress at our Salem office"},
+    {"file": "communication-workshop-2023-b", "caption": "Team activities during the communication workshop"}
+  ]
+ },
+ {
+  "slug": "dicom-conference-2023",
+  "title": "DICOM Educational Conference – 2023",
+  "date": "9, 10 & 11 October 2023",
+  "iso": "2023-10-09",
+  "image": "dicom-conference-2023",
+  "excerpt": "Three days of talks overseen by the people behind the DICOM standard, from first principles through to DICOMweb and AI encoding.",
+  "body": [
+    "The DICOM Education Conference is a series of talks and presentations which was conducted on the 9th, 10th and 11th October, overseen by the people behind the standard along with local partners to spread knowledge of the standard. It started with the basics, introducing the concepts of DICOM, and went on to cover important aspects of the standard. Recent additions such as DICOMweb™ were also covered.",
+    "The DICOM Education Conference is a great starting point for beginners to learn about Medical Imaging Informatics, and also serves as a refresher for those more experienced. This conference was also an opportunity to interact with your peers and gain from their experience."
+  ],
+  "listTitle": "Confirmed topics for the DICOM Conference",
+  "list": [
+    "AI Results Encoding",
+    "DICOM Cyber 101",
+    "DICOM ECG Files Conversion | Heart Diseases Prediction &amp; Progression",
+    "DICOM and FHIR, IHE, etc.",
+    "DICOM Security — advanced",
+    "DICOMweb",
+    "Enabling a multi-modal clinical data repository using openEHR and DICOM",
+    "History and future of DICOM",
+    "Integration and implementation strategies for AI algorithm development, deployment and enhancement using DICOM and other standards",
+    "Multi-modal clinical data repository using openEHR and DICOM",
+    "Leveraging DICOM and IHE standards to deploy AI for Diabetic Retinopathy Screening at vision centres in rural Tamil Nadu"
+  ],
+  "gallery": [
+    {"file": "dicom-conference-2023", "caption": "DICOM Educational Conference, October 2023"}
+  ]
+ },
+ {
+  "slug": "cahotech-2019",
+  "title": "CAHOTECH – 2019",
+  "date": "27 September 2019",
+  "iso": "2019-09-27",
+  "image": "cahotech-2019",
+  "excerpt": "The 4th International Healthcare Technology Conference of the Consortium of Accredited Healthcare Organisations, held over two days in Chennai.",
+  "body": [
+    "CAHOTECH 2019, the 4th International Healthcare Technology Conference of the Consortium of Accredited Healthcare Organisations, was conducted on 27th and 28th September 2019 at Chennai.",
+    "CAHOTECH is a platform for healthcare organisations and the technology industry to share and utilise combined experience, to guide themselves continuously towards more efficient practices utilising technological development.",
+    "The two-day event included pre-conference workshops and masterclasses on the preceding day of the main conference, focused on how to understand future healthcare technologies — for clinicians, hospital managers and administrators, biomedical engineers, scientists, researchers and other stakeholders of the healthcare industry interested in promoting change through innovation and advancement in healthcare."
+  ],
+  "gallery": [
+    {"file": "cahotech-2019", "caption": "CAHOTECH 2019, Chennai"}
+  ]
+ },
+ {
+  "slug": "healthcare-conference-2019",
+  "title": "Healthcare Conference – 2019",
+  "date": "12 September 2019",
+  "iso": "2019-09-12",
+  "image": "healthcare-conference-2019",
+  "excerpt": "CII Salem's first Healthcare Conference, convening regional stakeholders to re-examine what is needed for tangible progress in healthcare services.",
+  "body": [
+    "CII Salem organised the first edition of the “Healthcare Conference” on 12th September 2019 at Radisson Hotel. The conference was designed as a strategic platform where healthcare stakeholders from across the region congregate to assess and re-examine the steps that need to be taken for attaining tangible progress in healthcare services.",
+    "The conference lined up an array of professionals to guide stakeholders on enhancing profitability. Highlighted topics included “Enhancing profitability through operational excellence”, “Healthcare analytics” and “Challenges and opportunity in small and medium segment hospitals”."
+  ],
+  "gallery": [
+    {"file": "healthcare-conference-2019", "caption": "CII Salem Healthcare Conference, Radisson Hotel"}
+  ]
+ }
+]

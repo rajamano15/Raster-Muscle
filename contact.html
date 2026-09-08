@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Raster Images, Salem</title>
+  <meta name="description" content="Contact Raster Images — head office in Fairlands, Salem, with branch offices in Noida and Puchong, Malaysia. Call +91 427 4033100 or email info@raster.in.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23041109'/%3E%3Ccircle cx='32' cy='32' r='15' fill='%2300A87B'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ═══════════ Icon sprite ═══════════ -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-radiology" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="12" cy="12" r="1.7" fill="currentColor"/>
+        <path d="M12 8.9V4.4M14.7 13.6l3.9 2.2M9.3 13.6l-3.9 2.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M8.6 6.1a6.9 6.9 0 0 1 6.8 0M17.9 14.4a6.9 6.9 0 0 1-3.4 5.9M6.1 14.4a6.9 6.9 0 0 0 3.4 5.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>
+      </symbol>
+      <symbol id="i-hospital" viewBox="0 0 24 24">
+        <path d="M4.5 20.5V6.8a1.5 1.5 0 0 1 1.5-1.5h12a1.5 1.5 0 0 1 1.5 1.5v13.7M2.5 20.5h19M9.7 20.5v-3.6a2.3 2.3 0 0 1 4.6 0v3.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 8v4.4M9.8 10.2h4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-interface" viewBox="0 0 24 24">
+        <circle cx="5.5" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="18.5" cy="5.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="18.5" cy="18.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M7.9 10.8l8.3-4.1M7.9 13.2l8.3 4.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-apps" viewBox="0 0 24 24">
+        <rect x="3.5" y="3.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="13.5" y="3.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="3.5" y="13.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M17 13.8v6.4M13.8 17h6.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-chip" viewBox="0 0 24 24">
+        <rect x="6" y="6" width="12" height="12" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="9.6" y="9.6" width="4.8" height="4.8" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M9 6V3M15 6V3M9 21v-3M15 21v-3M6 9H3M6 15H3M21 9h-3M21 15h-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24">
+        <path d="M6 9.4l6 5.6 6-5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M4.5 12h14M13 5.8l6.2 6.2L13 18.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h11" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="M12 2.8l7.5 3v5.4c0 4.8-3.2 8.4-7.5 10-4.3-1.6-7.5-5.2-7.5-10V5.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M8.8 11.8l2.3 2.3 4.1-4.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24">
+        <path d="M12 3.2L21 8l-9 4.8L3 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M3 12.4l9 4.8 9-4.8M3 16.6l9 4.8 9-4.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" opacity=".65"/>
+      </symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24">
+        <path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 11.2a3.7 3.7 0 0 1-.7 7.3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-badge" viewBox="0 0 24 24">
+        <path d="M12 2.6l2.3 1.7 2.8-.3 1 2.7 2.5 1.3-.6 2.8 1.6 2.4-1.9 2.1.1 2.9-2.7.9-1.5 2.5-2.8-.7-2.6 1.3-2-2.1-2.9-.2-.6-2.8-2.3-1.8 1-2.7-1.2-2.6 2.2-1.9.3-2.8 2.8-.4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M8.7 12l2.3 2.3 4.3-4.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-support" viewBox="0 0 24 24">
+        <path d="M4.5 13.6v-2a7.5 7.5 0 0 1 15 0v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <rect x="2.8" y="12.6" width="4.4" height="6.4" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="16.8" y="12.6" width="4.4" height="6.4" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M19 19.4a6 6 0 0 1-5.2 2.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-plug" viewBox="0 0 24 24">
+        <path d="M9 2.8v4.4M15 2.8v4.4M7 7.2h10v3.4a5 5 0 0 1-10 0z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 15.6v2.6a3 3 0 0 1-3 3H7.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <!-- ── Contact icons ── -->
+      <symbol id="i-pin" viewBox="0 0 24 24">
+        <path d="M12 21.2s6.6-6.1 6.6-11a6.6 6.6 0 0 0-13.2 0c0 4.9 6.6 11 6.6 11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <circle cx="12" cy="10.1" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24">
+        <path d="M7.3 3.4h2.3l1.6 4-2 1.4a11.7 11.7 0 0 0 5.6 5.6l1.4-2 4 1.6v2.3a2 2 0 0 1-2.2 2A16.9 16.9 0 0 1 5.3 5.6a2 2 0 0 1 2-2.2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <rect x="2.8" y="5" width="18.4" height="14" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M3.7 6.7l8.3 5.9 8.3-5.9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ═══════════ Header ═══════════ -->
+  <header class="site-header" id="siteHeader">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <p class="topbar-tag">Integrated Healthcare IT &amp; Hardware</p>
+        <nav aria-label="Secondary">
+          <ul class="topbar-links">
+            <li><a href="news-events.html">News &amp; Events</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="navbar">
+      <div class="container navbar-inner">
+        <a class="brand" href="index.html" aria-label="Raster — Home">
+          <img src="assets/img/logo-green.webp" alt="Raster" width="259" height="56">
+        </a>
+        <nav class="main-nav" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="has-mega">
+              <a href="healthcare-solutions.html" aria-describedby="megaSolutions">Healthcare Solutions<svg class="icon nav-caret" aria-hidden="true"><use href="#i-chevron"/></svg></a>
+            <div class="mega glass" id="megaSolutions">
+              <div class="mega-grid">
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#radiology"><svg class="icon" aria-hidden="true"><use href="#i-radiology"/></svg>Radiology</a>
+                <ul>
+                  <li><a href="pacs.html">PACS</a></li>
+                  <li><a href="ris.html">RIS</a></li>
+                  <li><a href="teleradiology.html">Teleradiology</a></li>
+                  <li><a href="dicom-burner.html">DICOM Burner</a></li>
+                  <li><a href="dicom-camera.html">DICOM Camera</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#hospital-management"><svg class="icon" aria-hidden="true"><use href="#i-hospital"/></svg>Hospital Management</a>
+                <ul>
+                  <li><a href="ihms.html">IHMS</a></li>
+                  <li><a href="pharmacy-management.html">Pharmacy Management</a></li>
+                  <li><a href="blood-bank-management.html">Blood Bank Management</a></li>
+                  <li><a href="emr.html">EMR</a></li>
+                  <li><a href="lis.html">Lab Information System</a></li>
+                  <li><a href="neopead-emr.html">Neopead EMR &amp; Charting</a></li>
+                  <li><a href="asset-management.html">Asset Management</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#interfacing"><svg class="icon" aria-hidden="true"><use href="#i-interface"/></svg>Interfacing Applications</a>
+                <ul>
+                  <li><a href="lab-equipment-interfacing.html">Lab Equipment Interfacing</a></li>
+                  <li><a href="iomt-interfacing.html">IoMT &amp; Interfacing</a></li>
+                  <li><a href="electronic-charting.html">Electronic Charting</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#other-applications"><svg class="icon" aria-hidden="true"><use href="#i-apps"/></svg>Other Applications</a>
+                <ul>
+                  <li><a href="ot-video-broadcasting.html">OT – Video Broadcasting</a></li>
+                  <li><a href="telemedicine.html">Telemedicine</a></li>
+                  <li><a href="patient-id-wristbands.html">Patient ID Wristbands</a></li>
+                </ul>
+              </div>
+              </div>
+            </div>
+            </li>
+            <li><a href="hardware-products.html">Hardware Products</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn-primary nav-cta" href="contact.html" data-demo-open>Request Demo</a>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <svg class="icon icon-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <nav aria-label="Mobile primary">
+      <ul class="mobile-primary">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <details class="mobile-sub">
+            <summary>Healthcare Solutions<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="mobile-sub-body">
+            <h4>Radiology</h4>
+            <a href="pacs.html">PACS</a>
+            <a href="ris.html">RIS</a>
+            <a href="teleradiology.html">Teleradiology</a>
+            <a href="dicom-burner.html">DICOM Burner</a>
+            <a href="dicom-camera.html">DICOM Camera</a>
+            <h4>Hospital Management</h4>
+            <a href="ihms.html">IHMS</a>
+            <a href="pharmacy-management.html">Pharmacy Management</a>
+            <a href="blood-bank-management.html">Blood Bank Management</a>
+            <a href="emr.html">EMR</a>
+            <a href="lis.html">Lab Information System</a>
+            <a href="neopead-emr.html">Neopead EMR &amp; Charting</a>
+            <a href="asset-management.html">Asset Management</a>
+            <h4>Interfacing Applications</h4>
+            <a href="lab-equipment-interfacing.html">Lab Equipment Interfacing</a>
+            <a href="iomt-interfacing.html">IoMT &amp; Interfacing</a>
+            <a href="electronic-charting.html">Electronic Charting</a>
+            <h4>Other Applications</h4>
+            <a href="ot-video-broadcasting.html">OT – Video Broadcasting</a>
+            <a href="telemedicine.html">Telemedicine</a>
+            <a href="patient-id-wristbands.html">Patient ID Wristbands</a>
+              <a class="btn btn-primary mobile-sub-all" href="healthcare-solutions.html">All healthcare solutions<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </details>
+        </li>
+        <li><a href="hardware-products.html">Hardware Products</a></li>
+        <li><a href="partners.html">Partners</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+      <ul class="mobile-secondary">
+        <li><a href="news-events.html">News &amp; Events</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="our-team.html">Our Team</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="main">
+    <!-- ═══════════ Page header ═══════════ -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <p class="eyebrow"><span class="dot"></span>Contact Us</p>
+        <h1 id="page-title">Talk to the team at <span class="grad">Raster</span></h1>
+        <p class="page-lede">Salem, Noida and Puchong — plus direct lines to the people who will handle your enquiry.</p>
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span aria-current="page">Contact Us</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ═══════════ Offices ═══════════ -->
+    <section class="features" aria-labelledby="offices-h">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>Where to find us</p>
+          <h2 id="offices-h" style="--i:1">Our offices</h2>
+        </div>
+        <div class="office-grid" data-reveal>
+          <article class="glass office-card" style="--i:0">
+            <h3>Head Office</h3>
+            <address>
+              Raster Images (P) Ltd.<br>
+              2nd &amp; 3rd Floor, AKM Complex,<br>
+              No.&nbsp;29, Brindavan Road, 4th Cross,<br>
+              Kailash Nagar, Fairlands,<br>
+              Salem – 636016, Tamil Nadu
+            </address>
+            <div class="contact-lines">
+              <span class="contact-line">
+                <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+                <a href="tel:+914274033100">+91 427 4033100</a>
+              </span>
+              <span class="contact-line">
+                <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+                <a href="mailto:info@raster.in">info@raster.in</a>
+              </span>
+            </div>
+          </article>
+          <article class="glass office-card" style="--i:1">
+            <h3>Registered Office</h3>
+            <address>
+              54, Brindavan Road,<br>
+              Alagapuram,<br>
+              Salem – 636004,<br>
+              Tamil Nadu, India
+            </address>
+            <div class="contact-lines">
+              <span class="contact-line">
+                <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+                Registered address for correspondence
+              </span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ People ═══════════ -->
+    <section class="features" aria-labelledby="people-h">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>Direct lines</p>
+          <h2 id="people-h" style="--i:1">Speak to someone</h2>
+          <p class="section-sub" style="--i:2">If you would rather go straight to a person, these are the people who will pick up.</p>
+        </div>
+        <div class="people-grid" data-reveal>
+          <article class="glass person-card" style="--i:0">
+            <div class="person-head">
+              <span class="person-mono" aria-hidden="true">GR</span>
+              <div>
+                <h3 class="person-name">Gowthaman R</h3>
+                <p class="person-role">Business Development Manager</p>
+              </div>
+            </div>
+            <div class="contact-lines">
+              <span class="contact-line">
+                <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+                <a href="tel:+917708599111">+91 77085 99111</a>
+              </span>
+              <span class="contact-line">
+                <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+                <a href="mailto:gowthaman.r@raster.in">gowthaman.r@raster.in</a>
+              </span>
+            </div>
+          </article>
+          <article class="glass person-card" style="--i:1">
+            <div class="person-head">
+              <span class="person-mono" aria-hidden="true">KL</span>
+              <div>
+                <h3 class="person-name">Krishna Kumar L</h3>
+                <p class="person-role">Business Development Manager (South)</p>
+              </div>
+            </div>
+            <div class="contact-lines">
+              <span class="contact-line">
+                <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+                <a href="tel:+919566627733">+91 95666 27733</a>
+              </span>
+              <span class="contact-line">
+                <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+                <a href="mailto:krishnakumar.l@raster.in">krishnakumar.l@raster.in</a>
+              </span>
+            </div>
+          </article>
+          <article class="glass person-card" style="--i:2">
+            <div class="person-head">
+              <span class="person-mono" aria-hidden="true">MS</span>
+              <div>
+                <h3 class="person-name">Magudeshwaran S</h3>
+                <p class="person-role">Business Executive</p>
+              </div>
+            </div>
+            <div class="contact-lines">
+              <span class="contact-line">
+                <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+                <a href="tel:+919566500333">+91 95665 00333</a>
+              </span>
+              <span class="contact-line">
+                <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+                <a href="mailto:magudeshwaran.s@raster.in">magudeshwaran.s@raster.in</a>
+              </span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ Branch offices ═══════════ -->
+    <section class="features" aria-labelledby="branches-h">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>Further afield</p>
+          <h2 id="branches-h" style="--i:1">Branch offices</h2>
+        </div>
+        <div class="office-grid" data-reveal>
+          <article class="glass office-card" style="--i:0">
+            <h3>India — Delhi</h3>
+            <address>
+              F-21, Second Floor, Sector 12,<br>
+              Noida – 201 301,<br>
+              Delhi, India
+            </address>
+          </article>
+          <article class="glass office-card" style="--i:1">
+            <h3>Malaysia</h3>
+            <address>
+              No. 37, Jalan BP 7/12,<br>
+              Bandar Bukit,<br>
+              47120 Puchong, Selangor,<br>
+              Malaysia
+            </address>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ Enquiry form + map ═══════════ -->
+    <section class="solutions" aria-labelledby="enquiry-h">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>Get in touch</p>
+          <h2 id="enquiry-h" style="--i:1">Send us an enquiry</h2>
+          <p class="section-sub" style="--i:2">Tell us what you are looking for and we will route it to the right person.</p>
+        </div>
+        <div class="contact-split" data-reveal>
+          <div class="glass form-card" style="--i:0">
+            <!-- Point data-endpoint at the mail handler (e.g. "contact-us.php")
+                 to enable real submission; while it is empty the script tells
+                 visitors to email or call instead of silently dropping them. -->
+            <form id="contactForm" data-form data-endpoint="" novalidate
+                  data-fallback="This form is not connected to a mail handler yet. Please email info@raster.in or call +91 427 4033100 and we will come straight back to you."
+                  data-success="Thank you — your enquiry has been sent. We will be in touch shortly.">
+              <div class="field">
+                <label for="cf-name">Name <span class="req" aria-hidden="true">*</span></label>
+                <input id="cf-name" name="name" type="text" autocomplete="name" placeholder="Enter your full name" required>
+                <p class="err" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="cf-mobile">Mobile number <span class="req" aria-hidden="true">*</span></label>
+                <input id="cf-mobile" name="mobile" type="tel" autocomplete="tel" inputmode="tel" placeholder="Enter your mobile number" required>
+                <p class="err" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="cf-email">E-mail ID <span class="req" aria-hidden="true">*</span></label>
+                <input id="cf-email" name="email" type="email" autocomplete="email" placeholder="Enter your e-mail ID" required>
+                <p class="err" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="cf-message">Message <span class="req" aria-hidden="true">*</span></label>
+                <textarea id="cf-message" name="message" placeholder="Tell us what you would like to enquire about" required></textarea>
+                <p class="err" aria-live="polite"></p>
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit">Submit<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+                <span class="contact-line">
+                  <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+                  <a href="tel:+914274033100">or call +91 427 4033100</a>
+                </span>
+              </div>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+          <div class="glass map-card" style="--i:1">
+            <div class="map-frame">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15629.331768890508!2d78.1439058!3d11.6707999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4538c72dfcdace14!2sRaster%20Images%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1585544446967!5m2!1sen!2sin"
+                title="Map showing Raster Images Pvt Ltd, Salem"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
+            </div>
+            <p class="map-caption">Head office — Fairlands, Salem. The map loads only when you scroll to it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════ Footer ═══════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/img/logo-white.webp" alt="Raster" width="200" height="43">
+          <p>Integrated healthcare technology — software, interfacing and hardware engineered around patient care.</p>
+        </div>
+        <nav aria-label="Footer — Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Footer — Solutions">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="healthcare-solutions.html#radiology">Radiology</a></li>
+            <li><a href="healthcare-solutions.html#hospital-management">Hospital Management</a></li>
+            <li><a href="healthcare-solutions.html#interfacing">Interfacing Applications</a></li>
+            <li><a href="healthcare-solutions.html#other-applications">Other Applications</a></li>
+            <li><a href="hardware-products.html">Hardware Products</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Footer — Resources">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="news-events.html">News &amp; Events</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Raster. All rights reserved.</p>
+        <p class="footer-pulse" aria-hidden="true">
+          <svg viewBox="0 0 120 24" class="pulse-mini"><path d="M0,12 h34 l6,-8 8,16 6,-12 4,4 h62" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════ Demo request dialog ═══════════
+       Opened by any [data-demo-open] control (the header button, the product
+       pages' "Request a demo"); a native <dialog> gives the focus trap, Escape
+       and inertness for free. The form shares the [data-form] handler and, with
+       no mail endpoint, falls back to the phone/email line. -->
+  <dialog class="demo-dialog" id="demoDialog" aria-labelledby="demo-title">
+    <div class="demo-card">
+      <button class="demo-close" type="button" data-demo-close aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <p class="eyebrow"><span class="dot"></span>Request a demo</p>
+      <h2 id="demo-title">See it working at your institute</h2>
+      <p class="demo-lede">Tell us who you are and what you would like to see. We will arrange a walkthrough at a time that suits you.</p>
+      <form id="demoForm" data-form data-endpoint="" novalidate
+            data-fallback="This form is not connected to a mail handler yet. Please email info@raster.in or call +91 427 4033100 and we will arrange your demo."
+            data-success="Thank you — your demo request has been sent. We will be in touch shortly to fix a time.">
+        <input type="hidden" name="subject" value="Demo request">
+        <div class="demo-grid">
+          <div class="field">
+            <label for="df-name">Full name <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-org">Hospital / organisation <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-org" name="organisation" type="text" autocomplete="organization" placeholder="Institute name" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-email">E-mail ID <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-email" name="email" type="email" autocomplete="email" placeholder="you@hospital.org" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-mobile">Mobile number <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-mobile" name="mobile" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-role">Your role</label>
+            <select id="df-role" name="role">
+              <option value="">Choose a role</option>
+              <option>Doctor / Radiologist</option>
+              <option>Hospital administrator</option>
+              <option>IT / Biomedical</option>
+              <option>Laboratory</option>
+              <option>Purchase / Management</option>
+              <option>Other</option>
+            </select>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-solution">Solution of interest <span class="req" aria-hidden="true">*</span></label>
+            <select id="df-solution" name="solution" required>
+              <option value="">Choose a solution</option>
+                  <optgroup label="Radiology">
+                    <option value="pacs">PACS</option>
+                    <option value="ris">RIS</option>
+                    <option value="teleradiology">Teleradiology</option>
+                    <option value="dicom-burner">DICOM Burner</option>
+                    <option value="dicom-camera">DICOM Camera</option>
+                  </optgroup>
+                  <optgroup label="Hospital Management">
+                    <option value="ihms">IHMS</option>
+                    <option value="pharmacy-management">Pharmacy Management</option>
+                    <option value="blood-bank-management">Blood Bank Management</option>
+                    <option value="emr">EMR</option>
+                    <option value="lis">Lab Information System</option>
+                    <option value="neopead-emr">Neopead EMR &amp; Charting</option>
+                    <option value="asset-management">Asset Management</option>
+                  </optgroup>
+                  <optgroup label="Interfacing Applications">
+                    <option value="lab-equipment-interfacing">Lab Equipment Interfacing</option>
+                    <option value="iomt-interfacing">IoMT &amp; Interfacing</option>
+                    <option value="electronic-charting">Electronic Charting</option>
+                  </optgroup>
+                  <optgroup label="Other Applications">
+                    <option value="ot-video-broadcasting">OT – Video Broadcasting</option>
+                    <option value="telemedicine">Telemedicine</option>
+                    <option value="patient-id-wristbands">Patient ID Wristbands</option>
+                  </optgroup>
+              <option value="hardware">Hardware products</option>
+              <option value="not-sure">Not sure yet — advise me</option>
+            </select>
+            <p class="err" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="df-message">Anything we should know?</label>
+          <textarea id="df-message" name="message" placeholder="Departments, bed count, existing systems, preferred dates…"></textarea>
+          <p class="err" aria-live="polite"></p>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Send request<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <span class="contact-line"><a href="tel:+914274033100">or call +91 427 4033100</a></span>
+        </div>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </dialog>
+
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

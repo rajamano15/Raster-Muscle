@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="55 10 740 400" role="img" aria-labelledby="tm-schem-title tm-schem-desc" class="schem">
+  <title id="tm-schem-title">Telemedicine — consultation workflow</title>
+  <desc id="tm-schem-desc">The patient books an appointment (step 1) and makes payment (step 2) with the hospital control centre over a two-way link. The consultation (step 3) runs between patient and doctor over voice, video or message on a two-way channel. Prescriptions (step 4) and investigations (step 5) come back from the doctor through the control centre over a second two-way link.</desc>
+  <style>
+    .schem { --ink: var(--text-hi, #f2f7f5); --ink-2: var(--text-mid, #b9c6c1); --ink-3: var(--text-low, #7f8d88); --g: var(--green, #00A87B); --gb: var(--green-bright, #00CF97); --on-g: var(--on-green, #03110c); --bg: #0d1a16; font-family: inherit; color: var(--ink); }
+    .schem .pic { fill: var(--ink); stroke: none; }
+    .schem .pic-cut { fill: var(--bg); stroke: none; }
+    .schem .pic-line { fill: none; stroke: var(--ink); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+    .schem .panel { fill: rgba(255, 255, 255, 0.1); stroke: rgba(255, 255, 255, 0.18); stroke-width: 1; }
+    .schem .lbl { fill: var(--ink-2); font-size: 13px; font-weight: 500; letter-spacing: 0.01em; }
+    .schem .lbl-hd { fill: var(--ink); font-size: 13px; font-weight: 600; }
+    .schem .legend { fill: var(--ink-2); font-size: 13px; font-weight: 500; }
+    .schem .link { fill: none; stroke: var(--g); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 1.5 6.5; animation: schem-march 1.4s linear infinite; }
+    .schem .link.chan { stroke: var(--ink-3); animation: none; }
+    .schem .head { fill: var(--g); }
+    .schem .head-grey { fill: var(--ink-3); }
+    .schem .pkt { fill: var(--gb); filter: drop-shadow(0 0 4px rgba(0, 207, 151, 0.9)); offset-rotate: 0deg; animation: schem-pkt 3.6s linear infinite; }
+    .schem .pkt.back { animation-direction: reverse; }
+    .schem .pkt.grey { fill: var(--ink); filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.6)); }
+    .schem .step { fill: var(--g); stroke: rgba(255, 255, 255, 0.35); stroke-width: 1.5; }
+    .schem .step-n { fill: var(--on-g); font-size: 13px; font-weight: 700; }
+    .schem .step-ring { fill: none; stroke: var(--gb); stroke-width: 1.5; opacity: 0; transform-box: fill-box; transform-origin: 50% 50%; animation: schem-ping 7.5s ease-out infinite; }
+    .schem .bubble-q { fill: var(--ink); }
+    .schem .bubble-m { fill: var(--gb); }
+    .schem .bubble { transform-box: fill-box; transform-origin: 50% 100%; animation: schem-bob 3s ease-in-out infinite; }
+    .schem .rupee { fill: var(--ink); font-size: 24px; font-weight: 700; animation: schem-pulse 3.6s ease-in-out infinite; }
+    .schem .trace { fill: none; stroke: var(--gb); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 20 100; animation: schem-trace 2.2s linear infinite; }
+    .schem .led { fill: var(--gb); animation: schem-blink 2.2s ease-in-out infinite; }
+    .schem .dots circle { animation: schem-dots 1.8s ease-in-out infinite; }
+    @keyframes schem-march { to { stroke-dashoffset: -16; } }
+    @keyframes schem-pkt { 0% { offset-distance: 0%; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+    @keyframes schem-ping { 0% { transform: scale(1); opacity: 0.85; } 16%, 100% { transform: scale(2.1); opacity: 0; } }
+    @keyframes schem-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes schem-pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+    @keyframes schem-trace { to { stroke-dashoffset: -120; } }
+    @keyframes schem-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    @keyframes schem-dots { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) {
+      .schem .link, .schem .step-ring, .schem .bubble, .schem .rupee, .schem .trace, .schem .led, .schem .dots circle { animation: none; }
+      .schem .trace { stroke-dasharray: none; }
+      .schem .pkt { display: none; }
+    }
+  </style>
+  <defs>
+    <marker id="tm-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="head" d="M1 1.5 L9 5 L1 8.5 Z"/>
+    </marker>
+    <marker id="tm-arrow-grey" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="head-grey" d="M1 1.5 L9 5 L1 8.5 Z"/>
+    </marker>
+  </defs>
+
+  <!-- ══ Links ══ -->
+  <g id="tm-links">
+    <!-- Patient ⇄ Hospital Control Centre (book, pay) -->
+    <path class="link" d="M144 256 C190 190 270 130 357 111" marker-start="url(#tm-arrow)" marker-end="url(#tm-arrow)"/>
+    <!-- Hospital Control Centre ⇄ Doctor (prescriptions, investigations) -->
+    <path class="link" d="M485 113 C570 130 650 190 699 240" marker-start="url(#tm-arrow)" marker-end="url(#tm-arrow)"/>
+    <!-- Patient ⇄ Doctor consultation channel through Voice · Video · Message (grey in the source) -->
+    <path class="link chan" d="M152 300 H330" marker-start="url(#tm-arrow-grey)"/>
+    <path class="link chan" d="M382 300 H396"/>
+    <path class="link chan" d="M452 300 H466"/>
+    <path class="link chan" d="M520 300 H685" marker-end="url(#tm-arrow-grey)"/>
+  </g>
+  <g id="tm-packets" aria-hidden="true">
+    <circle class="pkt" r="3.4" style="offset-path: path('M144 256 C190 190 270 130 357 111'); animation-delay: 0s"/>
+    <circle class="pkt back" r="3.4" style="offset-path: path('M144 256 C190 190 270 130 357 111'); animation-delay: -1.8s"/>
+    <circle class="pkt" r="3.4" style="offset-path: path('M485 113 C570 130 650 190 699 240'); animation-delay: -0.9s"/>
+    <circle class="pkt back" r="3.4" style="offset-path: path('M485 113 C570 130 650 190 699 240'); animation-delay: -2.7s"/>
+    <circle class="pkt grey" r="3" style="offset-path: path('M152 300 H685'); animation-delay: -0.4s"/>
+    <circle class="pkt grey back" r="3" style="offset-path: path('M152 300 H685'); animation-delay: -2.2s"/>
+  </g>
+
+  <!-- ══ Patient: front-facing person with a cross on the chest ══ -->
+  <g id="n-patient" transform="translate(70 244)">
+    <circle class="pic" cx="28" cy="16" r="13"/>
+    <path class="pic-cut" d="M17 15a11 11 0 0 1 22 0v8a11 11 0 0 1-22 0z"/>
+    <path class="pic" d="M15 12c2-8 8-11 13-11s11 3 13 11c-4-3-9-4-13-4s-9 1-13 4z"/>
+    <path class="pic" d="M0 62V46a14 14 0 0 1 14-14h4l10 8 10-8h4a14 14 0 0 1 14 14v16z"/>
+    <path class="pic-cut" d="M40 44h4v4h4v4h-4v4h-4v-4h-4v-4h4z"/>
+    <text class="lbl" x="28" y="86" text-anchor="middle">Patient</text>
+  </g>
+  <!-- question bubble above the patient -->
+  <g transform="translate(72 184)"><g class="bubble">
+    <path class="bubble-q" d="M6 0h30a6 6 0 0 1 6 6v30a6 6 0 0 1-6 6H26l-5 10-3-10H6a6 6 0 0 1-6-6V6a6 6 0 0 1 6-6z"/>
+    <text x="21" y="31" text-anchor="middle" style="fill: var(--bg); font-size: 24px; font-weight: 700">?</text>
+  </g></g>
+
+  <!-- ══ Step 1: calendar ══ -->
+  <g id="n-calendar" transform="translate(148 168)">
+    <rect class="pic" x="0" y="4" width="30" height="28" rx="3"/>
+    <rect class="pic-cut" x="3" y="12" width="24" height="17" rx="1"/>
+    <path class="pic" d="M7 0h4v9H7zM19 0h4v9h-4z"/>
+    <g class="pic"><rect x="6" y="15" width="4" height="4"/><rect x="13" y="15" width="4" height="4"/><rect x="20" y="15" width="4" height="4"/><rect x="6" y="22" width="4" height="4"/><rect x="13" y="22" width="4" height="4"/><rect x="20" y="22" width="4" height="4"/></g>
+  </g>
+  <!-- ══ Step 2: rupee ══ -->
+  <text class="rupee" x="260" y="128" text-anchor="middle">₹</text>
+
+  <!-- ══ Hospital Control Centre ══ -->
+  <g id="n-centre" transform="translate(367 54)">
+    <text class="lbl-hd" x="55" y="-26" text-anchor="middle">Hospital</text>
+    <text class="lbl-hd" x="55" y="-6" text-anchor="middle">Control Centre</text>
+    <rect class="panel" x="0" y="0" width="111" height="113" rx="14"/>
+    <rect class="pic" x="24" y="24" width="64" height="38" rx="2"/>
+    <rect class="pic-cut" x="27" y="27" width="58" height="32"/>
+    <path class="trace" d="M32 44h10l3-7 4 14 4-11 4 8 3-4h20"/>
+    <path class="pic" d="M12 62l18-2v26l-18 2zM100 62l-18-2v26l18 2z"/>
+    <path class="pic-cut" d="M15 65l12-1v20l-12 1zM97 65l-12-1v20l12 1z"/>
+    <path class="pic" d="M56 52a9 9 0 0 1 9 9v5a9 9 0 0 1-3 7h3a13 13 0 0 1 13 13v6H34v-6a13 13 0 0 1 13-13h3a9 9 0 0 1-3-7v-5a9 9 0 0 1 9-9z"/>
+  </g>
+
+  <!-- ══ Step 4: medicine — pill bottle and capsule ══ -->
+  <g id="n-medicine" transform="translate(586 98)">
+    <path class="pic" d="M4 0h14v6H4z"/>
+    <rect class="pic" x="1" y="6" width="20" height="30" rx="3"/>
+    <path class="pic-cut" d="M9 14h4v4h4v4h-4v4H9v-4H5v-4h4z"/>
+    <g transform="rotate(-35 32 28)">
+      <rect class="pic" x="24" y="21" width="18" height="12" rx="6"/>
+      <rect class="pic-cut" x="33" y="23" width="7" height="8" rx="3"/>
+    </g>
+  </g>
+  <!-- ══ Step 5: lab — flask and test tube ══ -->
+  <g id="n-lab" transform="translate(670 158)">
+    <path class="pic" d="M6 0h10v3H6zM7 3h8v10l9 16a4 4 0 0 1-3 6H3a4 4 0 0 1-3-6l7-16z"/>
+    <path class="pic-cut" d="M9 5h4v10l6 12H5l4-12z"/>
+    <path class="pic" d="M20 6h8v2h-8zM21 8h6v22a3 3 0 0 1-6 0z"/>
+    <path class="pic-cut" d="M22.5 9h3v10h-3z"/>
+  </g>
+
+  <!-- ══ Doctor: seated at a desk with a laptop ══ -->
+  <g id="n-doctor" transform="translate(698 232)">
+    <circle class="pic" cx="60" cy="10" r="9"/>
+    <path class="pic" d="M50 22a12 12 0 0 1 20 6v30h7V42a4 4 0 0 1 8 0v34H50v-8h12v-8H50z"/>
+    <path class="pic" d="M50 30l-16 8 2 5 14-6z"/>
+    <path class="pic" d="M0 40h58v4H0zM4 44h4v32H4zM50 44h4v32h-4z"/>
+    <path class="pic" d="M22 24l4-16h18l-2 16z"/>
+    <path class="pic-cut" d="M26 22l3-11h11l-2 11z"/>
+    <path class="pic" d="M18 40h32l-2-3H20z"/>
+    <path class="pic" d="M76 60h6v16h-6zM70 76h18v3H70z"/>
+    <circle class="led" cx="34" cy="16" r="1.4"/>
+    <text class="lbl" x="45" y="98" text-anchor="middle">Doctor</text>
+  </g>
+  <!-- message bubble above the doctor -->
+  <g transform="translate(730 168)"><g class="bubble" style="animation-delay: -1.5s">
+    <path class="bubble-m" d="M6 0h28a6 6 0 0 1 6 6v26a6 6 0 0 1-6 6H16l-6 10 1-10H6a6 6 0 0 1-6-6V6a6 6 0 0 1 6-6z"/>
+    <g class="dots" style="fill: var(--bg)"><circle cx="11" cy="20" r="2.5"/><circle cx="20" cy="20" r="2.5" style="animation-delay: -0.6s"/><circle cx="29" cy="20" r="2.5" style="animation-delay: -1.2s"/></g>
+  </g></g>
+
+  <!-- ══ Consultation channel icons ══ -->
+  <g id="n-voice" transform="translate(340 282)">
+    <circle class="pic-line" cx="17" cy="17" r="15"/>
+    <path class="pic" d="M11 9c1-1 3-1 4 1l2 4c1 1 0 2-1 3l-1 1c1 3 3 5 6 6l1-1c1-1 2-2 3-1l4 2c2 1 2 3 1 4l-2 2c-2 2-5 1-8 0-4-2-8-6-10-10-1-3-2-6 0-8z"/>
+    <text class="lbl" x="17" y="48" text-anchor="middle">Voice</text>
+  </g>
+  <g id="n-video" transform="translate(404 280)">
+    <circle class="pic-line" cx="10" cy="8" r="6"/>
+    <circle class="pic-line" cx="24" cy="8" r="6"/>
+    <rect class="pic" x="0" y="14" width="30" height="20" rx="3"/>
+    <path class="pic" d="M30 20l10-6v20l-10-6z"/>
+    <text class="lbl" x="20" y="50" text-anchor="middle">Video</text>
+  </g>
+  <g id="n-message" transform="translate(474 288)">
+    <rect class="pic" x="0" y="0" width="37" height="24" rx="3"/>
+    <path class="pic-cut" d="M2 3l16.5 12L35 3v2L18.5 18 2 5z"/>
+    <text class="lbl" x="18" y="42" text-anchor="middle">Message</text>
+  </g>
+
+  <!-- ══ Step badges ══ -->
+  <g id="steps">
+    <g transform="translate(196 217)"><circle class="step-ring" r="12" style="animation-delay: 0s"/><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">1</text></g>
+    <g transform="translate(276 159)"><circle class="step-ring" r="12" style="animation-delay: -6s"/><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">2</text></g>
+    <g transform="translate(420 253)"><circle class="step-ring" r="12" style="animation-delay: -4.5s"/><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">3</text></g>
+    <g transform="translate(580 161)"><circle class="step-ring" r="12" style="animation-delay: -3s"/><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">4</text></g>
+    <g transform="translate(650 213)"><circle class="step-ring" r="12" style="animation-delay: -1.5s"/><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">5</text></g>
+  </g>
+
+  <!-- ══ Legend ══ -->
+  <g id="legend" transform="translate(0 391)">
+    <g transform="translate(88 0)"><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">1</text><text class="legend" x="19" y="5">Book appointment</text></g>
+    <g transform="translate(255 0)"><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">2</text><text class="legend" x="19" y="5">Make payment</text></g>
+    <g transform="translate(400 0)"><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">3</text><text class="legend" x="19" y="5">Consultation</text></g>
+    <g transform="translate(531 0)"><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">4</text><text class="legend" x="19" y="5">Prescriptions</text></g>
+    <g transform="translate(665 0)"><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">5</text><text class="legend" x="19" y="5">Investigations</text></g>
+  </g>
+</svg>

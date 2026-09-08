@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="60 20 730 360" role="img" aria-labelledby="bb-schem-title bb-schem-desc" class="schem">
+  <title id="bb-schem-title">Blood Bank Management System — flow of units</title>
+  <desc id="bb-schem-desc">A blood donation camp and a blood donor both supply the blood bank. The blood bank supplies the blood beneficiary and the hospital. All four arrows are one-way.</desc>
+  <style>
+    .schem { --ink: var(--text-hi, #f2f7f5); --ink-2: var(--text-mid, #b9c6c1); --g: var(--green, #00A87B); --gb: var(--green-bright, #00CF97); --drop: #e0533f; font-family: inherit; }
+    .schem .ic { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .schem .ic-fill { fill: rgba(255, 255, 255, 0.07); }
+    .schem .ic-soft { stroke-width: 1.6; opacity: 0.7; }
+    .schem .drop { fill: var(--drop); stroke: none; }
+    .schem .plus { fill: var(--gb); stroke: none; }
+    .schem .lbl { fill: var(--ink-2); font-size: 14px; font-weight: 500; letter-spacing: 0.01em; }
+    .schem .link { fill: none; stroke: var(--g); stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 1.5 6; animation: schem-march 1.4s linear infinite; }
+    .schem .head { fill: var(--g); }
+    .schem .pkt { fill: var(--drop); filter: drop-shadow(0 0 4px rgba(224, 83, 63, 0.7)); offset-rotate: auto; animation: schem-pkt 3.6s linear infinite; }
+    .schem .beat { transform-box: fill-box; transform-origin: 50% 50%; animation: schem-beat 2.4s ease-in-out infinite; }
+    .schem .bag-fill { fill: var(--drop); opacity: 0.85; transform-box: fill-box; transform-origin: 50% 100%; animation: schem-fill 4.8s ease-in-out infinite; }
+    @keyframes schem-march { to { stroke-dashoffset: -15; } }
+    @keyframes schem-pkt { 0% { offset-distance: 0%; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+    @keyframes schem-beat { 0%, 100% { transform: scale(1); } 12% { transform: scale(1.18); } 24% { transform: scale(1); } 36% { transform: scale(1.12); } 48% { transform: scale(1); } }
+    @keyframes schem-fill { 0%, 100% { transform: scaleY(0.45); } 50% { transform: scaleY(1); } }
+    @media (prefers-reduced-motion: reduce) {
+      .schem .link, .schem .beat, .schem .bag-fill { animation: none; }
+      .schem .pkt { display: none; }
+    }
+  </style>
+  <defs>
+    <marker id="bb-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path class="head" d="M1 1.5 L9 5 L1 8.5 Z"/>
+    </marker>
+  </defs>
+
+  <!-- ══ Arrows — all one-way ══ -->
+  <g id="bb-links">
+    <!-- a  Blood Donation Camp → Blood Bank -->
+    <path class="link" d="M215 73 C270 78 310 96 335 122" marker-end="url(#bb-arrow)"/>
+    <!-- b  Blood Donor → Blood Bank -->
+    <path class="link" d="M204 306 C250 300 302 270 335 238" marker-end="url(#bb-arrow)"/>
+    <!-- c  Blood Bank → Blood Beneficiary -->
+    <path class="link" d="M486 133 C540 100 602 72 668 64" marker-end="url(#bb-arrow)"/>
+    <!-- d  Blood Bank → Hospital -->
+    <path class="link" d="M490 234 C540 262 600 280 662 283" marker-end="url(#bb-arrow)"/>
+  </g>
+  <!-- packets are little blood drops that follow each arrow -->
+  <g id="bb-packets" aria-hidden="true">
+    <path class="pkt" d="M0 -4.5c2.4 3 3.6 4.6 3.6 6.4a3.6 3.6 0 0 1-7.2 0c0-1.8 1.2-3.4 3.6-6.4z" style="offset-path: path('M215 73 C270 78 310 96 335 122'); animation-delay: 0s"/>
+    <path class="pkt" d="M0 -4.5c2.4 3 3.6 4.6 3.6 6.4a3.6 3.6 0 0 1-7.2 0c0-1.8 1.2-3.4 3.6-6.4z" style="offset-path: path('M204 306 C250 300 302 270 335 238'); animation-delay: -1.8s"/>
+    <path class="pkt" d="M0 -4.5c2.4 3 3.6 4.6 3.6 6.4a3.6 3.6 0 0 1-7.2 0c0-1.8 1.2-3.4 3.6-6.4z" style="offset-path: path('M486 133 C540 100 602 72 668 64'); animation-delay: -0.9s"/>
+    <path class="pkt" d="M0 -4.5c2.4 3 3.6 4.6 3.6 6.4a3.6 3.6 0 0 1-7.2 0c0-1.8 1.2-3.4 3.6-6.4z" style="offset-path: path('M490 234 C540 262 600 280 662 283'); animation-delay: -2.7s"/>
+  </g>
+
+  <!-- ══ Blood Donation Camp (tent) ══ -->
+  <g id="n-camp" transform="translate(113 46)">
+    <path class="ic ic-fill" d="M2 38L28 2h30l24 36z"/>
+    <path class="ic" d="M58 2L44 38M44 38h-8l8-20"/>
+    <text class="lbl" x="42" y="58" text-anchor="middle">Blood Donation Camp</text>
+  </g>
+
+  <!-- ══ Blood Donor (on the bed, bag on a stand) ══ -->
+  <g id="n-donor" transform="translate(102 262)">
+    <!-- blood bag on its hook -->
+    <path class="ic" d="M46 2v6"/>
+    <rect class="ic ic-fill" x="38" y="8" width="16" height="20" rx="4"/>
+    <rect class="bag-fill" x="40" y="16" width="12" height="10" rx="2"/>
+    <path class="ic ic-soft" d="M46 28c0 8-8 8-8 16"/>
+    <!-- donor lying on the bed -->
+    <circle class="ic" cx="14" cy="42" r="6"/>
+    <path class="ic ic-fill" d="M20 46h40a6 6 0 0 1 6 6v4H8v-4a6 6 0 0 1 6-6z"/>
+    <path class="ic ic-fill" d="M2 56h80v10H2z"/>
+    <path class="ic" d="M12 66v10M72 66v10"/>
+    <text class="lbl" x="42" y="96" text-anchor="middle">Blood Donor</text>
+  </g>
+
+  <!-- ══ Blood Bank ══ -->
+  <g id="n-bank" transform="translate(344 124)">
+    <path class="ic ic-fill" d="M2 40L70 6l68 34z"/>
+    <path class="drop beat" d="M70 14c5 6 8 10 8 14a8 8 0 0 1-16 0c0-4 3-8 8-14z"/>
+    <path class="ic" d="M8 40h124v8H8z"/>
+    <g class="ic ic-fill">
+      <rect x="16" y="52" width="14" height="60" rx="2"/><rect x="42" y="52" width="14" height="60" rx="2"/>
+      <rect x="68" y="52" width="14" height="60" rx="2"/><rect x="94" y="52" width="14" height="60" rx="2"/><rect x="120" y="52" width="14" height="60" rx="2"/>
+    </g>
+    <path class="ic ic-fill" d="M8 116h124v8H8zM0 128h140v10H0z"/>
+    <text class="lbl" x="70" y="160" text-anchor="middle">Blood Bank</text>
+  </g>
+
+  <!-- ══ Blood Beneficiary (patient with a bag on a drip) ══ -->
+  <g id="n-beneficiary" transform="translate(674 30)">
+    <circle class="ic" cx="26" cy="14" r="11"/>
+    <path class="ic ic-fill" d="M4 68V52a20 20 0 0 1 20-20h4a20 20 0 0 1 20 20v16z"/>
+    <rect class="ic ic-fill" x="52" y="2" width="20" height="28" rx="4"/>
+    <path class="plus" d="M60 10h4v4h4v4h-4v4h-4v-4h-4v-4h4z"/>
+    <path class="ic ic-soft" d="M62 30v8M62 44v6"/>
+    <text class="lbl" x="34" y="86" text-anchor="middle">Blood Beneficiary</text>
+  </g>
+
+  <!-- ══ Hospital ══ -->
+  <g id="n-hospital" transform="translate(668 266)">
+    <path class="ic ic-fill" d="M2 22h20V4h40v18h20v46H2z"/>
+    <g class="ic ic-soft">
+      <path d="M8 30h6M8 40h6M8 50h6M70 30h6M70 40h6M70 50h6M28 12h6M40 12h6M50 12h6"/>
+    </g>
+    <circle class="ic" cx="42" cy="38" r="9"/>
+    <path class="plus" d="M40 33h4v3h3v4h-3v3h-4v-3h-3v-4h3z"/>
+    <path class="ic" d="M42 52v16"/>
+    <text class="lbl" x="42" y="90" text-anchor="middle">Hospital</text>
+  </g>
+</svg>

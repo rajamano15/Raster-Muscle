@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardware Products — Raster Medical AV &amp; Broadcast</title>
+  <meta name="description" content="Professional video and audio hardware from Raster — cameras, ATEM live production switchers, converters, monitoring, MultiView, routing, streaming encoders, cables and accessories for operating theatres, teaching venues and telemedicine.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23041109'/%3E%3Ccircle cx='32' cy='32' r='15' fill='%2300A87B'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ═══════════ Icon sprite ═══════════ -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-radiology" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="12" cy="12" r="1.7" fill="currentColor"/>
+        <path d="M12 8.9V4.4M14.7 13.6l3.9 2.2M9.3 13.6l-3.9 2.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M8.6 6.1a6.9 6.9 0 0 1 6.8 0M17.9 14.4a6.9 6.9 0 0 1-3.4 5.9M6.1 14.4a6.9 6.9 0 0 0 3.4 5.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>
+      </symbol>
+      <symbol id="i-hospital" viewBox="0 0 24 24">
+        <path d="M4.5 20.5V6.8a1.5 1.5 0 0 1 1.5-1.5h12a1.5 1.5 0 0 1 1.5 1.5v13.7M2.5 20.5h19M9.7 20.5v-3.6a2.3 2.3 0 0 1 4.6 0v3.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 8v4.4M9.8 10.2h4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-interface" viewBox="0 0 24 24">
+        <circle cx="5.5" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="18.5" cy="5.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="18.5" cy="18.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M7.9 10.8l8.3-4.1M7.9 13.2l8.3 4.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-apps" viewBox="0 0 24 24">
+        <rect x="3.5" y="3.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="13.5" y="3.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="3.5" y="13.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M17 13.8v6.4M13.8 17h6.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-chip" viewBox="0 0 24 24">
+        <rect x="6" y="6" width="12" height="12" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="9.6" y="9.6" width="4.8" height="4.8" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M9 6V3M15 6V3M9 21v-3M15 21v-3M6 9H3M6 15H3M21 9h-3M21 15h-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24">
+        <path d="M6 9.4l6 5.6 6-5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M4.5 12h14M13 5.8l6.2 6.2L13 18.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h11" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="M12 2.8l7.5 3v5.4c0 4.8-3.2 8.4-7.5 10-4.3-1.6-7.5-5.2-7.5-10V5.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M8.8 11.8l2.3 2.3 4.1-4.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24">
+        <path d="M12 3.2L21 8l-9 4.8L3 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M3 12.4l9 4.8 9-4.8M3 16.6l9 4.8 9-4.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" opacity=".65"/>
+      </symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24">
+        <path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 11.2a3.7 3.7 0 0 1-.7 7.3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-badge" viewBox="0 0 24 24">
+        <path d="M12 2.6l2.3 1.7 2.8-.3 1 2.7 2.5 1.3-.6 2.8 1.6 2.4-1.9 2.1.1 2.9-2.7.9-1.5 2.5-2.8-.7-2.6 1.3-2-2.1-2.9-.2-.6-2.8-2.3-1.8 1-2.7-1.2-2.6 2.2-1.9.3-2.8 2.8-.4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M8.7 12l2.3 2.3 4.3-4.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-support" viewBox="0 0 24 24">
+        <path d="M4.5 13.6v-2a7.5 7.5 0 0 1 15 0v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <rect x="2.8" y="12.6" width="4.4" height="6.4" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="16.8" y="12.6" width="4.4" height="6.4" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M19 19.4a6 6 0 0 1-5.2 2.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-plug" viewBox="0 0 24 24">
+        <path d="M9 2.8v4.4M15 2.8v4.4M7 7.2h10v3.4a5 5 0 0 1-10 0z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 15.6v2.6a3 3 0 0 1-3 3H7.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <!-- ── AV / broadcast hardware icons ── -->
+      <symbol id="i-camera" viewBox="0 0 24 24">
+        <rect x="2.6" y="7" width="14.8" height="10.4" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="9.8" cy="12.2" r="2.9" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M17.4 10.6l4-2.3v7.8l-4-2.3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M6.2 7V5.5h4.4V7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-sliders" viewBox="0 0 24 24">
+        <path d="M5.5 3.6v6.3M5.5 14.1v6.3M12 3.6v3.5M12 11.3v9.1M18.5 3.6v9.9M18.5 17.7v2.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="5.5" cy="12" r="2.1" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="12" cy="9.2" r="2.1" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="18.5" cy="15.6" r="2.1" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      </symbol>
+      <symbol id="i-switcher" viewBox="0 0 24 24">
+        <rect x="2.6" y="5.4" width="18.8" height="13.2" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M6.2 9.6h3.4M11.6 9.6h3.4M17 9.6h1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M6.2 13.4h3.4M11.6 13.4h3.4M17 13.4h1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity=".55"/>
+        <path d="M6.2 16.2h7.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity=".3"/>
+      </symbol>
+      <symbol id="i-key" viewBox="0 0 24 24">
+        <rect x="3.2" y="3.4" width="11.8" height="11.8" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M9 20.6h8.8a2.8 2.8 0 0 0 2.8-2.8V9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="9.1" cy="9.3" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".6"/>
+      </symbol>
+      <symbol id="i-disk" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="12" cy="12" r="2.7" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M12 3.5a8.5 8.5 0 0 1 7.4 4.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".55"/>
+      </symbol>
+      <symbol id="i-capture" viewBox="0 0 24 24">
+        <rect x="2.6" y="4.6" width="18.8" height="14.8" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M10.2 9.4l5 2.6-5 2.6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-film" viewBox="0 0 24 24">
+        <rect x="3" y="4.4" width="18" height="15.2" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M7.5 4.4v15.2M16.5 4.4v15.2" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M3 9.5h4.5M3 14.5h4.5M16.5 9.5H21M16.5 14.5H21" stroke="currentColor" stroke-width="1.4" opacity=".6"/>
+      </symbol>
+      <symbol id="i-convert" viewBox="0 0 24 24">
+        <path d="M3.6 8.6h13.1M13.5 5.4l3.2 3.2-3.2 3.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20.4 15.4H7.3M10.5 12.2L7.3 15.4l3.2 3.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-monitor" viewBox="0 0 24 24">
+        <rect x="2.6" y="4.4" width="18.8" height="12.6" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M8.6 20.6h6.8M12 17v3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M6.4 11.8l2-2.8 2 4.2 2-5.4 2 5.2 1.8-2.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-gauge" viewBox="0 0 24 24">
+        <path d="M3.5 17.5a9 9 0 1 1 17 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M12 17.5l4.3-5.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <circle cx="12" cy="17.5" r="1.5" fill="currentColor"/>
+      </symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24">
+        <rect x="2.6" y="4.4" width="18.8" height="15.2" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M12 4.4v15.2M2.6 12h18.8" stroke="currentColor" stroke-width="1.5" opacity=".7"/>
+      </symbol>
+      <symbol id="i-router" viewBox="0 0 24 24">
+        <rect x="8.5" y="9.6" width="7" height="4.8" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M12 9.6V5.2M12 14.4v4.4M8.5 12H4.4M15.5 12h4.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="12" cy="4" r="1.4" fill="currentColor"/>
+        <circle cx="12" cy="20" r="1.4" fill="currentColor"/>
+        <circle cx="3.2" cy="12" r="1.4" fill="currentColor"/>
+        <circle cx="20.8" cy="12" r="1.4" fill="currentColor"/>
+      </symbol>
+      <symbol id="i-cable" viewBox="0 0 24 24">
+        <rect x="4" y="4.4" width="7" height="3.8" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M6.2 4.4V2.8M8.8 4.4V2.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M7.5 8.2v2.2a2.8 2.8 0 0 0 2.8 2.8h3.4a2.8 2.8 0 0 1 2.8 2.8v0.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <rect x="13" y="16.2" width="7" height="3.8" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M15.2 20v1.6M17.8 20v1.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-box" viewBox="0 0 24 24">
+        <path d="M12 3.2l8.4 4.2v9.2L12 20.8 3.6 16.6V7.4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M3.6 7.4L12 11.6l8.4-4.2M12 11.6v9.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" opacity=".65"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ═══════════ Header ═══════════ -->
+  <header class="site-header" id="siteHeader">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <p class="topbar-tag">Integrated Healthcare IT &amp; Hardware</p>
+        <nav aria-label="Secondary">
+          <ul class="topbar-links">
+            <li><a href="news-events.html">News &amp; Events</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="navbar">
+      <div class="container navbar-inner">
+        <a class="brand" href="index.html" aria-label="Raster — Home">
+          <img src="assets/img/logo-green.webp" alt="Raster" width="259" height="56">
+        </a>
+        <nav class="main-nav" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="has-mega">
+              <a href="healthcare-solutions.html" aria-describedby="megaSolutions">Healthcare Solutions<svg class="icon nav-caret" aria-hidden="true"><use href="#i-chevron"/></svg></a>
+            <div class="mega glass" id="megaSolutions">
+              <div class="mega-grid">
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#radiology"><svg class="icon" aria-hidden="true"><use href="#i-radiology"/></svg>Radiology</a>
+                <ul>
+                  <li><a href="pacs.html">PACS</a></li>
+                  <li><a href="ris.html">RIS</a></li>
+                  <li><a href="teleradiology.html">Teleradiology</a></li>
+                  <li><a href="dicom-burner.html">DICOM Burner</a></li>
+                  <li><a href="dicom-camera.html">DICOM Camera</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#hospital-management"><svg class="icon" aria-hidden="true"><use href="#i-hospital"/></svg>Hospital Management</a>
+                <ul>
+                  <li><a href="ihms.html">IHMS</a></li>
+                  <li><a href="pharmacy-management.html">Pharmacy Management</a></li>
+                  <li><a href="blood-bank-management.html">Blood Bank Management</a></li>
+                  <li><a href="emr.html">EMR</a></li>
+                  <li><a href="lis.html">Lab Information System</a></li>
+                  <li><a href="neopead-emr.html">Neopead EMR &amp; Charting</a></li>
+                  <li><a href="asset-management.html">Asset Management</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#interfacing"><svg class="icon" aria-hidden="true"><use href="#i-interface"/></svg>Interfacing Applications</a>
+                <ul>
+                  <li><a href="lab-equipment-interfacing.html">Lab Equipment Interfacing</a></li>
+                  <li><a href="iomt-interfacing.html">IoMT &amp; Interfacing</a></li>
+                  <li><a href="electronic-charting.html">Electronic Charting</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#other-applications"><svg class="icon" aria-hidden="true"><use href="#i-apps"/></svg>Other Applications</a>
+                <ul>
+                  <li><a href="ot-video-broadcasting.html">OT – Video Broadcasting</a></li>
+                  <li><a href="telemedicine.html">Telemedicine</a></li>
+                  <li><a href="patient-id-wristbands.html">Patient ID Wristbands</a></li>
+                </ul>
+              </div>
+              </div>
+            </div>
+            </li>
+            <li><a href="hardware-products.html" class="active" aria-current="page">Hardware Products</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn-primary nav-cta" href="contact.html" data-demo-open>Request Demo</a>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <svg class="icon icon-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <nav aria-label="Mobile primary">
+      <ul class="mobile-primary">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <details class="mobile-sub">
+            <summary>Healthcare Solutions<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="mobile-sub-body">
+            <h4>Radiology</h4>
+            <a href="pacs.html">PACS</a>
+            <a href="ris.html">RIS</a>
+            <a href="teleradiology.html">Teleradiology</a>
+            <a href="dicom-burner.html">DICOM Burner</a>
+            <a href="dicom-camera.html">DICOM Camera</a>
+            <h4>Hospital Management</h4>
+            <a href="ihms.html">IHMS</a>
+            <a href="pharmacy-management.html">Pharmacy Management</a>
+            <a href="blood-bank-management.html">Blood Bank Management</a>
+            <a href="emr.html">EMR</a>
+            <a href="lis.html">Lab Information System</a>
+            <a href="neopead-emr.html">Neopead EMR &amp; Charting</a>
+            <a href="asset-management.html">Asset Management</a>
+            <h4>Interfacing Applications</h4>
+            <a href="lab-equipment-interfacing.html">Lab Equipment Interfacing</a>
+            <a href="iomt-interfacing.html">IoMT &amp; Interfacing</a>
+            <a href="electronic-charting.html">Electronic Charting</a>
+            <h4>Other Applications</h4>
+            <a href="ot-video-broadcasting.html">OT – Video Broadcasting</a>
+            <a href="telemedicine.html">Telemedicine</a>
+            <a href="patient-id-wristbands.html">Patient ID Wristbands</a>
+              <a class="btn btn-primary mobile-sub-all" href="healthcare-solutions.html">All healthcare solutions<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </details>
+        </li>
+        <li><a href="hardware-products.html" aria-current="page">Hardware Products</a></li>
+        <li><a href="partners.html">Partners</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="mobile-secondary">
+        <li><a href="news-events.html">News &amp; Events</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="our-team.html">Our Team</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="main">
+    <!-- ═══════════ Page header ═══════════ -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <p class="eyebrow"><span class="dot"></span>Hardware Products</p>
+        <h1 id="page-title">Broadcast-grade <span class="grad">medical AV</span></h1>
+        <p class="page-lede">Professional video and audio hardware for operating theatres, teaching venues and telemedicine — supplied, installed and supported alongside our software.</p>
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span aria-current="page">Hardware Products</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ═══════════ Product range ═══════════ -->
+    <section class="features" aria-labelledby="range-h">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>The range</p>
+          <h2 id="range-h" style="--i:1">Every link in the signal chain</h2>
+          <p class="section-sub" style="--i:2">From the camera in the theatre to the encoder that streams it, we supply the whole path — capture, switching, conversion, monitoring, routing and the cabling that joins it together.</p>
+        </div>
+        <div class="hw-grid" data-reveal>
+          <article class="glass hw-card" style="--i:0">
+            <div class="hw-shot"><img src="assets/img/hardware/professional-cameras.webp" alt="" width="300" height="200" loading="lazy" decoding="async"></div>
+            <h3>Professional Cameras</h3>
+            <p>Broadcast and cinema camera bodies for theatre capture, teaching sessions and clinical documentation.</p>
+          </article>
+          <article class="glass hw-card" style="--i:1">
+            <div class="hw-shot"><img src="assets/img/hardware/davinci-resolve-fusion.webp" alt="" width="350" height="180" loading="lazy" decoding="async"></div>
+            <h3>DaVinci Resolve &amp; Fusion Software</h3>
+            <p>Editing, colour grading and visual effects in a single application for post-producing surgical and training footage.</p>
+          </article>
+          <article class="glass hw-card" style="--i:2">
+            <div class="hw-shot"><img src="assets/img/hardware/atem-switchers.webp" alt="" width="648" height="233" loading="lazy" decoding="async"></div>
+            <h3>ATEM Live Production Switchers</h3>
+            <p>Multi-input live switching to mix theatre cameras, endoscopy feeds and graphics into one programme output.</p>
+          </article>
+          <article class="glass hw-card" style="--i:3">
+            <div class="hw-shot"><img src="assets/img/hardware/ultimatte.webp" alt="" width="263" height="181" loading="lazy" decoding="async"></div>
+            <h3>Ultimatte</h3>
+            <p>Real-time keying and compositing for clean chroma-key backgrounds in studio and lecture recordings.</p>
+          </article>
+          <article class="glass hw-card" style="--i:4">
+            <div class="hw-shot"><img src="assets/img/hardware/duplication-storage.webp" alt="" width="570" height="241" loading="lazy" decoding="async"></div>
+            <h3>Duplication, Disk Recorders &amp; Storage</h3>
+            <p>Disc publishing, recorders and storage for archiving procedures and issuing patient copies on DICOM media.</p>
+          </article>
+          <article class="glass hw-card" style="--i:5">
+            <div class="hw-shot"><img src="assets/img/hardware/capture-playback.webp" alt="" width="300" height="216" loading="lazy" decoding="async"></div>
+            <h3>Capture and Playback</h3>
+            <p>Capture cards and playback devices that bring SDI and HDMI sources into a workstation, and back out again.</p>
+          </article>
+          <article class="glass hw-card" style="--i:6">
+            <div class="hw-shot"><img src="assets/img/hardware/cintel-scanner.webp" alt="" width="488" height="195" loading="lazy" decoding="async"></div>
+            <h3>Cintel Scanner</h3>
+            <p>High-resolution film scanning to digitise archival 16mm and 35mm reels.</p>
+          </article>
+          <article class="glass hw-card" style="--i:7">
+            <div class="hw-shot"><img src="assets/img/hardware/standards-conversion.webp" alt="" width="418" height="86" loading="lazy" decoding="async"></div>
+            <h3>Standards Conversion</h3>
+            <p>Frame-rate and format conversion between broadcast standards, so mismatched sources interoperate.</p>
+          </article>
+          <article class="glass hw-card" style="--i:8">
+            <div class="hw-shot"><img src="assets/img/hardware/broadcast-converters.webp" alt="" width="325" height="157" loading="lazy" decoding="async"></div>
+            <h3>Broadcast Converters</h3>
+            <p>Compact SDI, HDMI, optical and analogue converters for connecting equipment that otherwise would not talk.</p>
+          </article>
+          <article class="glass hw-card" style="--i:9">
+            <div class="hw-shot"><img src="assets/img/hardware/video-audio-monitoring.webp" alt="" width="298" height="169" loading="lazy" decoding="async"></div>
+            <h3>Video and Audio Monitoring</h3>
+            <p>Reference monitors, scopes and audio metering to confirm signal integrity before it is recorded or streamed.</p>
+          </article>
+          <article class="glass hw-card" style="--i:10">
+            <div class="hw-shot"><img src="assets/img/hardware/test-equipment.webp" alt="" width="340" height="94" loading="lazy" decoding="async"></div>
+            <h3>Test Equipment</h3>
+            <p>Signal generators and analysers for commissioning and fault-finding across an installed video plant.</p>
+          </article>
+          <article class="glass hw-card" style="--i:11">
+            <div class="hw-shot"><img src="assets/img/hardware/multiview.webp" alt="" width="348" height="104" loading="lazy" decoding="async"></div>
+            <h3>MultiView</h3>
+            <p>One display showing many live sources at once, so an operator can watch every feed in a theatre or control room.</p>
+          </article>
+          <article class="glass hw-card" style="--i:12">
+            <div class="hw-shot"><img src="assets/img/hardware/routing-distribution.webp" alt="" width="280" height="121" loading="lazy" decoding="async"></div>
+            <h3>Routing and Distribution</h3>
+            <p>Matrix routers and distribution amplifiers to send any source to any destination across a facility.</p>
+          </article>
+          <article class="glass hw-card" style="--i:13">
+            <div class="hw-shot"><img src="assets/img/hardware/streaming-encoding.webp" alt="" width="278" height="159" loading="lazy" decoding="async"></div>
+            <h3>Streaming and Encoding</h3>
+            <p>Hardware encoders that publish live feeds to teaching venues, telemedicine sessions and streaming platforms.</p>
+          </article>
+          <article class="glass hw-card" style="--i:14">
+            <div class="hw-shot"><img src="assets/img/hardware/accessories.webp" alt="" width="501" height="346" loading="lazy" decoding="async"></div>
+            <h3>Accessories</h3>
+            <p>Racks, mounts, control panels, power supplies and spares that complete an installation.</p>
+          </article>
+          <article class="glass hw-card" style="--i:15">
+            <div class="hw-shot"><img src="assets/img/hardware/cables-adapters.webp" alt="" width="500" height="249" loading="lazy" decoding="async"></div>
+            <h3>Cables &amp; Adapters</h3>
+            <p>SDI, HDMI, optical fibre and audio cabling, plus the adapters that bridge connector types.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ Where it is deployed ═══════════ -->
+    <section class="solutions" aria-labelledby="deploy-h">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>In the hospital</p>
+          <h2 id="deploy-h" style="--i:1">Where this hardware goes to work</h2>
+        </div>
+        <div class="vm-grid" data-reveal>
+          <article class="glass sol-card" style="--i:0">
+            <span class="sol-icon"><svg class="icon" aria-hidden="true"><use href="#i-switcher"/></svg></span>
+            <h3>OT — video broadcasting</h3>
+            <p>Live theatre feeds switched, keyed and distributed to lecture halls and conference rooms, so a procedure can be taught as it happens.</p>
+            <a class="card-link" href="ot-video-broadcasting.html">Explore the solution<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="glass sol-card" style="--i:1">
+            <span class="sol-icon"><svg class="icon" aria-hidden="true"><use href="#i-cloud"/></svg></span>
+            <h3>Telemedicine &amp; teleradiology</h3>
+            <p>Encoded, monitored video links that carry consultations and reads between sites without losing diagnostic clarity.</p>
+            <a class="card-link" href="telemedicine.html">Explore the solution<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ Partners ═══════════ -->
+    <section class="features" aria-labelledby="partners-h">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>Supplied with</p>
+          <h2 id="partners-h" style="--i:1">Brands we build on</h2>
+          <p class="section-sub" style="--i:2">Working closely with our partners, we share our expertise to provide quick and hassle-free resolutions to your IT problems.</p>
+        </div>
+        <div class="feat-grid" data-reveal>
+          <article class="feat" style="--i:0">
+            <span class="feat-icon"><svg class="icon" aria-hidden="true"><use href="#i-switcher"/></svg></span>
+            <h3>Blackmagic Design</h3>
+            <p>Live production, capture, conversion and post — the backbone of the range above.</p>
+          </article>
+          <article class="feat" style="--i:1">
+            <span class="feat-icon"><svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg></span>
+            <h3>Canon India</h3>
+            <p>Photography and cinematography solutions for clinical and teaching capture.</p>
+          </article>
+          <article class="feat" style="--i:2">
+            <span class="feat-icon"><svg class="icon" aria-hidden="true"><use href="#i-disk"/></svg></span>
+            <h3>Primera Technology</h3>
+            <p>Disc publishing and duplication, behind our DICOM media output.</p>
+          </article>
+          <article class="feat" style="--i:3">
+            <span class="feat-icon"><svg class="icon" aria-hidden="true"><use href="#i-badge"/></svg></span>
+            <h3>Idenpro</h3>
+            <p>Identification hardware, including patient ID wristband printing.</p>
+          </article>
+        </div>
+        <div data-reveal style="margin-top:26px">
+          <a class="card-link" href="partners.html" style="--i:0">See all partners<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CTA ═══════════ -->
+    <section class="cta-band" aria-labelledby="cta-h">
+      <div class="container">
+        <div class="glass cta-card" data-reveal>
+          <div style="--i:0">
+            <h2 id="cta-h">Specifying a theatre or control room?</h2>
+            <p>Tell us the rooms, the feeds and where they need to reach. We will scope the signal chain, supply the hardware and commission it.</p>
+          </div>
+          <div class="cta-actions" style="--i:1">
+            <a class="btn btn-primary" href="contact.html">Request a quote<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="healthcare-solutions.html">Healthcare solutions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════ Footer ═══════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/img/logo-white.webp" alt="Raster" width="200" height="43">
+          <p>Integrated healthcare technology — software, interfacing and hardware engineered around patient care.</p>
+        </div>
+        <nav aria-label="Footer — Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Footer — Solutions">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="healthcare-solutions.html#radiology">Radiology</a></li>
+            <li><a href="healthcare-solutions.html#hospital-management">Hospital Management</a></li>
+            <li><a href="healthcare-solutions.html#interfacing">Interfacing Applications</a></li>
+            <li><a href="healthcare-solutions.html#other-applications">Other Applications</a></li>
+            <li><a href="hardware-products.html">Hardware Products</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Footer — Resources">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="news-events.html">News &amp; Events</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Raster. All rights reserved.</p>
+        <p class="footer-pulse" aria-hidden="true">
+          <svg viewBox="0 0 120 24" class="pulse-mini"><path d="M0,12 h34 l6,-8 8,16 6,-12 4,4 h62" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════ Demo request dialog ═══════════
+       Opened by any [data-demo-open] control (the header button, the product
+       pages' "Request a demo"); a native <dialog> gives the focus trap, Escape
+       and inertness for free. The form shares the [data-form] handler and, with
+       no mail endpoint, falls back to the phone/email line. -->
+  <dialog class="demo-dialog" id="demoDialog" aria-labelledby="demo-title">
+    <div class="demo-card">
+      <button class="demo-close" type="button" data-demo-close aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <p class="eyebrow"><span class="dot"></span>Request a demo</p>
+      <h2 id="demo-title">See it working at your institute</h2>
+      <p class="demo-lede">Tell us who you are and what you would like to see. We will arrange a walkthrough at a time that suits you.</p>
+      <form id="demoForm" data-form data-endpoint="" novalidate
+            data-fallback="This form is not connected to a mail handler yet. Please email info@raster.in or call +91 427 4033100 and we will arrange your demo."
+            data-success="Thank you — your demo request has been sent. We will be in touch shortly to fix a time.">
+        <input type="hidden" name="subject" value="Demo request">
+        <div class="demo-grid">
+          <div class="field">
+            <label for="df-name">Full name <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-org">Hospital / organisation <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-org" name="organisation" type="text" autocomplete="organization" placeholder="Institute name" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-email">E-mail ID <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-email" name="email" type="email" autocomplete="email" placeholder="you@hospital.org" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-mobile">Mobile number <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-mobile" name="mobile" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-role">Your role</label>
+            <select id="df-role" name="role">
+              <option value="">Choose a role</option>
+              <option>Doctor / Radiologist</option>
+              <option>Hospital administrator</option>
+              <option>IT / Biomedical</option>
+              <option>Laboratory</option>
+              <option>Purchase / Management</option>
+              <option>Other</option>
+            </select>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-solution">Solution of interest <span class="req" aria-hidden="true">*</span></label>
+            <select id="df-solution" name="solution" required>
+              <option value="">Choose a solution</option>
+                  <optgroup label="Radiology">
+                    <option value="pacs">PACS</option>
+                    <option value="ris">RIS</option>
+                    <option value="teleradiology">Teleradiology</option>
+                    <option value="dicom-burner">DICOM Burner</option>
+                    <option value="dicom-camera">DICOM Camera</option>
+                  </optgroup>
+                  <optgroup label="Hospital Management">
+                    <option value="ihms">IHMS</option>
+                    <option value="pharmacy-management">Pharmacy Management</option>
+                    <option value="blood-bank-management">Blood Bank Management</option>
+                    <option value="emr">EMR</option>
+                    <option value="lis">Lab Information System</option>
+                    <option value="neopead-emr">Neopead EMR &amp; Charting</option>
+                    <option value="asset-management">Asset Management</option>
+                  </optgroup>
+                  <optgroup label="Interfacing Applications">
+                    <option value="lab-equipment-interfacing">Lab Equipment Interfacing</option>
+                    <option value="iomt-interfacing">IoMT &amp; Interfacing</option>
+                    <option value="electronic-charting">Electronic Charting</option>
+                  </optgroup>
+                  <optgroup label="Other Applications">
+                    <option value="ot-video-broadcasting">OT – Video Broadcasting</option>
+                    <option value="telemedicine">Telemedicine</option>
+                    <option value="patient-id-wristbands">Patient ID Wristbands</option>
+                  </optgroup>
+              <option value="hardware">Hardware products</option>
+              <option value="not-sure">Not sure yet — advise me</option>
+            </select>
+            <p class="err" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="df-message">Anything we should know?</label>
+          <textarea id="df-message" name="message" placeholder="Departments, bed count, existing systems, preferred dates…"></textarea>
+          <p class="err" aria-live="polite"></p>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Send request<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <span class="contact-line"><a href="tel:+914274033100">or call +91 427 4033100</a></span>
+        </div>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </dialog>
+
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

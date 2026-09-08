@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clients — Raster Images</title>
+  <meta name="description" content="58 hospitals, scan centres and laboratories running Raster Images software and hardware — including AIIMS, Kauvery, Velammal, SKS Hospital and Adyar Cancer Institute.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23041109'/%3E%3Ccircle cx='32' cy='32' r='15' fill='%2300A87B'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ═══════════ Icon sprite ═══════════ -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-radiology" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="12" cy="12" r="1.7" fill="currentColor"/>
+        <path d="M12 8.9V4.4M14.7 13.6l3.9 2.2M9.3 13.6l-3.9 2.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M8.6 6.1a6.9 6.9 0 0 1 6.8 0M17.9 14.4a6.9 6.9 0 0 1-3.4 5.9M6.1 14.4a6.9 6.9 0 0 0 3.4 5.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>
+      </symbol>
+      <symbol id="i-hospital" viewBox="0 0 24 24">
+        <path d="M4.5 20.5V6.8a1.5 1.5 0 0 1 1.5-1.5h12a1.5 1.5 0 0 1 1.5 1.5v13.7M2.5 20.5h19M9.7 20.5v-3.6a2.3 2.3 0 0 1 4.6 0v3.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 8v4.4M9.8 10.2h4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-interface" viewBox="0 0 24 24">
+        <circle cx="5.5" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="18.5" cy="5.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="18.5" cy="18.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M7.9 10.8l8.3-4.1M7.9 13.2l8.3 4.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-apps" viewBox="0 0 24 24">
+        <rect x="3.5" y="3.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="13.5" y="3.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="3.5" y="13.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M17 13.8v6.4M13.8 17h6.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-chip" viewBox="0 0 24 24">
+        <rect x="6" y="6" width="12" height="12" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="9.6" y="9.6" width="4.8" height="4.8" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M9 6V3M15 6V3M9 21v-3M15 21v-3M6 9H3M6 15H3M21 9h-3M21 15h-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24">
+        <path d="M6 9.4l6 5.6 6-5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M4.5 12h14M13 5.8l6.2 6.2L13 18.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h11" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="M12 2.8l7.5 3v5.4c0 4.8-3.2 8.4-7.5 10-4.3-1.6-7.5-5.2-7.5-10V5.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M8.8 11.8l2.3 2.3 4.1-4.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24">
+        <path d="M12 3.2L21 8l-9 4.8L3 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M3 12.4l9 4.8 9-4.8M3 16.6l9 4.8 9-4.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" opacity=".65"/>
+      </symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24">
+        <path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 11.2a3.7 3.7 0 0 1-.7 7.3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-badge" viewBox="0 0 24 24">
+        <path d="M12 2.6l2.3 1.7 2.8-.3 1 2.7 2.5 1.3-.6 2.8 1.6 2.4-1.9 2.1.1 2.9-2.7.9-1.5 2.5-2.8-.7-2.6 1.3-2-2.1-2.9-.2-.6-2.8-2.3-1.8 1-2.7-1.2-2.6 2.2-1.9.3-2.8 2.8-.4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M8.7 12l2.3 2.3 4.3-4.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-support" viewBox="0 0 24 24">
+        <path d="M4.5 13.6v-2a7.5 7.5 0 0 1 15 0v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <rect x="2.8" y="12.6" width="4.4" height="6.4" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="16.8" y="12.6" width="4.4" height="6.4" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M19 19.4a6 6 0 0 1-5.2 2.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-plug" viewBox="0 0 24 24">
+        <path d="M9 2.8v4.4M15 2.8v4.4M7 7.2h10v3.4a5 5 0 0 1-10 0z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 15.6v2.6a3 3 0 0 1-3 3H7.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24">
+        <path d="M12 21.2s6.6-6.1 6.6-11a6.6 6.6 0 0 0-13.2 0c0 4.9 6.6 11 6.6 11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <circle cx="12" cy="10.1" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ═══════════ Header ═══════════ -->
+  <header class="site-header" id="siteHeader">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <p class="topbar-tag">Integrated Healthcare IT &amp; Hardware</p>
+        <nav aria-label="Secondary">
+          <ul class="topbar-links">
+            <li><a href="news-events.html">News &amp; Events</a></li>
+            <li><a href="clients.html" class="active" aria-current="page">Clients</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="navbar">
+      <div class="container navbar-inner">
+        <a class="brand" href="index.html" aria-label="Raster — Home">
+          <img src="assets/img/logo-green.webp" alt="Raster" width="259" height="56">
+        </a>
+        <nav class="main-nav" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="has-mega">
+              <a href="healthcare-solutions.html" aria-describedby="megaSolutions">Healthcare Solutions<svg class="icon nav-caret" aria-hidden="true"><use href="#i-chevron"/></svg></a>
+            <div class="mega glass" id="megaSolutions">
+              <div class="mega-grid">
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#radiology"><svg class="icon" aria-hidden="true"><use href="#i-radiology"/></svg>Radiology</a>
+                <ul>
+                  <li><a href="pacs.html">PACS</a></li>
+                  <li><a href="ris.html">RIS</a></li>
+                  <li><a href="teleradiology.html">Teleradiology</a></li>
+                  <li><a href="dicom-burner.html">DICOM Burner</a></li>
+                  <li><a href="dicom-camera.html">DICOM Camera</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#hospital-management"><svg class="icon" aria-hidden="true"><use href="#i-hospital"/></svg>Hospital Management</a>
+                <ul>
+                  <li><a href="ihms.html">IHMS</a></li>
+                  <li><a href="pharmacy-management.html">Pharmacy Management</a></li>
+                  <li><a href="blood-bank-management.html">Blood Bank Management</a></li>
+                  <li><a href="emr.html">EMR</a></li>
+                  <li><a href="lis.html">Lab Information System</a></li>
+                  <li><a href="neopead-emr.html">Neopead EMR &amp; Charting</a></li>
+                  <li><a href="asset-management.html">Asset Management</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#interfacing"><svg class="icon" aria-hidden="true"><use href="#i-interface"/></svg>Interfacing Applications</a>
+                <ul>
+                  <li><a href="lab-equipment-interfacing.html">Lab Equipment Interfacing</a></li>
+                  <li><a href="iomt-interfacing.html">IoMT &amp; Interfacing</a></li>
+                  <li><a href="electronic-charting.html">Electronic Charting</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#other-applications"><svg class="icon" aria-hidden="true"><use href="#i-apps"/></svg>Other Applications</a>
+                <ul>
+                  <li><a href="ot-video-broadcasting.html">OT – Video Broadcasting</a></li>
+                  <li><a href="telemedicine.html">Telemedicine</a></li>
+                  <li><a href="patient-id-wristbands.html">Patient ID Wristbands</a></li>
+                </ul>
+              </div>
+              </div>
+            </div>
+            </li>
+            <li><a href="hardware-products.html">Hardware Products</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn-primary nav-cta" href="contact.html" data-demo-open>Request Demo</a>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <svg class="icon icon-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <nav aria-label="Mobile primary">
+      <ul class="mobile-primary">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <details class="mobile-sub">
+            <summary>Healthcare Solutions<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="mobile-sub-body">
+            <h4>Radiology</h4>
+            <a href="pacs.html">PACS</a>
+            <a href="ris.html">RIS</a>
+            <a href="teleradiology.html">Teleradiology</a>
+            <a href="dicom-burner.html">DICOM Burner</a>
+            <a href="dicom-camera.html">DICOM Camera</a>
+            <h4>Hospital Management</h4>
+            <a href="ihms.html">IHMS</a>
+            <a href="pharmacy-management.html">Pharmacy Management</a>
+            <a href="blood-bank-management.html">Blood Bank Management</a>
+            <a href="emr.html">EMR</a>
+            <a href="lis.html">Lab Information System</a>
+            <a href="neopead-emr.html">Neopead EMR &amp; Charting</a>
+            <a href="asset-management.html">Asset Management</a>
+            <h4>Interfacing Applications</h4>
+            <a href="lab-equipment-interfacing.html">Lab Equipment Interfacing</a>
+            <a href="iomt-interfacing.html">IoMT &amp; Interfacing</a>
+            <a href="electronic-charting.html">Electronic Charting</a>
+            <h4>Other Applications</h4>
+            <a href="ot-video-broadcasting.html">OT – Video Broadcasting</a>
+            <a href="telemedicine.html">Telemedicine</a>
+            <a href="patient-id-wristbands.html">Patient ID Wristbands</a>
+              <a class="btn btn-primary mobile-sub-all" href="healthcare-solutions.html">All healthcare solutions<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </details>
+        </li>
+        <li><a href="hardware-products.html">Hardware Products</a></li>
+        <li><a href="partners.html">Partners</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="mobile-secondary">
+        <li><a href="news-events.html">News &amp; Events</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="our-team.html">Our Team</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="main">
+    <!-- ═══════════ Page header ═══════════ -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <p class="eyebrow"><span class="dot"></span>Clients</p>
+        <h1 id="page-title">58 healthcare providers <span class="grad">running Raster</span></h1>
+        <p class="page-lede">Our team of talented experts provide the best customer experience and service — and we let our customers do the marketing for us, through word of mouth.</p>
+        <p class="page-lede" style="margin-top:10px">Across 22 locations in India, Malaysia, Australia and Afghanistan.</p>
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span aria-current="page">Clients</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ═══════════ Client grid ═══════════ -->
+    <section class="features" aria-labelledby="clients-h">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>Our clients</p>
+          <h2 id="clients-h" style="--i:1">Hospitals, scan centres and laboratories</h2>
+          <p class="section-sub" style="--i:2">From single-speciality clinics to multi-speciality referral centres and national institutes — across Tamil Nadu, India and beyond.</p>
+        </div>
+        <div class="client-grid" data-reveal>
+          <article class="glass client-card" style="--i:0">
+            <div class="client-plate"><img src="assets/img/clients/aiims.webp" alt="AIIMS Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">AIIMS Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Delhi</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:1">
+            <div class="client-plate"><img src="assets/img/clients/velammal.webp" alt="Velammal Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Velammal Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Madurai</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:2">
+            <div class="client-plate"><img src="assets/img/clients/kauvery.webp" alt="Kauvery Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Kauvery Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Chennai</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:3">
+            <div class="client-plate"><img src="assets/img/clients/sks.webp" alt="SKS Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">SKS Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:4">
+            <div class="client-plate"><img src="assets/img/clients/adayar-cancer-institute.webp" alt="Adyar Cancer Institute logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Adyar Cancer Institute</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Chennai</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:5">
+            <div class="client-plate"><img src="assets/img/clients/air-liquid-medical-systems.webp" alt="Air Liquid Medical Systems Pvt Ltd. logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Air Liquid Medical Systems Pvt Ltd.</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Chennai</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:6">
+            <div class="client-plate"><img src="assets/img/clients/aishwaryam-speciality-hospital.webp" alt="Aishwaryam Speciality Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Aishwaryam Speciality Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:7">
+            <div class="client-plate"><img src="assets/img/clients/annai-medical-center.webp" alt="Annai Medical Center logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Annai Medical Center</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Kallakkurichi</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:8">
+            <div class="client-plate"><img src="assets/img/clients/avanti-medical-diagnostic-center.webp" alt="Avanti Medical Diagnostic Center logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Avanti Medical Diagnostic Center</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Andhra Pradesh</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:9">
+            <div class="client-plate"><img src="assets/img/clients/bharathi-hospital.webp" alt="Bharathi Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Bharathi Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Madurai</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:10">
+            <div class="client-plate"><img src="assets/img/clients/big-picture.webp" alt="Big Pictures logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Big Pictures</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Australia</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:11">
+            <div class="client-plate"><img src="assets/img/clients/blossom-health-care-center.webp" alt="Blossom Health care center logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Blossom Health care center</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Afghanistan</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:0">
+            <div class="client-plate"><img src="assets/img/clients/booma.webp" alt="Booma hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Booma hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Madurai</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:1">
+            <div class="client-plate"><img src="assets/img/clients/care-24-logo.webp" alt="Care 24 Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Care 24 Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:2">
+            <div class="client-plate"><img src="assets/img/clients/chennai-national-hospital.webp" alt="Chennai National Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Chennai National Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Chennai</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:3">
+            <div class="client-plate"><img src="assets/img/clients/city-laboratory.webp" alt="City Laboratory logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">City Laboratory</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Afghanistan</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:4">
+            <div class="client-plate"><img src="assets/img/clients/deepam-hospital.webp" alt="Deepam Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Deepam Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Valapadi</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:5">
+            <div class="client-plate"><img src="assets/img/clients/dharan-hospital.webp" alt="Dharan Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Dharan Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:6">
+            <div class="client-plate"><img src="assets/img/clients/eka-hospital.webp" alt="EKA Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">EKA Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:7">
+            <div class="client-plate"><img src="assets/img/clients/gl-hospitals.webp" alt="G L Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">G L Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:8">
+            <div class="client-plate"><img src="assets/img/clients/geeth-ragunath.webp" alt="Geeth Raghunath Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Geeth Raghunath Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Attur</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:9">
+            <div class="client-plate"><img src="assets/img/clients/global-ortho-hospital.webp" alt="Global Ortho Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Global Ortho Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Coimbatore</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:10">
+            <div class="client-plate"><img src="assets/img/clients/gokul-scans.webp" alt="Gokul Scans logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Gokul Scans</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Thiruvallur</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:11">
+            <div class="client-plate"><img src="assets/img/clients/jaaidev-hospital.webp" alt="Jaai Dev Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Jaai Dev Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:0">
+            <div class="client-plate"><img src="assets/img/clients/jeevan-samyuktha-hospital.webp" alt="Jeevan Samyuktha Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Jeevan Samyuktha Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Chennai</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:1">
+            <div class="client-plate"><img src="assets/img/clients/jpn.webp" alt="J P N Trauma Centre logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">J P N Trauma Centre</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>New Delhi</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:2">
+            <div class="client-plate"><img src="assets/img/clients/kmc.webp" alt="Karthick Medical Centre logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Karthick Medical Centre</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Edapadi</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:3">
+            <div class="client-plate"><img src="assets/img/clients/medwin-hospital.webp" alt="Medwin Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Medwin Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Coimbatore</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:4">
+            <div class="client-plate"><img src="assets/img/clients/mithra-scans.webp" alt="Mithra Scans logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Mithra Scans</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:5">
+            <div class="client-plate"><img src="assets/img/clients/mother-ortho-vission.webp" alt="Mother Ortho Vission logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Mother Ortho Vission</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:6">
+            <div class="client-plate"><img src="assets/img/clients/namakkal-scans.webp" alt="Namakkal Scans logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Namakkal Scans</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Namakkal</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:7">
+            <div class="client-plate"><img src="assets/img/clients/neuro-foundation.webp" alt="Neuro Foundation logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Neuro Foundation</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:8">
+            <div class="client-plate"><img src="assets/img/clients/nih.webp" alt="NIH logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">NIH</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Kolkata</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:9">
+            <div class="client-plate"><img src="assets/img/clients/pixel-scans.webp" alt="Pixel Scans logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Pixel Scans</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Trichy</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:10">
+            <div class="client-plate"><img src="assets/img/clients/preethi-hospital.webp" alt="Preethi Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Preethi Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Madurai</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:11">
+            <div class="client-plate"><img src="assets/img/clients/putra-medical-centre.webp" alt="Putra Medical Centre logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Putra Medical Centre</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Malaysia</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:0">
+            <div class="client-plate"><img src="assets/img/clients/rainbow-hospital.webp" alt="Rainbow Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Rainbow Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:1">
+            <div class="client-plate"><img src="assets/img/clients/ramalingam-hospital.webp" alt="Ramalingam Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Ramalingam Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:2">
+            <div class="client-plate"><img src="assets/img/clients/revathi-hospital.webp" alt="Revathi Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Revathi Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:3">
+            <div class="client-plate"><img src="assets/img/clients/revathi-medical-centre.webp" alt="Revathi Medical Centre logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Revathi Medical Centre</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Ooty</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:4">
+            <div class="client-plate"><img src="assets/img/clients/royal-care.webp" alt="Royal Care Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Royal Care Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Coimbatore</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:5">
+            <div class="client-plate"><img src="assets/img/clients/royal-hospital.webp" alt="Royal Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Royal Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Afghanistan</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:6">
+            <div class="client-plate"><img src="assets/img/clients/sr-multispeciality-hospital.webp" alt="SR Multispeciality Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">SR Multispeciality Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Chennai</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:7">
+            <div class="client-plate"><img src="assets/img/clients/ss-medical-centre.webp" alt="SS Medical Centre logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">SS Medical Centre</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:8">
+            <div class="client-plate"><img src="assets/img/clients/spmm-hospital.webp" alt="SPMM Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">SPMM Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:9">
+            <div class="client-plate"><img src="assets/img/clients/springfield-wellnes-centre.webp" alt="Springfield Wellnes Centre logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Springfield Wellnes Centre</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Chennai</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:10">
+            <div class="client-plate"><img src="assets/img/clients/sri-chandra-sekara-hospital.webp" alt="Sri Chandra Sekara Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Sri Chandra Sekara Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Hosur</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:11">
+            <div class="client-plate"><img src="assets/img/clients/sri-hospital.webp" alt="Sri Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Sri Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Chennai</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:0">
+            <div class="client-plate"><img src="assets/img/clients/sri-ramakrishna-mission-dispensary.webp" alt="Sri Ramakrishna Mission Dispensary logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Sri Ramakrishna Mission Dispensary</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:1">
+            <div class="client-plate"><img src="assets/img/clients/sri-shellappa-hospital.webp" alt="Sri Shellappa Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Sri Shellappa Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:2">
+            <div class="client-plate"><img src="assets/img/clients/ss-medical-centre.webp" alt="SS Medical Foundation logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">SS Medical Foundation</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:3">
+            <div class="client-plate"><img src="assets/img/clients/sumathi-hospital.webp" alt="Sumathi Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Sumathi Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Viluppuram</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:4">
+            <div class="client-plate"><img src="assets/img/clients/thiru-neuro.webp" alt="Thiru Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Thiru Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Salem</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:5">
+            <div class="client-plate"><img src="assets/img/clients/uni-scans.webp" alt="Uni-scans logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Uni-scans</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Hosur</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:6">
+            <div class="client-plate"><img src="assets/img/clients/vayu-clinic.webp" alt="Vydehi Institute of Medical Science and Research Center logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Vydehi Institute of Medical Science and Research Center</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Bangalore</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:7">
+            <div class="client-plate"><img src="assets/img/clients/voluntary-health-services.webp" alt="Voluntary Health Services logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Voluntary Health Services</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Chennai</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:8">
+            <div class="client-plate"><img src="assets/img/clients/women-centre.webp" alt="Women Centre logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">Women Centre</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Coimbatore</p>
+            </div>
+          </article>
+          <article class="glass client-card" style="--i:9">
+            <div class="client-plate"><img src="assets/img/clients/rml-hospital.webp" alt="RML Hospital logo" loading="lazy" decoding="async"></div>
+            <div class="client-meta">
+              <p class="client-name">RML Hospital</p>
+              <p class="client-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Delhi</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CTA ═══════════ -->
+    <section class="cta-band" aria-labelledby="cta-h">
+      <div class="container">
+        <div class="glass cta-card" data-reveal>
+          <div style="--i:0">
+            <h2 id="cta-h">Join them</h2>
+            <p>Tell us about your institute and we will show you what our imaging, hospital management and interfacing software can do for it.</p>
+          </div>
+          <div class="cta-actions" style="--i:1">
+            <a class="btn btn-primary" href="contact.html">Talk to us<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="healthcare-solutions.html">Healthcare solutions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════ Footer ═══════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/img/logo-white.webp" alt="Raster" width="200" height="43">
+          <p>Integrated healthcare technology — software, interfacing and hardware engineered around patient care.</p>
+        </div>
+        <nav aria-label="Footer — Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Footer — Solutions">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="healthcare-solutions.html#radiology">Radiology</a></li>
+            <li><a href="healthcare-solutions.html#hospital-management">Hospital Management</a></li>
+            <li><a href="healthcare-solutions.html#interfacing">Interfacing Applications</a></li>
+            <li><a href="healthcare-solutions.html#other-applications">Other Applications</a></li>
+            <li><a href="hardware-products.html">Hardware Products</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Footer — Resources">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="news-events.html">News &amp; Events</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Raster. All rights reserved.</p>
+        <p class="footer-pulse" aria-hidden="true">
+          <svg viewBox="0 0 120 24" class="pulse-mini"><path d="M0,12 h34 l6,-8 8,16 6,-12 4,4 h62" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════ Demo request dialog ═══════════
+       Opened by any [data-demo-open] control (the header button, the product
+       pages' "Request a demo"); a native <dialog> gives the focus trap, Escape
+       and inertness for free. The form shares the [data-form] handler and, with
+       no mail endpoint, falls back to the phone/email line. -->
+  <dialog class="demo-dialog" id="demoDialog" aria-labelledby="demo-title">
+    <div class="demo-card">
+      <button class="demo-close" type="button" data-demo-close aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <p class="eyebrow"><span class="dot"></span>Request a demo</p>
+      <h2 id="demo-title">See it working at your institute</h2>
+      <p class="demo-lede">Tell us who you are and what you would like to see. We will arrange a walkthrough at a time that suits you.</p>
+      <form id="demoForm" data-form data-endpoint="" novalidate
+            data-fallback="This form is not connected to a mail handler yet. Please email info@raster.in or call +91 427 4033100 and we will arrange your demo."
+            data-success="Thank you — your demo request has been sent. We will be in touch shortly to fix a time.">
+        <input type="hidden" name="subject" value="Demo request">
+        <div class="demo-grid">
+          <div class="field">
+            <label for="df-name">Full name <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-org">Hospital / organisation <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-org" name="organisation" type="text" autocomplete="organization" placeholder="Institute name" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-email">E-mail ID <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-email" name="email" type="email" autocomplete="email" placeholder="you@hospital.org" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-mobile">Mobile number <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-mobile" name="mobile" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-role">Your role</label>
+            <select id="df-role" name="role">
+              <option value="">Choose a role</option>
+              <option>Doctor / Radiologist</option>
+              <option>Hospital administrator</option>
+              <option>IT / Biomedical</option>
+              <option>Laboratory</option>
+              <option>Purchase / Management</option>
+              <option>Other</option>
+            </select>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-solution">Solution of interest <span class="req" aria-hidden="true">*</span></label>
+            <select id="df-solution" name="solution" required>
+              <option value="">Choose a solution</option>
+                  <optgroup label="Radiology">
+                    <option value="pacs">PACS</option>
+                    <option value="ris">RIS</option>
+                    <option value="teleradiology">Teleradiology</option>
+                    <option value="dicom-burner">DICOM Burner</option>
+                    <option value="dicom-camera">DICOM Camera</option>
+                  </optgroup>
+                  <optgroup label="Hospital Management">
+                    <option value="ihms">IHMS</option>
+                    <option value="pharmacy-management">Pharmacy Management</option>
+                    <option value="blood-bank-management">Blood Bank Management</option>
+                    <option value="emr">EMR</option>
+                    <option value="lis">Lab Information System</option>
+                    <option value="neopead-emr">Neopead EMR &amp; Charting</option>
+                    <option value="asset-management">Asset Management</option>
+                  </optgroup>
+                  <optgroup label="Interfacing Applications">
+                    <option value="lab-equipment-interfacing">Lab Equipment Interfacing</option>
+                    <option value="iomt-interfacing">IoMT &amp; Interfacing</option>
+                    <option value="electronic-charting">Electronic Charting</option>
+                  </optgroup>
+                  <optgroup label="Other Applications">
+                    <option value="ot-video-broadcasting">OT – Video Broadcasting</option>
+                    <option value="telemedicine">Telemedicine</option>
+                    <option value="patient-id-wristbands">Patient ID Wristbands</option>
+                  </optgroup>
+              <option value="hardware">Hardware products</option>
+              <option value="not-sure">Not sure yet — advise me</option>
+            </select>
+            <p class="err" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="df-message">Anything we should know?</label>
+          <textarea id="df-message" name="message" placeholder="Departments, bed count, existing systems, preferred dates…"></textarea>
+          <p class="err" aria-live="polite"></p>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Send request<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <span class="contact-line"><a href="tel:+914274033100">or call +91 427 4033100</a></span>
+        </div>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </dialog>
+
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

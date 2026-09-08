@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telemedicine | Raster</title>
+  <meta name="description" content="Video consultations, follow-ups and check-ups on a flexible schedule — a mobile app for patients and a web application for doctors that overcome the geographical barriers to care.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23041109'/%3E%3Ccircle cx='32' cy='32' r='15' fill='%2300A87B'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ═══════════ Icon sprite ═══════════ -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-radiology" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="12" cy="12" r="1.7" fill="currentColor"/>
+        <path d="M12 8.9V4.4M14.7 13.6l3.9 2.2M9.3 13.6l-3.9 2.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M8.6 6.1a6.9 6.9 0 0 1 6.8 0M17.9 14.4a6.9 6.9 0 0 1-3.4 5.9M6.1 14.4a6.9 6.9 0 0 0 3.4 5.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>
+      </symbol>
+      <symbol id="i-hospital" viewBox="0 0 24 24">
+        <path d="M4.5 20.5V6.8a1.5 1.5 0 0 1 1.5-1.5h12a1.5 1.5 0 0 1 1.5 1.5v13.7M2.5 20.5h19M9.7 20.5v-3.6a2.3 2.3 0 0 1 4.6 0v3.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 8v4.4M9.8 10.2h4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-interface" viewBox="0 0 24 24">
+        <circle cx="5.5" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="18.5" cy="5.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="18.5" cy="18.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M7.9 10.8l8.3-4.1M7.9 13.2l8.3 4.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-apps" viewBox="0 0 24 24">
+        <rect x="3.5" y="3.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="13.5" y="3.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="3.5" y="13.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M17 13.8v6.4M13.8 17h6.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-chip" viewBox="0 0 24 24">
+        <rect x="6" y="6" width="12" height="12" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="9.6" y="9.6" width="4.8" height="4.8" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M9 6V3M15 6V3M9 21v-3M15 21v-3M6 9H3M6 15H3M21 9h-3M21 15h-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24">
+        <path d="M6 9.4l6 5.6 6-5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M4.5 12h14M13 5.8l6.2 6.2L13 18.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h11" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="M12 2.8l7.5 3v5.4c0 4.8-3.2 8.4-7.5 10-4.3-1.6-7.5-5.2-7.5-10V5.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M8.8 11.8l2.3 2.3 4.1-4.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24">
+        <path d="M12 3.2L21 8l-9 4.8L3 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M3 12.4l9 4.8 9-4.8M3 16.6l9 4.8 9-4.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" opacity=".65"/>
+      </symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24">
+        <path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 11.2a3.7 3.7 0 0 1-.7 7.3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-badge" viewBox="0 0 24 24">
+        <path d="M12 2.6l2.3 1.7 2.8-.3 1 2.7 2.5 1.3-.6 2.8 1.6 2.4-1.9 2.1.1 2.9-2.7.9-1.5 2.5-2.8-.7-2.6 1.3-2-2.1-2.9-.2-.6-2.8-2.3-1.8 1-2.7-1.2-2.6 2.2-1.9.3-2.8 2.8-.4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M8.7 12l2.3 2.3 4.3-4.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-support" viewBox="0 0 24 24">
+        <path d="M4.5 13.6v-2a7.5 7.5 0 0 1 15 0v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <rect x="2.8" y="12.6" width="4.4" height="6.4" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="16.8" y="12.6" width="4.4" height="6.4" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M19 19.4a6 6 0 0 1-5.2 2.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-plug" viewBox="0 0 24 24">
+        <path d="M9 2.8v4.4M15 2.8v4.4M7 7.2h10v3.4a5 5 0 0 1-10 0z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 15.6v2.6a3 3 0 0 1-3 3H7.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <path d="M5 12.6l4.4 4.4L19 7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-download" viewBox="0 0 24 24">
+        <path d="M12 3.6v10.6M8.2 10.6l3.8 3.8 3.8-3.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4.4 16.4v2.2a1.8 1.8 0 0 0 1.8 1.8h11.6a1.8 1.8 0 0 0 1.8-1.8v-2.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+        <path d="M15.8 15.8L20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ═══════════ Header ═══════════ -->
+  <header class="site-header" id="siteHeader">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <p class="topbar-tag">Integrated Healthcare IT &amp; Hardware</p>
+        <nav aria-label="Secondary">
+          <ul class="topbar-links">
+            <li><a href="news-events.html">News &amp; Events</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="navbar">
+      <div class="container navbar-inner">
+        <a class="brand" href="index.html" aria-label="Raster — Home">
+          <img src="assets/img/logo-green.webp" alt="Raster" width="259" height="56">
+        </a>
+        <nav class="main-nav" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="has-mega">
+              <a href="healthcare-solutions.html" class="active" aria-describedby="megaSolutions">Healthcare Solutions<svg class="icon nav-caret" aria-hidden="true"><use href="#i-chevron"/></svg></a>
+            <div class="mega glass" id="megaSolutions">
+              <div class="mega-grid">
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#radiology"><svg class="icon" aria-hidden="true"><use href="#i-radiology"/></svg>Radiology</a>
+                <ul>
+                  <li><a href="pacs.html">PACS</a></li>
+                  <li><a href="ris.html">RIS</a></li>
+                  <li><a href="teleradiology.html">Teleradiology</a></li>
+                  <li><a href="dicom-burner.html">DICOM Burner</a></li>
+                  <li><a href="dicom-camera.html">DICOM Camera</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#hospital-management"><svg class="icon" aria-hidden="true"><use href="#i-hospital"/></svg>Hospital Management</a>
+                <ul>
+                  <li><a href="ihms.html">IHMS</a></li>
+                  <li><a href="pharmacy-management.html">Pharmacy Management</a></li>
+                  <li><a href="blood-bank-management.html">Blood Bank Management</a></li>
+                  <li><a href="emr.html">EMR</a></li>
+                  <li><a href="lis.html">Lab Information System</a></li>
+                  <li><a href="neopead-emr.html">Neopead EMR &amp; Charting</a></li>
+                  <li><a href="asset-management.html">Asset Management</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#interfacing"><svg class="icon" aria-hidden="true"><use href="#i-interface"/></svg>Interfacing Applications</a>
+                <ul>
+                  <li><a href="lab-equipment-interfacing.html">Lab Equipment Interfacing</a></li>
+                  <li><a href="iomt-interfacing.html">IoMT &amp; Interfacing</a></li>
+                  <li><a href="electronic-charting.html">Electronic Charting</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#other-applications"><svg class="icon" aria-hidden="true"><use href="#i-apps"/></svg>Other Applications</a>
+                <ul>
+                  <li><a href="ot-video-broadcasting.html">OT – Video Broadcasting</a></li>
+                  <li><a href="telemedicine.html" aria-current="page">Telemedicine</a></li>
+                  <li><a href="patient-id-wristbands.html">Patient ID Wristbands</a></li>
+                </ul>
+              </div>
+              </div>
+            </div>
+            </li>
+            <li><a href="hardware-products.html">Hardware Products</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn-primary nav-cta" href="contact.html" data-demo-open>Request Demo</a>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <svg class="icon icon-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <nav aria-label="Mobile primary">
+      <ul class="mobile-primary">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <details class="mobile-sub">
+            <summary>Healthcare Solutions<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="mobile-sub-body">
+            <h4>Radiology</h4>
+            <a href="pacs.html">PACS</a>
+            <a href="ris.html">RIS</a>
+            <a href="teleradiology.html">Teleradiology</a>
+            <a href="dicom-burner.html">DICOM Burner</a>
+            <a href="dicom-camera.html">DICOM Camera</a>
+            <h4>Hospital Management</h4>
+            <a href="ihms.html">IHMS</a>
+            <a href="pharmacy-management.html">Pharmacy Management</a>
+            <a href="blood-bank-management.html">Blood Bank Management</a>
+            <a href="emr.html">EMR</a>
+            <a href="lis.html">Lab Information System</a>
+            <a href="neopead-emr.html">Neopead EMR &amp; Charting</a>
+            <a href="asset-management.html">Asset Management</a>
+            <h4>Interfacing Applications</h4>
+            <a href="lab-equipment-interfacing.html">Lab Equipment Interfacing</a>
+            <a href="iomt-interfacing.html">IoMT &amp; Interfacing</a>
+            <a href="electronic-charting.html">Electronic Charting</a>
+            <h4>Other Applications</h4>
+            <a href="ot-video-broadcasting.html">OT – Video Broadcasting</a>
+            <a href="telemedicine.html" aria-current="page">Telemedicine</a>
+            <a href="patient-id-wristbands.html">Patient ID Wristbands</a>
+              <a class="btn btn-primary mobile-sub-all" href="healthcare-solutions.html">All healthcare solutions<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </details>
+        </li>
+        <li><a href="hardware-products.html">Hardware Products</a></li>
+        <li><a href="partners.html">Partners</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="mobile-secondary">
+        <li><a href="news-events.html">News &amp; Events</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="our-team.html">Our Team</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="main">
+    <!-- ═══════════ Page header ═══════════ -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <p class="eyebrow"><span class="dot"></span>Other Applications · e-Consultation platform</p>
+        <h1 id="page-title"><span class="grad">Telemedicine</span></h1>
+        <p class="page-lede">Video consultations, follow-ups and check-ups on a flexible schedule — a mobile app for patients and a web application for doctors that overcome the geographical barriers to care.</p>
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <a href="healthcare-solutions.html">Healthcare Solutions</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <a href="healthcare-solutions.html#other-applications">Other Applications</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span aria-current="page">Telemedicine</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ═══════════ Product side menu + content ═══════════ -->
+    <div class="container solution-layout">
+      <!-- Always open beside the content on desktop (summary hidden); main.js
+           collapses it to a toggle under 1024px. Mirrors the mega dropdown. -->
+      <details class="glass side-nav" open>
+        <summary>
+          <span><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg>All healthcare solutions</span>
+          <svg class="icon side-nav-caret" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </summary>
+        <nav class="side-nav-body" aria-label="Healthcare solutions">
+          <div class="side-nav-group">
+            <a class="side-nav-head" href="healthcare-solutions.html#radiology"><svg class="icon" aria-hidden="true"><use href="#i-radiology"/></svg>Radiology</a>
+            <ul>
+              <li><a href="pacs.html">PACS</a></li>
+              <li><a href="ris.html">RIS</a></li>
+              <li><a href="teleradiology.html">Teleradiology</a></li>
+              <li><a href="dicom-burner.html">DICOM Burner</a></li>
+              <li><a href="dicom-camera.html">DICOM Camera</a></li>
+            </ul>
+          </div>
+          <div class="side-nav-group">
+            <a class="side-nav-head" href="healthcare-solutions.html#hospital-management"><svg class="icon" aria-hidden="true"><use href="#i-hospital"/></svg>Hospital Management</a>
+            <ul>
+              <li><a href="ihms.html">IHMS</a></li>
+              <li><a href="pharmacy-management.html">Pharmacy Management</a></li>
+              <li><a href="blood-bank-management.html">Blood Bank Management</a></li>
+              <li><a href="emr.html">EMR</a></li>
+              <li><a href="lis.html">Lab Information System</a></li>
+              <li><a href="neopead-emr.html">Neopead EMR &amp; Charting</a></li>
+              <li><a href="asset-management.html">Asset Management</a></li>
+            </ul>
+          </div>
+          <div class="side-nav-group">
+            <a class="side-nav-head" href="healthcare-solutions.html#interfacing"><svg class="icon" aria-hidden="true"><use href="#i-interface"/></svg>Interfacing Applications</a>
+            <ul>
+              <li><a href="lab-equipment-interfacing.html">Lab Equipment Interfacing</a></li>
+              <li><a href="iomt-interfacing.html">IoMT &amp; Interfacing</a></li>
+              <li><a href="electronic-charting.html">Electronic Charting</a></li>
+            </ul>
+          </div>
+          <div class="side-nav-group">
+            <a class="side-nav-head" href="healthcare-solutions.html#other-applications"><svg class="icon" aria-hidden="true"><use href="#i-apps"/></svg>Other Applications</a>
+            <ul>
+              <li><a href="ot-video-broadcasting.html">OT – Video Broadcasting</a></li>
+              <li><a href="telemedicine.html" aria-current="page">Telemedicine</a></li>
+              <li><a href="patient-id-wristbands.html">Patient ID Wristbands</a></li>
+            </ul>
+          </div>
+        </nav>
+      </details>
+
+      <div class="solution-main">
+    <section class="features" aria-labelledby="s0-h">
+      <div>
+        <div class="prose solution-intro" data-reveal style="--i:0">
+            <p class="eyebrow"><span class="dot"></span>Overview</p>
+            <h2 id="s0-h">Care that crosses distance</h2>
+            <p>Telemedicine overcomes geographical barriers to providing healthcare. Doctors can now connect with patients on a more flexible schedule. Telemedicine can improve the quality of care for patients with both medical and mental health conditions. It's beneficial for patients in medically underserved communities and those in rural locations. Video conference gives the flexibility and convenience of seeing patients remotely for consultations, follow-ups, check-ups, and education. Patients love the convenience, flexibility and real-time care with their doctors. Usually, just a quick overview and reassuring words from doctors could save patients hassle, time, and money. Compliance with follow-up calls enables doctors to check in with their patients more frequently to ensure they are following orders. Telemedicine extends doctors hours and increases his availability for urgent care. It’s easy to squeeze a 10-15 minute e-Consultation to address a patient’s query.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" aria-labelledby="s1-h">
+      <div>
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>How it works</p>
+          <h2 id="s1-h" style="--i:1">Patient to doctor in five steps</h2>
+          <p class="section-sub" style="--i:2">Book an appointment, make the payment, consult over voice, video or message, receive prescriptions and investigation orders — all through the hospital control centre.</p>
+        </div>
+        <figure class="schematic diagram" data-reveal>
+          <div class="glass diagram-card" style="--i:0">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="55 10 740 400" role="img" aria-labelledby="tm-schem-title tm-schem-desc" class="schem">
+  <title id="tm-schem-title">Telemedicine — consultation workflow</title>
+  <desc id="tm-schem-desc">The patient books an appointment (step 1) and makes payment (step 2) with the hospital control centre over a two-way link. The consultation (step 3) runs between patient and doctor over voice, video or message on a two-way channel. Prescriptions (step 4) and investigations (step 5) come back from the doctor through the control centre over a second two-way link.</desc>
+  <style>
+    .schem { --ink: var(--text-hi, #f2f7f5); --ink-2: var(--text-mid, #b9c6c1); --ink-3: var(--text-low, #7f8d88); --g: var(--green, #00A87B); --gb: var(--green-bright, #00CF97); --on-g: var(--on-green, #03110c); --bg: #0d1a16; font-family: inherit; color: var(--ink); }
+    .schem .pic { fill: var(--ink); stroke: none; }
+    .schem .pic-cut { fill: var(--bg); stroke: none; }
+    .schem .pic-line { fill: none; stroke: var(--ink); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+    .schem .panel { fill: rgba(255, 255, 255, 0.1); stroke: rgba(255, 255, 255, 0.18); stroke-width: 1; }
+    .schem .lbl { fill: var(--ink-2); font-size: 13px; font-weight: 500; letter-spacing: 0.01em; }
+    .schem .lbl-hd { fill: var(--ink); font-size: 13px; font-weight: 600; }
+    .schem .legend { fill: var(--ink-2); font-size: 13px; font-weight: 500; }
+    .schem .link { fill: none; stroke: var(--g); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 1.5 6.5; animation: schem-march 1.4s linear infinite; }
+    .schem .link.chan { stroke: var(--ink-3); animation: none; }
+    .schem .head { fill: var(--g); }
+    .schem .head-grey { fill: var(--ink-3); }
+    .schem .pkt { fill: var(--gb); filter: drop-shadow(0 0 4px rgba(0, 207, 151, 0.9)); offset-rotate: 0deg; animation: schem-pkt 3.6s linear infinite; }
+    .schem .pkt.back { animation-direction: reverse; }
+    .schem .pkt.grey { fill: var(--ink); filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.6)); }
+    .schem .step { fill: var(--g); stroke: rgba(255, 255, 255, 0.35); stroke-width: 1.5; }
+    .schem .step-n { fill: var(--on-g); font-size: 13px; font-weight: 700; }
+    .schem .step-ring { fill: none; stroke: var(--gb); stroke-width: 1.5; opacity: 0; transform-box: fill-box; transform-origin: 50% 50%; animation: schem-ping 7.5s ease-out infinite; }
+    .schem .bubble-q { fill: var(--ink); }
+    .schem .bubble-m { fill: var(--gb); }
+    .schem .bubble { transform-box: fill-box; transform-origin: 50% 100%; animation: schem-bob 3s ease-in-out infinite; }
+    .schem .rupee { fill: var(--ink); font-size: 24px; font-weight: 700; animation: schem-pulse 3.6s ease-in-out infinite; }
+    .schem .trace { fill: none; stroke: var(--gb); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 20 100; animation: schem-trace 2.2s linear infinite; }
+    .schem .led { fill: var(--gb); animation: schem-blink 2.2s ease-in-out infinite; }
+    .schem .dots circle { animation: schem-dots 1.8s ease-in-out infinite; }
+    @keyframes schem-march { to { stroke-dashoffset: -16; } }
+    @keyframes schem-pkt { 0% { offset-distance: 0%; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+    @keyframes schem-ping { 0% { transform: scale(1); opacity: 0.85; } 16%, 100% { transform: scale(2.1); opacity: 0; } }
+    @keyframes schem-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes schem-pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+    @keyframes schem-trace { to { stroke-dashoffset: -120; } }
+    @keyframes schem-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    @keyframes schem-dots { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) {
+      .schem .link, .schem .step-ring, .schem .bubble, .schem .rupee, .schem .trace, .schem .led, .schem .dots circle { animation: none; }
+      .schem .trace { stroke-dasharray: none; }
+      .schem .pkt { display: none; }
+    }
+  </style>
+  <defs>
+    <marker id="tm-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="head" d="M1 1.5 L9 5 L1 8.5 Z"/>
+    </marker>
+    <marker id="tm-arrow-grey" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="head-grey" d="M1 1.5 L9 5 L1 8.5 Z"/>
+    </marker>
+  </defs>
+
+  <!-- ══ Links ══ -->
+  <g id="tm-links">
+    <!-- Patient ⇄ Hospital Control Centre (book, pay) -->
+    <path class="link" d="M144 256 C190 190 270 130 357 111" marker-start="url(#tm-arrow)" marker-end="url(#tm-arrow)"/>
+    <!-- Hospital Control Centre ⇄ Doctor (prescriptions, investigations) -->
+    <path class="link" d="M485 113 C570 130 650 190 699 240" marker-start="url(#tm-arrow)" marker-end="url(#tm-arrow)"/>
+    <!-- Patient ⇄ Doctor consultation channel through Voice · Video · Message (grey in the source) -->
+    <path class="link chan" d="M152 300 H330" marker-start="url(#tm-arrow-grey)"/>
+    <path class="link chan" d="M382 300 H396"/>
+    <path class="link chan" d="M452 300 H466"/>
+    <path class="link chan" d="M520 300 H685" marker-end="url(#tm-arrow-grey)"/>
+  </g>
+  <g id="tm-packets" aria-hidden="true">
+    <circle class="pkt" r="3.4" style="offset-path: path('M144 256 C190 190 270 130 357 111'); animation-delay: 0s"/>
+    <circle class="pkt back" r="3.4" style="offset-path: path('M144 256 C190 190 270 130 357 111'); animation-delay: -1.8s"/>
+    <circle class="pkt" r="3.4" style="offset-path: path('M485 113 C570 130 650 190 699 240'); animation-delay: -0.9s"/>
+    <circle class="pkt back" r="3.4" style="offset-path: path('M485 113 C570 130 650 190 699 240'); animation-delay: -2.7s"/>
+    <circle class="pkt grey" r="3" style="offset-path: path('M152 300 H685'); animation-delay: -0.4s"/>
+    <circle class="pkt grey back" r="3" style="offset-path: path('M152 300 H685'); animation-delay: -2.2s"/>
+  </g>
+
+  <!-- ══ Patient: front-facing person with a cross on the chest ══ -->
+  <g id="n-patient" transform="translate(70 244)">
+    <circle class="pic" cx="28" cy="16" r="13"/>
+    <path class="pic-cut" d="M17 15a11 11 0 0 1 22 0v8a11 11 0 0 1-22 0z"/>
+    <path class="pic" d="M15 12c2-8 8-11 13-11s11 3 13 11c-4-3-9-4-13-4s-9 1-13 4z"/>
+    <path class="pic" d="M0 62V46a14 14 0 0 1 14-14h4l10 8 10-8h4a14 14 0 0 1 14 14v16z"/>
+    <path class="pic-cut" d="M40 44h4v4h4v4h-4v4h-4v-4h-4v-4h4z"/>
+    <text class="lbl" x="28" y="86" text-anchor="middle">Patient</text>
+  </g>
+  <!-- question bubble above the patient -->
+  <g transform="translate(72 184)"><g class="bubble">
+    <path class="bubble-q" d="M6 0h30a6 6 0 0 1 6 6v30a6 6 0 0 1-6 6H26l-5 10-3-10H6a6 6 0 0 1-6-6V6a6 6 0 0 1 6-6z"/>
+    <text x="21" y="31" text-anchor="middle" style="fill: var(--bg); font-size: 24px; font-weight: 700">?</text>
+  </g></g>
+
+  <!-- ══ Step 1: calendar ══ -->
+  <g id="n-calendar" transform="translate(148 168)">
+    <rect class="pic" x="0" y="4" width="30" height="28" rx="3"/>
+    <rect class="pic-cut" x="3" y="12" width="24" height="17" rx="1"/>
+    <path class="pic" d="M7 0h4v9H7zM19 0h4v9h-4z"/>
+    <g class="pic"><rect x="6" y="15" width="4" height="4"/><rect x="13" y="15" width="4" height="4"/><rect x="20" y="15" width="4" height="4"/><rect x="6" y="22" width="4" height="4"/><rect x="13" y="22" width="4" height="4"/><rect x="20" y="22" width="4" height="4"/></g>
+  </g>
+  <!-- ══ Step 2: rupee ══ -->
+  <text class="rupee" x="260" y="128" text-anchor="middle">₹</text>
+
+  <!-- ══ Hospital Control Centre ══ -->
+  <g id="n-centre" transform="translate(367 54)">
+    <text class="lbl-hd" x="55" y="-26" text-anchor="middle">Hospital</text>
+    <text class="lbl-hd" x="55" y="-6" text-anchor="middle">Control Centre</text>
+    <rect class="panel" x="0" y="0" width="111" height="113" rx="14"/>
+    <rect class="pic" x="24" y="24" width="64" height="38" rx="2"/>
+    <rect class="pic-cut" x="27" y="27" width="58" height="32"/>
+    <path class="trace" d="M32 44h10l3-7 4 14 4-11 4 8 3-4h20"/>
+    <path class="pic" d="M12 62l18-2v26l-18 2zM100 62l-18-2v26l18 2z"/>
+    <path class="pic-cut" d="M15 65l12-1v20l-12 1zM97 65l-12-1v20l12 1z"/>
+    <path class="pic" d="M56 52a9 9 0 0 1 9 9v5a9 9 0 0 1-3 7h3a13 13 0 0 1 13 13v6H34v-6a13 13 0 0 1 13-13h3a9 9 0 0 1-3-7v-5a9 9 0 0 1 9-9z"/>
+  </g>
+
+  <!-- ══ Step 4: medicine — pill bottle and capsule ══ -->
+  <g id="n-medicine" transform="translate(586 98)">
+    <path class="pic" d="M4 0h14v6H4z"/>
+    <rect class="pic" x="1" y="6" width="20" height="30" rx="3"/>
+    <path class="pic-cut" d="M9 14h4v4h4v4h-4v4H9v-4H5v-4h4z"/>
+    <g transform="rotate(-35 32 28)">
+      <rect class="pic" x="24" y="21" width="18" height="12" rx="6"/>
+      <rect class="pic-cut" x="33" y="23" width="7" height="8" rx="3"/>
+    </g>
+  </g>
+  <!-- ══ Step 5: lab — flask and test tube ══ -->
+  <g id="n-lab" transform="translate(670 158)">
+    <path class="pic" d="M6 0h10v3H6zM7 3h8v10l9 16a4 4 0 0 1-3 6H3a4 4 0 0 1-3-6l7-16z"/>
+    <path class="pic-cut" d="M9 5h4v10l6 12H5l4-12z"/>
+    <path class="pic" d="M20 6h8v2h-8zM21 8h6v22a3 3 0 0 1-6 0z"/>
+    <path class="pic-cut" d="M22.5 9h3v10h-3z"/>
+  </g>
+
+  <!-- ══ Doctor: seated at a desk with a laptop ══ -->
+  <g id="n-doctor" transform="translate(698 232)">
+    <circle class="pic" cx="60" cy="10" r="9"/>
+    <path class="pic" d="M50 22a12 12 0 0 1 20 6v30h7V42a4 4 0 0 1 8 0v34H50v-8h12v-8H50z"/>
+    <path class="pic" d="M50 30l-16 8 2 5 14-6z"/>
+    <path class="pic" d="M0 40h58v4H0zM4 44h4v32H4zM50 44h4v32h-4z"/>
+    <path class="pic" d="M22 24l4-16h18l-2 16z"/>
+    <path class="pic-cut" d="M26 22l3-11h11l-2 11z"/>
+    <path class="pic" d="M18 40h32l-2-3H20z"/>
+    <path class="pic" d="M76 60h6v16h-6zM70 76h18v3H70z"/>
+    <circle class="led" cx="34" cy="16" r="1.4"/>
+    <text class="lbl" x="45" y="98" text-anchor="middle">Doctor</text>
+  </g>
+  <!-- message bubble above the doctor -->
+  <g transform="translate(730 168)"><g class="bubble" style="animation-delay: -1.5s">
+    <path class="bubble-m" d="M6 0h28a6 6 0 0 1 6 6v26a6 6 0 0 1-6 6H16l-6 10 1-10H6a6 6 0 0 1-6-6V6a6 6 0 0 1 6-6z"/>
+    <g class="dots" style="fill: var(--bg)"><circle cx="11" cy="20" r="2.5"/><circle cx="20" cy="20" r="2.5" style="animation-delay: -0.6s"/><circle cx="29" cy="20" r="2.5" style="animation-delay: -1.2s"/></g>
+  </g></g>
+
+  <!-- ══ Consultation channel icons ══ -->
+  <g id="n-voice" transform="translate(340 282)">
+    <circle class="pic-line" cx="17" cy="17" r="15"/>
+    <path class="pic" d="M11 9c1-1 3-1 4 1l2 4c1 1 0 2-1 3l-1 1c1 3 3 5 6 6l1-1c1-1 2-2 3-1l4 2c2 1 2 3 1 4l-2 2c-2 2-5 1-8 0-4-2-8-6-10-10-1-3-2-6 0-8z"/>
+    <text class="lbl" x="17" y="48" text-anchor="middle">Voice</text>
+  </g>
+  <g id="n-video" transform="translate(404 280)">
+    <circle class="pic-line" cx="10" cy="8" r="6"/>
+    <circle class="pic-line" cx="24" cy="8" r="6"/>
+    <rect class="pic" x="0" y="14" width="30" height="20" rx="3"/>
+    <path class="pic" d="M30 20l10-6v20l-10-6z"/>
+    <text class="lbl" x="20" y="50" text-anchor="middle">Video</text>
+  </g>
+  <g id="n-message" transform="translate(474 288)">
+    <rect class="pic" x="0" y="0" width="37" height="24" rx="3"/>
+    <path class="pic-cut" d="M2 3l16.5 12L35 3v2L18.5 18 2 5z"/>
+    <text class="lbl" x="18" y="42" text-anchor="middle">Message</text>
+  </g>
+
+  <!-- ══ Step badges ══ -->
+  <g id="steps">
+    <g transform="translate(196 217)"><circle class="step-ring" r="12" style="animation-delay: 0s"/><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">1</text></g>
+    <g transform="translate(276 159)"><circle class="step-ring" r="12" style="animation-delay: -6s"/><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">2</text></g>
+    <g transform="translate(420 253)"><circle class="step-ring" r="12" style="animation-delay: -4.5s"/><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">3</text></g>
+    <g transform="translate(580 161)"><circle class="step-ring" r="12" style="animation-delay: -3s"/><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">4</text></g>
+    <g transform="translate(650 213)"><circle class="step-ring" r="12" style="animation-delay: -1.5s"/><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">5</text></g>
+  </g>
+
+  <!-- ══ Legend ══ -->
+  <g id="legend" transform="translate(0 391)">
+    <g transform="translate(88 0)"><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">1</text><text class="legend" x="19" y="5">Book appointment</text></g>
+    <g transform="translate(255 0)"><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">2</text><text class="legend" x="19" y="5">Make payment</text></g>
+    <g transform="translate(400 0)"><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">3</text><text class="legend" x="19" y="5">Consultation</text></g>
+    <g transform="translate(531 0)"><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">4</text><text class="legend" x="19" y="5">Prescriptions</text></g>
+    <g transform="translate(665 0)"><circle class="step" r="12"/><text class="step-n" y="4.5" text-anchor="middle">5</text><text class="legend" x="19" y="5">Investigations</text></g>
+  </g>
+</svg>
+          </div>
+          <figcaption style="--i:1">Telemedicine — consultation workflow. Both hospital links and the voice, video and message channel exchange in both directions; the numbers mark the five steps.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="features" aria-labelledby="s2-h">
+      <div>
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>For patients</p>
+          <h2 id="s2-h" style="--i:1">Features of the mobile application</h2>
+        </div>
+        <ul class="spec-grid" data-reveal aria-label="Features of the mobile application">
+          <li class="glass spec" style="--i:0"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Appointment booking</li>
+          <li class="glass spec" style="--i:1"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Digital payments</li>
+          <li class="glass spec" style="--i:2"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Prescriptions</li>
+          <li class="glass spec" style="--i:3"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Investigation orders</li>
+          <li class="glass spec" style="--i:4"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Photo uploads</li>
+          <li class="glass spec" style="--i:5"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Case summary</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="features" aria-labelledby="s3-h">
+      <div>
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>For doctors</p>
+          <h2 id="s3-h" style="--i:1">Features of the web application</h2>
+        </div>
+        <ul class="spec-grid" data-reveal aria-label="Features of the web application">
+          <li class="glass spec" style="--i:0"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Appointment schedules</li>
+          <li class="glass spec" style="--i:1"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Digital patient records</li>
+          <li class="glass spec" style="--i:2"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Online Prescription</li>
+          <li class="glass spec" style="--i:3"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Online Investigation Orders</li>
+          <li class="glass spec" style="--i:4"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Automatic Patient follow-ups</li>
+          <li class="glass spec" style="--i:5"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Payment Reports</li>
+          <li class="glass spec" style="--i:6"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Online Patient Referrals</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="solutions" aria-labelledby="related-h">
+      <div>
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>Other Applications</p>
+          <h2 id="related-h" style="--i:1">Works alongside</h2>
+          <p class="section-sub" style="--i:2">Telemedicine is one part of Raster's Other Applications range. The rest plugs straight into it.</p>
+        </div>
+        <div class="vm-grid" data-reveal>
+          <article class="glass sol-card" style="--i:0">
+            <span class="sol-icon"><svg class="icon" aria-hidden="true"><use href="#i-apps"/></svg></span>
+            <h3>OT – Video Broadcasting</h3>
+            <p>HD theatre feeds recorded, streamed and shared to classrooms and conference rooms.</p>
+            <a class="card-link" href="ot-video-broadcasting.html">Explore the solution<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="glass sol-card" style="--i:1">
+            <span class="sol-icon"><svg class="icon" aria-hidden="true"><use href="#i-badge"/></svg></span>
+            <h3>Patient ID Wristbands</h3>
+            <p>Thermal, laser and RFID printable wristbands that survive the ward.</p>
+            <a class="card-link" href="patient-id-wristbands.html">Explore the solution<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+      </div><!-- /.solution-main -->
+    </div><!-- /.solution-layout -->
+
+    <section class="cta-band" aria-labelledby="cta-h">
+      <div class="container">
+        <div class="glass cta-card" data-reveal>
+          <div style="--i:0">
+            <h2 id="cta-h">See Telemedicine at your institute</h2>
+            <p>Tell us about your departments, workflow and existing systems, and we'll map Telemedicine to them.</p>
+          </div>
+          <div class="cta-actions" style="--i:1">
+            <a class="btn btn-primary" href="contact.html" data-demo-open data-demo-solution="telemedicine">Request a demo<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="healthcare-solutions.html">All healthcare solutions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════ Footer ═══════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/img/logo-white.webp" alt="Raster" width="200" height="43">
+          <p>Integrated healthcare technology — software, interfacing and hardware engineered around patient care.</p>
+        </div>
+        <nav aria-label="Footer — Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Footer — Solutions">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="healthcare-solutions.html#radiology">Radiology</a></li>
+            <li><a href="healthcare-solutions.html#hospital-management">Hospital Management</a></li>
+            <li><a href="healthcare-solutions.html#interfacing">Interfacing Applications</a></li>
+            <li><a href="healthcare-solutions.html#other-applications">Other Applications</a></li>
+            <li><a href="hardware-products.html">Hardware Products</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Footer — Resources">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="news-events.html">News &amp; Events</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Raster. All rights reserved.</p>
+        <p class="footer-pulse" aria-hidden="true">
+          <svg viewBox="0 0 120 24" class="pulse-mini"><path d="M0,12 h34 l6,-8 8,16 6,-12 4,4 h62" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════ Demo request dialog ═══════════
+       Opened by any [data-demo-open] control (the header button, the product
+       pages' "Request a demo"); a native <dialog> gives the focus trap, Escape
+       and inertness for free. The form shares the [data-form] handler and, with
+       no mail endpoint, falls back to the phone/email line. -->
+  <dialog class="demo-dialog" id="demoDialog" aria-labelledby="demo-title">
+    <div class="demo-card">
+      <button class="demo-close" type="button" data-demo-close aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <p class="eyebrow"><span class="dot"></span>Request a demo</p>
+      <h2 id="demo-title">See it working at your institute</h2>
+      <p class="demo-lede">Tell us who you are and what you would like to see. We will arrange a walkthrough at a time that suits you.</p>
+      <form id="demoForm" data-form data-endpoint="" novalidate
+            data-fallback="This form is not connected to a mail handler yet. Please email info@raster.in or call +91 427 4033100 and we will arrange your demo."
+            data-success="Thank you — your demo request has been sent. We will be in touch shortly to fix a time.">
+        <input type="hidden" name="subject" value="Demo request">
+        <div class="demo-grid">
+          <div class="field">
+            <label for="df-name">Full name <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-org">Hospital / organisation <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-org" name="organisation" type="text" autocomplete="organization" placeholder="Institute name" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-email">E-mail ID <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-email" name="email" type="email" autocomplete="email" placeholder="you@hospital.org" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-mobile">Mobile number <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-mobile" name="mobile" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-role">Your role</label>
+            <select id="df-role" name="role">
+              <option value="">Choose a role</option>
+              <option>Doctor / Radiologist</option>
+              <option>Hospital administrator</option>
+              <option>IT / Biomedical</option>
+              <option>Laboratory</option>
+              <option>Purchase / Management</option>
+              <option>Other</option>
+            </select>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-solution">Solution of interest <span class="req" aria-hidden="true">*</span></label>
+            <select id="df-solution" name="solution" required>
+              <option value="">Choose a solution</option>
+                  <optgroup label="Radiology">
+                    <option value="pacs">PACS</option>
+                    <option value="ris">RIS</option>
+                    <option value="teleradiology">Teleradiology</option>
+                    <option value="dicom-burner">DICOM Burner</option>
+                    <option value="dicom-camera">DICOM Camera</option>
+                  </optgroup>
+                  <optgroup label="Hospital Management">
+                    <option value="ihms">IHMS</option>
+                    <option value="pharmacy-management">Pharmacy Management</option>
+                    <option value="blood-bank-management">Blood Bank Management</option>
+                    <option value="emr">EMR</option>
+                    <option value="lis">Lab Information System</option>
+                    <option value="neopead-emr">Neopead EMR &amp; Charting</option>
+                    <option value="asset-management">Asset Management</option>
+                  </optgroup>
+                  <optgroup label="Interfacing Applications">
+                    <option value="lab-equipment-interfacing">Lab Equipment Interfacing</option>
+                    <option value="iomt-interfacing">IoMT &amp; Interfacing</option>
+                    <option value="electronic-charting">Electronic Charting</option>
+                  </optgroup>
+                  <optgroup label="Other Applications">
+                    <option value="ot-video-broadcasting">OT – Video Broadcasting</option>
+                    <option value="telemedicine">Telemedicine</option>
+                    <option value="patient-id-wristbands">Patient ID Wristbands</option>
+                  </optgroup>
+              <option value="hardware">Hardware products</option>
+              <option value="not-sure">Not sure yet — advise me</option>
+            </select>
+            <p class="err" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="df-message">Anything we should know?</label>
+          <textarea id="df-message" name="message" placeholder="Departments, bed count, existing systems, preferred dates…"></textarea>
+          <p class="err" aria-live="polite"></p>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Send request<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <span class="contact-line"><a href="tel:+914274033100">or call +91 427 4033100</a></span>
+        </div>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </dialog>
+
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

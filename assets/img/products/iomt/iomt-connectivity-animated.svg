@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="55 15 730 540" role="img" aria-labelledby="iomt-schem-title iomt-schem-desc" class="schem">
+  <title id="iomt-schem-title">Raster IoMT — device connectivity</title>
+  <desc id="iomt-schem-desc">The Raster IoMT device sits at the centre of a ring. A hospital server or, alternatively, the cloud connects to the ring from the left through a shared junction. Consumer generated data from smart bands and smart shoes connects from above, a haematology analyser from the upper right, medical devices such as IV pumps and vital signs from the lower right, and radiology CT scans and X-ray from below. The connectors are dotted lines without arrowheads.</desc>
+  <style>
+    .schem { --ink: var(--text-hi, #f2f7f5); --ink-2: var(--text-mid, #b9c6c1); --ink-3: var(--text-low, #7f8d88); --g: var(--green, #00A87B); --gb: var(--green-bright, #00CF97); font-family: inherit; }
+    .schem .ic { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .schem .ic-fill { fill: rgba(255, 255, 255, 0.07); }
+    .schem .ic-soft { stroke-width: 1.6; opacity: 0.7; }
+    .schem .ic-g { stroke: var(--gb); }
+    .schem .fill-g { fill: rgba(0, 168, 123, 0.28); }
+    .schem .lbl { fill: var(--ink); font-size: 15px; font-weight: 700; letter-spacing: 0.005em; }
+    .schem .sub { fill: var(--ink-3); font-size: 12.5px; font-weight: 500; }
+    .schem .or { fill: var(--ink); font-size: 15px; font-weight: 700; letter-spacing: 0.08em; }
+    .schem .link { fill: none; stroke: var(--g); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1.5 6; }
+    /* the ring "rotates" by marching its dots (stroke-dashoffset), not by a CSS
+       transform: Chrome mis-places a circle rotated about its fill box */
+    .schem .orbit { fill: none; stroke: var(--g); stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 1.5 6; animation: schem-ring 40s linear infinite; }
+    .schem .pkt { fill: var(--gb); filter: drop-shadow(0 0 4px rgba(0, 207, 151, 0.9)); offset-rotate: 0deg; animation: schem-pkt 3.6s linear infinite; }
+    .schem .pkt.back { animation-direction: reverse; }
+    .schem .led { fill: var(--gb); animation: schem-blink 2.2s ease-in-out infinite; }
+    .schem .core { transform-box: fill-box; transform-origin: 50% 50%; animation: schem-core 2.4s ease-in-out infinite; }
+    .schem .pulse-line { stroke-dasharray: 60; stroke-dashoffset: 60; animation: schem-ecg 2.4s linear infinite; }
+    .schem .heart { transform-box: fill-box; transform-origin: 50% 50%; animation: schem-beat 2.4s ease-in-out infinite; }
+    .schem .slip { transform-box: fill-box; transform-origin: 50% 0%; animation: schem-print 4s ease-in-out infinite; }
+    .schem .bpm { animation: schem-blink 2.4s steps(2, end) infinite; }
+    @keyframes schem-ring { to { stroke-dashoffset: -600; } }
+    @keyframes schem-pkt { 0% { offset-distance: 0%; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+    @keyframes schem-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    @keyframes schem-core { 0%, 100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.06); } }
+    @keyframes schem-ecg { to { stroke-dashoffset: -60; } }
+    @keyframes schem-beat { 0%, 100% { transform: scale(1); } 12% { transform: scale(1.12); } 24% { transform: scale(1); } 36% { transform: scale(1.08); } 48% { transform: scale(1); } }
+    @keyframes schem-print { 0%, 15% { transform: scaleY(0); } 45%, 80% { transform: scaleY(1); } 100% { transform: scaleY(0); } }
+    @media (prefers-reduced-motion: reduce) {
+      .schem .orbit, .schem .led, .schem .core, .schem .pulse-line, .schem .heart, .schem .slip, .schem .bpm { animation: none; }
+      .schem .pulse-line { stroke-dasharray: none; stroke-dashoffset: 0; }
+      .schem .pkt { display: none; }
+    }
+  </style>
+
+  <!-- ══ Ring around the device ══ -->
+  <circle class="orbit" cx="400" cy="283" r="95"/>
+
+  <!-- ══ Connectors (dotted, no arrowheads in the source) ══ -->
+  <g id="iomt-links">
+    <!-- Hospital Server → junction -->
+    <path class="link" d="M165 213 L246 231 V283"/>
+    <!-- Cloud → junction -->
+    <path class="link" d="M162 347 L242 338 V283"/>
+    <!-- junction → ring (left) -->
+    <path class="link" d="M244 283 H305"/>
+    <!-- Consumer Generated Data → ring (top) -->
+    <path class="link" d="M400 154 V188"/>
+    <!-- Haematology Analyser → ring (upper right) -->
+    <path class="link" d="M488 250 L631 215"/>
+    <!-- Medical Devices → ring (lower right) -->
+    <path class="link" d="M488 311 L631 349"/>
+    <!-- Radiology → ring (bottom) -->
+    <path class="link" d="M400 378 V415"/>
+    <circle class="led" cx="245" cy="283" r="3"/>
+  </g>
+  <!-- packets travel each connector both ways: the connectors carry no direction in the source -->
+  <g id="iomt-packets" aria-hidden="true">
+    <circle class="pkt" r="3.2" style="offset-path: path('M165 213 L246 231 V283 H305'); animation-delay: 0s"/>
+    <circle class="pkt back" r="3.2" style="offset-path: path('M165 213 L246 231 V283 H305'); animation-delay: -1.8s"/>
+    <circle class="pkt" r="3.2" style="offset-path: path('M162 347 L242 338 V283 H305'); animation-delay: -0.9s"/>
+    <circle class="pkt back" r="3.2" style="offset-path: path('M162 347 L242 338 V283 H305'); animation-delay: -2.7s"/>
+    <circle class="pkt" r="3.2" style="offset-path: path('M400 154 V188'); animation-delay: -0.4s"/>
+    <circle class="pkt back" r="3.2" style="offset-path: path('M400 154 V188'); animation-delay: -2.2s"/>
+    <circle class="pkt" r="3.2" style="offset-path: path('M631 215 L488 250'); animation-delay: -1.3s"/>
+    <circle class="pkt back" r="3.2" style="offset-path: path('M631 215 L488 250'); animation-delay: -3.1s"/>
+    <circle class="pkt" r="3.2" style="offset-path: path('M631 349 L488 311'); animation-delay: -0.6s"/>
+    <circle class="pkt back" r="3.2" style="offset-path: path('M631 349 L488 311'); animation-delay: -2.4s"/>
+    <circle class="pkt" r="3.2" style="offset-path: path('M400 415 V378'); animation-delay: -1.5s"/>
+    <circle class="pkt back" r="3.2" style="offset-path: path('M400 415 V378'); animation-delay: -3.3s"/>
+  </g>
+
+  <!-- ══ Hospital Server ══ -->
+  <g id="n-server" transform="translate(71 110)">
+    <g class="ic">
+      <rect class="ic-fill" x="0" y="0" width="66" height="14" rx="3"/><rect class="ic-fill" x="0" y="22" width="66" height="14" rx="3"/><rect class="ic-fill" x="0" y="44" width="66" height="14" rx="3"/>
+      <path class="ic-soft ic-g" d="M8 7h34M8 29h34M8 51h34"/>
+      <path class="ic-soft ic-g" d="M33 14v8M33 36v8"/>
+    </g>
+    <circle class="led" cx="56" cy="7" r="1.8"/><circle class="led" cx="56" cy="29" r="1.8" style="animation-delay: -0.7s"/><circle class="led" cx="56" cy="51" r="1.8" style="animation-delay: -1.4s"/>
+    <text class="lbl" x="33" y="90" text-anchor="middle">Hospital</text>
+    <text class="lbl" x="33" y="112" text-anchor="middle">Server</text>
+  </g>
+  <text class="or" x="104" y="282" text-anchor="middle">OR</text>
+
+  <!-- ══ Cloud ══ -->
+  <g id="n-cloud" transform="translate(62 318)">
+    <path class="ic ic-fill" d="M18 44h46a13 13 0 0 0 1-26a17 17 0 0 0-33-4a12 12 0 0 0-14 30z"/>
+    <g class="ic ic-g ic-soft">
+      <path d="M22 44v12h-8M36 44v18M50 44v18M62 44v10h8"/>
+      <circle cx="10" cy="56" r="4"/><circle cx="36" cy="66" r="4"/><circle cx="50" cy="66" r="4"/><circle cx="74" cy="54" r="4"/>
+    </g>
+    <text class="lbl" x="42" y="106" text-anchor="middle">Cloud</text>
+  </g>
+
+  <!-- ══ IoMT Device (isometric slab) ══ -->
+  <g id="n-device" transform="translate(340 236)">
+    <path class="ic ic-fill" d="M0 40l60-30 60 30-60 30z"/>
+    <path class="ic ic-fill" d="M0 40v12l60 30 60-30V40L60 70z"/>
+    <path class="fill-g ic ic-g ic-soft" d="M22 34l30-15 14 7-30 15z"/>
+    <g class="core" style="fill: var(--gb)">
+      <path d="M76 44l6-3 4 2-6 3 4 2-6 3-4-2 6-3-4-2 6-3z" opacity="0.9"/>
+    </g>
+    <text class="lbl" x="60" y="90" text-anchor="middle">IoMT</text>
+    <text class="lbl" x="60" y="112" text-anchor="middle">Device</text>
+  </g>
+
+  <!-- ══ Consumer Generated Data (smartwatch) ══ -->
+  <g id="n-consumer" transform="translate(377 26)">
+    <path class="ic ic-fill" d="M16 2h20l6 12-6 12H16l-6-12z" transform="rotate(-20 26 14)"/>
+    <rect class="ic ic-fill fill-g" x="14" y="14" width="30" height="30" rx="7"/>
+    <text class="bpm" x="29" y="34" text-anchor="middle" style="fill: var(--ink); font-size: 11px; font-weight: 700">85</text>
+    <path class="ic ic-fill" d="M18 44h22l-4 12H22z"/>
+    <text class="lbl" x="23" y="78" text-anchor="middle">Consumer</text>
+    <text class="lbl" x="23" y="100" text-anchor="middle">Generated Data</text>
+    <text class="sub" x="23" y="122" text-anchor="middle">Smart Bands, Smart Shoes</text>
+  </g>
+
+  <!-- ══ Haematology Analyser ══ -->
+  <g id="n-haem" transform="translate(677 80)">
+    <path class="ic ic-fill" d="M0 10a10 10 0 0 1 10-10h56a6 6 0 0 1 6 6v70a6 6 0 0 1-6 6H10A10 10 0 0 1 0 72z"/>
+    <rect class="ic ic-fill fill-g" x="22" y="10" width="34" height="24" rx="2"/>
+    <path class="ic ic-soft" d="M22 44h34a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H22a4 4 0 0 1-4-4V48a4 4 0 0 1 4-4z"/>
+    <g class="slip"><path class="ic ic-fill" d="M6 46h12v22L6 74z"/><path class="ic ic-soft" d="M9 52h6M9 58h6M9 64h6"/></g>
+    <circle class="led" cx="62" cy="56" r="2"/>
+    <text class="lbl" x="36" y="102" text-anchor="middle">Haematology</text>
+    <text class="lbl" x="36" y="124" text-anchor="middle">Analyser</text>
+  </g>
+
+  <!-- ══ Medical Devices (heart + ECG) ══ -->
+  <g id="n-medical" transform="translate(683 328)">
+    <path class="ic ic-fill heart" d="M26 48C10 36 2 28 2 17A11 11 0 0 1 26 12a11 11 0 0 1 24 5c0 11-8 19-24 31z"/>
+    <path class="ic ic-g pulse-line" d="M40 30h12l4-10 6 20 5-14 3 4h20"/>
+    <text class="lbl" x="45" y="76" text-anchor="middle">Medical Devices</text>
+    <text class="sub" x="45" y="100" text-anchor="middle">IV Pumps, Vital signs</text>
+  </g>
+
+  <!-- ══ Radiology (patient with chest X-ray) ══ -->
+  <g id="n-radiology" transform="translate(379 420)">
+    <circle class="ic ic-fill" cx="20" cy="7" r="7"/>
+    <path class="ic ic-fill" d="M6 24a7 7 0 0 1 7-7h14a7 7 0 0 1 7 7v12H6z"/>
+    <rect class="ic ic-fill fill-g" x="8" y="18" width="24" height="20" rx="2"/>
+    <path class="ic ic-soft" d="M20 21v14M12 24c4 2 12 2 16 0M12 29c4 2 12 2 16 0M12 34c4 2 12 2 16 0"/>
+    <path class="ic" d="M12 38v34M28 38v34M6 36h28"/>
+    <text class="lbl" x="21" y="98" text-anchor="middle">Radiology</text>
+    <text class="sub" x="21" y="122" text-anchor="middle">CT Scans, X-Ray</text>
+  </g>
+</svg>

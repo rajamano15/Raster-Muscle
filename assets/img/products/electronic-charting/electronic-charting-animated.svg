@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="85 15 680 390" role="img" aria-labelledby="ec-schem-title ec-schem-desc" class="schem">
+  <title id="ec-schem-title">Electronic Charting — centralised remote monitoring</title>
+  <desc id="ec-schem-desc">Step 1: ICU beds 1, 2 and 3 each send data one way to the ICU central monitoring station; IoMT collects all data from patient connected devices. Step 2: the central monitoring station receives all information from connected patients and exchanges data both ways with the unified database. Step 3: the doctor exchanges data both ways with the station, and can monitor and give instructions virtually from anywhere.</desc>
+  <style>
+    .schem { --ink: var(--text-hi, #f2f7f5); --ink-2: var(--text-mid, #b9c6c1); --g: var(--green, #00A87B); --gb: var(--green-bright, #00CF97); --on-g: var(--on-green, #03110c); font-family: inherit; }
+    .schem .ic { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .schem .ic-fill { fill: rgba(255, 255, 255, 0.07); }
+    .schem .ic-soft { stroke-width: 1.6; opacity: 0.7; }
+    .schem .ic-g { stroke: var(--gb); }
+    .schem .screen { fill: rgba(0, 168, 123, 0.2); }
+    .schem .silhouette { fill: rgba(255, 255, 255, 0.12); stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; }
+    .schem .lbl { fill: var(--ink-2); font-size: 12.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+    .schem .link { fill: none; stroke: var(--g); stroke-width: 2; stroke-linecap: round; }
+    .schem .head { fill: var(--g); }
+    .schem .pkt { fill: var(--gb); filter: drop-shadow(0 0 4px rgba(0, 207, 151, 0.9)); offset-rotate: 0deg; animation: schem-pkt 3.6s linear infinite; }
+    .schem .pkt.back { animation-direction: reverse; }
+    .schem .step { fill: var(--g); stroke: rgba(255, 255, 255, 0.35); stroke-width: 1.5; }
+    .schem .step-n { fill: var(--on-g); font-size: 12px; font-weight: 700; }
+    .schem .step-ring { fill: none; stroke: var(--gb); stroke-width: 1.5; opacity: 0; transform-box: fill-box; transform-origin: 50% 50%; animation: schem-ping 3.6s ease-out infinite; }
+    .schem .note { fill: rgba(0, 168, 123, 0.14); stroke: rgba(0, 168, 123, 0.45); stroke-width: 1; stroke-linejoin: round; }
+    .schem .note-t { fill: var(--ink); font-size: 12px; font-weight: 600; }
+    .schem .trace { stroke-dasharray: 40 200; animation: schem-trace 2.4s linear infinite; }
+    .schem .vitals { stroke-dasharray: 14 60; animation: schem-trace 1.8s linear infinite; }
+    .schem .led { fill: var(--gb); animation: schem-blink 2.2s ease-in-out infinite; }
+    @keyframes schem-pkt { 0% { offset-distance: 0%; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+    @keyframes schem-ping { 0% { transform: scale(1); opacity: 0.8; } 70%, 100% { transform: scale(2.1); opacity: 0; } }
+    @keyframes schem-trace { to { stroke-dashoffset: -240; } }
+    @keyframes schem-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    @media (prefers-reduced-motion: reduce) {
+      .schem .step-ring, .schem .trace, .schem .vitals, .schem .led { animation: none; }
+      .schem .trace, .schem .vitals { stroke-dasharray: none; }
+      .schem .pkt { display: none; }
+    }
+  </style>
+  <defs>
+    <marker id="ec-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="head" d="M1 1.5 L9 5 L1 8.5 Z"/>
+    </marker>
+  </defs>
+
+  <!-- ══ Links ══ -->
+  <g id="ec-links">
+    <!-- beds → station (one-way) -->
+    <path class="link" d="M146 84 C220 80 300 100 358 126" marker-end="url(#ec-arrow)"/>
+    <path class="link" d="M146 184 C220 156 300 150 358 151" marker-end="url(#ec-arrow)"/>
+    <path class="link" d="M146 284 C230 240 300 192 358 174" marker-end="url(#ec-arrow)"/>
+    <!-- station ⇄ unified database -->
+    <path class="link" d="M425 289 V330" marker-start="url(#ec-arrow)" marker-end="url(#ec-arrow)"/>
+    <!-- station ⇄ doctor -->
+    <path class="link" d="M508 165 H626" marker-start="url(#ec-arrow)" marker-end="url(#ec-arrow)"/>
+  </g>
+  <g id="ec-packets" aria-hidden="true">
+    <circle class="pkt" r="3.2" style="offset-path: path('M146 84 C220 80 300 100 358 126'); animation-delay: 0s"/>
+    <circle class="pkt" r="3.2" style="offset-path: path('M146 184 C220 156 300 150 358 151'); animation-delay: -1.2s"/>
+    <circle class="pkt" r="3.2" style="offset-path: path('M146 284 C230 240 300 192 358 174'); animation-delay: -2.4s"/>
+    <circle class="pkt" r="3.2" style="offset-path: path('M425 289 V330'); animation-delay: -0.6s"/>
+    <circle class="pkt back" r="3.2" style="offset-path: path('M425 289 V330'); animation-delay: -2.4s"/>
+    <circle class="pkt" r="3.2" style="offset-path: path('M508 165 H626'); animation-delay: -1.8s"/>
+    <circle class="pkt back" r="3.2" style="offset-path: path('M508 165 H626'); animation-delay: -3.6s"/>
+  </g>
+
+  <!-- ══ ICU beds ══ -->
+  <g id="n-bed1" transform="translate(100 62)">
+    <rect class="ic ic-fill screen" x="18" y="0" width="22" height="14" rx="2"/>
+    <path class="ic ic-g vitals" style="stroke-width: 1.3" d="M21 7h4l2-4 3 8 2-4h7"/>
+    <circle class="ic" cx="8" cy="24" r="4"/>
+    <path class="ic ic-fill" d="M13 28h30a5 5 0 0 1 5 5v3H4v-3a5 5 0 0 1 5-5z"/>
+    <path class="ic ic-fill" d="M0 36h50v8H0zM6 44v8M44 44v8"/>
+    <text class="lbl" x="25" y="73" text-anchor="middle">ICU BED #1</text>
+  </g>
+  <g id="n-bed2" transform="translate(100 162)">
+    <rect class="ic ic-fill screen" x="18" y="0" width="22" height="14" rx="2"/>
+    <path class="ic ic-g vitals" style="stroke-width: 1.3; animation-delay: -0.6s" d="M21 7h4l2-4 3 8 2-4h7"/>
+    <circle class="ic" cx="8" cy="24" r="4"/>
+    <path class="ic ic-fill" d="M13 28h30a5 5 0 0 1 5 5v3H4v-3a5 5 0 0 1 5-5z"/>
+    <path class="ic ic-fill" d="M0 36h50v8H0zM6 44v8M44 44v8"/>
+    <text class="lbl" x="25" y="73" text-anchor="middle">ICU BED #2</text>
+  </g>
+  <g id="n-bed3" transform="translate(100 262)">
+    <rect class="ic ic-fill screen" x="18" y="0" width="22" height="14" rx="2"/>
+    <path class="ic ic-g vitals" style="stroke-width: 1.3; animation-delay: -1.2s" d="M21 7h4l2-4 3 8 2-4h7"/>
+    <circle class="ic" cx="8" cy="24" r="4"/>
+    <path class="ic ic-fill" d="M13 28h30a5 5 0 0 1 5 5v3H4v-3a5 5 0 0 1 5-5z"/>
+    <path class="ic ic-fill" d="M0 36h50v8H0zM6 44v8M44 44v8"/>
+    <text class="lbl" x="25" y="73" text-anchor="middle">ICU BED #3</text>
+  </g>
+
+  <!-- ══ ICU Central Monitoring Station ══ -->
+  <g id="n-station" transform="translate(360 112)">
+    <rect class="ic ic-fill screen" x="15" y="0" width="100" height="56" rx="3"/>
+    <path class="ic ic-g trace" d="M24 30h16l4-10 6 20 6-16 5 12 4-6h34"/>
+    <path class="ic ic-fill screen" d="M0 66l30-3v40L0 106z"/>
+    <path class="ic ic-fill screen" d="M130 66l-30-3v40l30 3z"/>
+    <path class="silhouette" d="M52 84a13 13 0 1 1 26 0v6a13 13 0 0 1-3 8h6a16 16 0 0 1 16 16H33a16 16 0 0 1 16-16h6a13 13 0 0 1-3-8z"/>
+    <path class="ic ic-soft" d="M52 86c-4 0-6 3-6 8M78 86c4 0 6 3 6 8M46 94v4h4M84 94v4h-4"/>
+    <text class="lbl" x="65" y="131" text-anchor="middle">ICU</text>
+    <text class="lbl" x="65" y="148" text-anchor="middle">CENTRAL MONITORING</text>
+    <text class="lbl" x="65" y="165" text-anchor="middle">STATION</text>
+  </g>
+
+  <!-- ══ Unified Database ══ -->
+  <g id="n-db" transform="translate(405 336)">
+    <g class="ic">
+      <path class="ic-fill" d="M4 8v30c0 4 8 6 16 6s16-2 16-6V8"/>
+      <ellipse class="ic-fill" cx="20" cy="8" rx="16" ry="5"/>
+      <path class="ic-soft" d="M4 16c0 4 8 6 16 6s16-2 16-6M4 24c0 4 8 6 16 6s16-2 16-6M4 32c0 4 8 6 16 6s16-2 16-6"/>
+    </g>
+    <text class="lbl" x="20" y="62" text-anchor="middle">UNIFIED DATABASE</text>
+  </g>
+
+  <!-- ══ Doctor ══ -->
+  <g id="n-doctor" transform="translate(645 118)">
+    <!-- desk and laptop -->
+    <path class="ic" d="M0 46h64M4 46v50M60 46v50"/>
+    <path class="ic ic-fill screen" d="M14 22l6-20h26l-2 20z"/>
+    <path class="ic" d="M12 24h34"/>
+    <circle class="led" cx="30" cy="12" r="1.4"/>
+    <!-- seated person -->
+    <circle class="silhouette" cx="76" cy="12" r="10"/>
+    <path class="silhouette" d="M64 30a12 12 0 0 1 24 0v24h6v-18a4 4 0 0 1 8 0v34H64v-8h12v-8H64z"/>
+    <path class="ic" d="M46 34l16 10"/>
+    <path class="ic" d="M80 70v22M80 92h-10M80 92h10M88 26h6v40"/>
+    <text class="lbl" x="47" y="118" text-anchor="middle">DOCTOR</text>
+  </g>
+
+  <!-- ══ Step badges ══ -->
+  <g transform="translate(125 48)"><circle class="step-ring" r="10"/><circle class="step" r="10"/><text class="step-n" y="4" text-anchor="middle">1</text></g>
+  <g transform="translate(425 100)"><circle class="step-ring" r="10" style="animation-delay: -1.2s"/><circle class="step" r="10"/><text class="step-n" y="4" text-anchor="middle">2</text></g>
+  <g transform="translate(692 98)"><circle class="step-ring" r="10" style="animation-delay: -2.4s"/><circle class="step" r="10"/><text class="step-n" y="4" text-anchor="middle">3</text></g>
+
+  <!-- ══ Callouts ══ -->
+  <!-- IoMT collects all data from patient connected devices (tail left, to bed 3) -->
+  <g id="c-iomt" transform="translate(185 296)">
+    <path class="note" d="M12 0h94a6 6 0 0 1 6 6v54a6 6 0 0 1-6 6H12a6 6 0 0 1-6-6V22l-14-6 14-6V6a6 6 0 0 1 6-6z"/>
+    <text class="note-t" x="59" y="20" text-anchor="middle">IoMT collects all</text>
+    <text class="note-t" x="59" y="37" text-anchor="middle">data from patient</text>
+    <text class="note-t" x="59" y="54" text-anchor="middle">connected devices</text>
+  </g>
+  <!-- Central monitoring station receives all information from connected patients (tail bottom-left) -->
+  <g id="c-station" transform="translate(485 26)">
+    <path class="note" d="M6 0h108a6 6 0 0 1 6 6v66a6 6 0 0 1-6 6H14l-14 14 4-14a6 6 0 0 1-4-6V6a6 6 0 0 1 6-6z"/>
+    <text class="note-t" x="60" y="19" text-anchor="middle">Central monitoring</text>
+    <text class="note-t" x="60" y="36" text-anchor="middle">station receives all</text>
+    <text class="note-t" x="60" y="53" text-anchor="middle">information from</text>
+    <text class="note-t" x="60" y="70" text-anchor="middle">connected patients</text>
+  </g>
+  <!-- Doctors can monitor and give instructions virtually from anywhere (tail top, to the doctor) -->
+  <g id="c-doctor" transform="translate(560 268)">
+    <path class="note" d="M6 0h84l6-16 8 16h4a6 6 0 0 1 6 6v88a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6V6a6 6 0 0 1 6-6z"/>
+    <text class="note-t" x="57" y="21" text-anchor="middle">Doctors can</text>
+    <text class="note-t" x="57" y="38" text-anchor="middle">monitor and give</text>
+    <text class="note-t" x="57" y="55" text-anchor="middle">instructions</text>
+    <text class="note-t" x="57" y="72" text-anchor="middle">virtually from</text>
+    <text class="note-t" x="57" y="89" text-anchor="middle">anywhere</text>
+  </g>
+</svg>

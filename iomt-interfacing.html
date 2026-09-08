@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IoMT &amp; Interfacing — IoMT Interfacing | Raster</title>
+  <meta name="description" content="A small box that eliminates the dedicated PC for each analyser — direct connectivity between laboratory analysers, medical devices and the LIS / HIS, working reliably 24x7 and conforming to HL7 and ASTM.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23041109'/%3E%3Ccircle cx='32' cy='32' r='15' fill='%2300A87B'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ═══════════ Icon sprite ═══════════ -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-radiology" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="12" cy="12" r="1.7" fill="currentColor"/>
+        <path d="M12 8.9V4.4M14.7 13.6l3.9 2.2M9.3 13.6l-3.9 2.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M8.6 6.1a6.9 6.9 0 0 1 6.8 0M17.9 14.4a6.9 6.9 0 0 1-3.4 5.9M6.1 14.4a6.9 6.9 0 0 0 3.4 5.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>
+      </symbol>
+      <symbol id="i-hospital" viewBox="0 0 24 24">
+        <path d="M4.5 20.5V6.8a1.5 1.5 0 0 1 1.5-1.5h12a1.5 1.5 0 0 1 1.5 1.5v13.7M2.5 20.5h19M9.7 20.5v-3.6a2.3 2.3 0 0 1 4.6 0v3.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 8v4.4M9.8 10.2h4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-interface" viewBox="0 0 24 24">
+        <circle cx="5.5" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="18.5" cy="5.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="18.5" cy="18.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M7.9 10.8l8.3-4.1M7.9 13.2l8.3 4.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-apps" viewBox="0 0 24 24">
+        <rect x="3.5" y="3.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="13.5" y="3.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="3.5" y="13.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M17 13.8v6.4M13.8 17h6.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-chip" viewBox="0 0 24 24">
+        <rect x="6" y="6" width="12" height="12" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="9.6" y="9.6" width="4.8" height="4.8" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M9 6V3M15 6V3M9 21v-3M15 21v-3M6 9H3M6 15H3M21 9h-3M21 15h-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24">
+        <path d="M6 9.4l6 5.6 6-5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M4.5 12h14M13 5.8l6.2 6.2L13 18.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h11" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="M12 2.8l7.5 3v5.4c0 4.8-3.2 8.4-7.5 10-4.3-1.6-7.5-5.2-7.5-10V5.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M8.8 11.8l2.3 2.3 4.1-4.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24">
+        <path d="M12 3.2L21 8l-9 4.8L3 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M3 12.4l9 4.8 9-4.8M3 16.6l9 4.8 9-4.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" opacity=".65"/>
+      </symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24">
+        <path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 11.2a3.7 3.7 0 0 1-.7 7.3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-badge" viewBox="0 0 24 24">
+        <path d="M12 2.6l2.3 1.7 2.8-.3 1 2.7 2.5 1.3-.6 2.8 1.6 2.4-1.9 2.1.1 2.9-2.7.9-1.5 2.5-2.8-.7-2.6 1.3-2-2.1-2.9-.2-.6-2.8-2.3-1.8 1-2.7-1.2-2.6 2.2-1.9.3-2.8 2.8-.4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M8.7 12l2.3 2.3 4.3-4.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-support" viewBox="0 0 24 24">
+        <path d="M4.5 13.6v-2a7.5 7.5 0 0 1 15 0v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <rect x="2.8" y="12.6" width="4.4" height="6.4" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="16.8" y="12.6" width="4.4" height="6.4" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M19 19.4a6 6 0 0 1-5.2 2.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-plug" viewBox="0 0 24 24">
+        <path d="M9 2.8v4.4M15 2.8v4.4M7 7.2h10v3.4a5 5 0 0 1-10 0z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 15.6v2.6a3 3 0 0 1-3 3H7.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <path d="M5 12.6l4.4 4.4L19 7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-download" viewBox="0 0 24 24">
+        <path d="M12 3.6v10.6M8.2 10.6l3.8 3.8 3.8-3.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4.4 16.4v2.2a1.8 1.8 0 0 0 1.8 1.8h11.6a1.8 1.8 0 0 0 1.8-1.8v-2.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+        <path d="M15.8 15.8L20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ═══════════ Header ═══════════ -->
+  <header class="site-header" id="siteHeader">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <p class="topbar-tag">Integrated Healthcare IT &amp; Hardware</p>
+        <nav aria-label="Secondary">
+          <ul class="topbar-links">
+            <li><a href="news-events.html">News &amp; Events</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="navbar">
+      <div class="container navbar-inner">
+        <a class="brand" href="index.html" aria-label="Raster — Home">
+          <img src="assets/img/logo-green.webp" alt="Raster" width="259" height="56">
+        </a>
+        <nav class="main-nav" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="has-mega">
+              <a href="healthcare-solutions.html" class="active" aria-describedby="megaSolutions">Healthcare Solutions<svg class="icon nav-caret" aria-hidden="true"><use href="#i-chevron"/></svg></a>
+            <div class="mega glass" id="megaSolutions">
+              <div class="mega-grid">
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#radiology"><svg class="icon" aria-hidden="true"><use href="#i-radiology"/></svg>Radiology</a>
+                <ul>
+                  <li><a href="pacs.html">PACS</a></li>
+                  <li><a href="ris.html">RIS</a></li>
+                  <li><a href="teleradiology.html">Teleradiology</a></li>
+                  <li><a href="dicom-burner.html">DICOM Burner</a></li>
+                  <li><a href="dicom-camera.html">DICOM Camera</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#hospital-management"><svg class="icon" aria-hidden="true"><use href="#i-hospital"/></svg>Hospital Management</a>
+                <ul>
+                  <li><a href="ihms.html">IHMS</a></li>
+                  <li><a href="pharmacy-management.html">Pharmacy Management</a></li>
+                  <li><a href="blood-bank-management.html">Blood Bank Management</a></li>
+                  <li><a href="emr.html">EMR</a></li>
+                  <li><a href="lis.html">Lab Information System</a></li>
+                  <li><a href="neopead-emr.html">Neopead EMR &amp; Charting</a></li>
+                  <li><a href="asset-management.html">Asset Management</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#interfacing"><svg class="icon" aria-hidden="true"><use href="#i-interface"/></svg>Interfacing Applications</a>
+                <ul>
+                  <li><a href="lab-equipment-interfacing.html">Lab Equipment Interfacing</a></li>
+                  <li><a href="iomt-interfacing.html" aria-current="page">IoMT &amp; Interfacing</a></li>
+                  <li><a href="electronic-charting.html">Electronic Charting</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#other-applications"><svg class="icon" aria-hidden="true"><use href="#i-apps"/></svg>Other Applications</a>
+                <ul>
+                  <li><a href="ot-video-broadcasting.html">OT – Video Broadcasting</a></li>
+                  <li><a href="telemedicine.html">Telemedicine</a></li>
+                  <li><a href="patient-id-wristbands.html">Patient ID Wristbands</a></li>
+                </ul>
+              </div>
+              </div>
+            </div>
+            </li>
+            <li><a href="hardware-products.html">Hardware Products</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn-primary nav-cta" href="contact.html" data-demo-open>Request Demo</a>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <svg class="icon icon-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <nav aria-label="Mobile primary">
+      <ul class="mobile-primary">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <details class="mobile-sub">
+            <summary>Healthcare Solutions<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="mobile-sub-body">
+            <h4>Radiology</h4>
+            <a href="pacs.html">PACS</a>
+            <a href="ris.html">RIS</a>
+            <a href="teleradiology.html">Teleradiology</a>
+            <a href="dicom-burner.html">DICOM Burner</a>
+            <a href="dicom-camera.html">DICOM Camera</a>
+            <h4>Hospital Management</h4>
+            <a href="ihms.html">IHMS</a>
+            <a href="pharmacy-management.html">Pharmacy Management</a>
+            <a href="blood-bank-management.html">Blood Bank Management</a>
+            <a href="emr.html">EMR</a>
+            <a href="lis.html">Lab Information System</a>
+            <a href="neopead-emr.html">Neopead EMR &amp; Charting</a>
+            <a href="asset-management.html">Asset Management</a>
+            <h4>Interfacing Applications</h4>
+            <a href="lab-equipment-interfacing.html">Lab Equipment Interfacing</a>
+            <a href="iomt-interfacing.html" aria-current="page">IoMT &amp; Interfacing</a>
+            <a href="electronic-charting.html">Electronic Charting</a>
+            <h4>Other Applications</h4>
+            <a href="ot-video-broadcasting.html">OT – Video Broadcasting</a>
+            <a href="telemedicine.html">Telemedicine</a>
+            <a href="patient-id-wristbands.html">Patient ID Wristbands</a>
+              <a class="btn btn-primary mobile-sub-all" href="healthcare-solutions.html">All healthcare solutions<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </details>
+        </li>
+        <li><a href="hardware-products.html">Hardware Products</a></li>
+        <li><a href="partners.html">Partners</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="mobile-secondary">
+        <li><a href="news-events.html">News &amp; Events</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="our-team.html">Our Team</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="main">
+    <!-- ═══════════ Page header ═══════════ -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <p class="eyebrow"><span class="dot"></span>Interfacing Applications · Raster IoMT device</p>
+        <h1 id="page-title">IoMT <span class="grad">Interfacing</span></h1>
+        <p class="page-lede">A small box that eliminates the dedicated PC for each analyser — direct connectivity between laboratory analysers, medical devices and the LIS / HIS, working reliably 24x7 and conforming to HL7 and ASTM.</p>
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <a href="healthcare-solutions.html">Healthcare Solutions</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <a href="healthcare-solutions.html#interfacing">Interfacing Applications</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span aria-current="page">IoMT &amp; Interfacing</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ═══════════ Product side menu + content ═══════════ -->
+    <div class="container solution-layout">
+      <!-- Always open beside the content on desktop (summary hidden); main.js
+           collapses it to a toggle under 1024px. Mirrors the mega dropdown. -->
+      <details class="glass side-nav" open>
+        <summary>
+          <span><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg>All healthcare solutions</span>
+          <svg class="icon side-nav-caret" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </summary>
+        <nav class="side-nav-body" aria-label="Healthcare solutions">
+          <div class="side-nav-group">
+            <a class="side-nav-head" href="healthcare-solutions.html#radiology"><svg class="icon" aria-hidden="true"><use href="#i-radiology"/></svg>Radiology</a>
+            <ul>
+              <li><a href="pacs.html">PACS</a></li>
+              <li><a href="ris.html">RIS</a></li>
+              <li><a href="teleradiology.html">Teleradiology</a></li>
+              <li><a href="dicom-burner.html">DICOM Burner</a></li>
+              <li><a href="dicom-camera.html">DICOM Camera</a></li>
+            </ul>
+          </div>
+          <div class="side-nav-group">
+            <a class="side-nav-head" href="healthcare-solutions.html#hospital-management"><svg class="icon" aria-hidden="true"><use href="#i-hospital"/></svg>Hospital Management</a>
+            <ul>
+              <li><a href="ihms.html">IHMS</a></li>
+              <li><a href="pharmacy-management.html">Pharmacy Management</a></li>
+              <li><a href="blood-bank-management.html">Blood Bank Management</a></li>
+              <li><a href="emr.html">EMR</a></li>
+              <li><a href="lis.html">Lab Information System</a></li>
+              <li><a href="neopead-emr.html">Neopead EMR &amp; Charting</a></li>
+              <li><a href="asset-management.html">Asset Management</a></li>
+            </ul>
+          </div>
+          <div class="side-nav-group">
+            <a class="side-nav-head" href="healthcare-solutions.html#interfacing"><svg class="icon" aria-hidden="true"><use href="#i-interface"/></svg>Interfacing Applications</a>
+            <ul>
+              <li><a href="lab-equipment-interfacing.html">Lab Equipment Interfacing</a></li>
+              <li><a href="iomt-interfacing.html" aria-current="page">IoMT &amp; Interfacing</a></li>
+              <li><a href="electronic-charting.html">Electronic Charting</a></li>
+            </ul>
+          </div>
+          <div class="side-nav-group">
+            <a class="side-nav-head" href="healthcare-solutions.html#other-applications"><svg class="icon" aria-hidden="true"><use href="#i-apps"/></svg>Other Applications</a>
+            <ul>
+              <li><a href="ot-video-broadcasting.html">OT – Video Broadcasting</a></li>
+              <li><a href="telemedicine.html">Telemedicine</a></li>
+              <li><a href="patient-id-wristbands.html">Patient ID Wristbands</a></li>
+            </ul>
+          </div>
+        </nav>
+      </details>
+
+      <div class="solution-main">
+    <section class="features" aria-labelledby="s0-h">
+      <div>
+        <div class="prose solution-intro" data-reveal style="--i:0">
+            <p class="eyebrow"><span class="dot"></span>Overview</p>
+            <h2 id="s0-h">The end of manual transcription</h2>
+            <p>Even today, most clinical labs across the country, manually program tests into analysers, manually copy the results into a register and manually transcribe it once again into the LIS. This is inefficient for the labs, yes. But more importantly, it is error-prone and could be dangerous for the patient.</p>
+            <p><strong>Raster’s IoMT devices</strong> provide direct connectivity and automation by interfacing laboratory analysers and Laboratory Information Systems (LIS) across locations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" aria-labelledby="s1-h">
+      <div>
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>What it connects</p>
+          <h2 id="s1-h" style="--i:1">One device, many sources</h2>
+          <p class="section-sub" style="--i:2">The IoMT device sits between the hospital server or cloud and everything that produces data — haematology analysers, medical devices such as IV pumps and vital-sign monitors, radiology and consumer-generated data.</p>
+        </div>
+        <figure class="schematic narrow diagram" data-reveal>
+          <div class="glass diagram-card" style="--i:0">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="55 15 730 540" role="img" aria-labelledby="iomt-schem-title iomt-schem-desc" class="schem">
+  <title id="iomt-schem-title">Raster IoMT — device connectivity</title>
+  <desc id="iomt-schem-desc">The Raster IoMT device sits at the centre of a ring. A hospital server or, alternatively, the cloud connects to the ring from the left through a shared junction. Consumer generated data from smart bands and smart shoes connects from above, a haematology analyser from the upper right, medical devices such as IV pumps and vital signs from the lower right, and radiology CT scans and X-ray from below. The connectors are dotted lines without arrowheads.</desc>
+  <style>
+    .schem { --ink: var(--text-hi, #f2f7f5); --ink-2: var(--text-mid, #b9c6c1); --ink-3: var(--text-low, #7f8d88); --g: var(--green, #00A87B); --gb: var(--green-bright, #00CF97); font-family: inherit; }
+    .schem .ic { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .schem .ic-fill { fill: rgba(255, 255, 255, 0.07); }
+    .schem .ic-soft { stroke-width: 1.6; opacity: 0.7; }
+    .schem .ic-g { stroke: var(--gb); }
+    .schem .fill-g { fill: rgba(0, 168, 123, 0.28); }
+    .schem .lbl { fill: var(--ink); font-size: 15px; font-weight: 700; letter-spacing: 0.005em; }
+    .schem .sub { fill: var(--ink-3); font-size: 12.5px; font-weight: 500; }
+    .schem .or { fill: var(--ink); font-size: 15px; font-weight: 700; letter-spacing: 0.08em; }
+    .schem .link { fill: none; stroke: var(--g); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1.5 6; }
+    /* the ring "rotates" by marching its dots (stroke-dashoffset), not by a CSS
+       transform: Chrome mis-places a circle rotated about its fill box */
+    .schem .orbit { fill: none; stroke: var(--g); stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 1.5 6; animation: schem-ring 40s linear infinite; }
+    .schem .pkt { fill: var(--gb); filter: drop-shadow(0 0 4px rgba(0, 207, 151, 0.9)); offset-rotate: 0deg; animation: schem-pkt 3.6s linear infinite; }
+    .schem .pkt.back { animation-direction: reverse; }
+    .schem .led { fill: var(--gb); animation: schem-blink 2.2s ease-in-out infinite; }
+    .schem .core { transform-box: fill-box; transform-origin: 50% 50%; animation: schem-core 2.4s ease-in-out infinite; }
+    .schem .pulse-line { stroke-dasharray: 60; stroke-dashoffset: 60; animation: schem-ecg 2.4s linear infinite; }
+    .schem .heart { transform-box: fill-box; transform-origin: 50% 50%; animation: schem-beat 2.4s ease-in-out infinite; }
+    .schem .slip { transform-box: fill-box; transform-origin: 50% 0%; animation: schem-print 4s ease-in-out infinite; }
+    .schem .bpm { animation: schem-blink 2.4s steps(2, end) infinite; }
+    @keyframes schem-ring { to { stroke-dashoffset: -600; } }
+    @keyframes schem-pkt { 0% { offset-distance: 0%; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+    @keyframes schem-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    @keyframes schem-core { 0%, 100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.06); } }
+    @keyframes schem-ecg { to { stroke-dashoffset: -60; } }
+    @keyframes schem-beat { 0%, 100% { transform: scale(1); } 12% { transform: scale(1.12); } 24% { transform: scale(1); } 36% { transform: scale(1.08); } 48% { transform: scale(1); } }
+    @keyframes schem-print { 0%, 15% { transform: scaleY(0); } 45%, 80% { transform: scaleY(1); } 100% { transform: scaleY(0); } }
+    @media (prefers-reduced-motion: reduce) {
+      .schem .orbit, .schem .led, .schem .core, .schem .pulse-line, .schem .heart, .schem .slip, .schem .bpm { animation: none; }
+      .schem .pulse-line { stroke-dasharray: none; stroke-dashoffset: 0; }
+      .schem .pkt { display: none; }
+    }
+  </style>
+
+  <!-- ══ Ring around the device ══ -->
+  <circle class="orbit" cx="400" cy="283" r="95"/>
+
+  <!-- ══ Connectors (dotted, no arrowheads in the source) ══ -->
+  <g id="iomt-links">
+    <!-- Hospital Server → junction -->
+    <path class="link" d="M165 213 L246 231 V283"/>
+    <!-- Cloud → junction -->
+    <path class="link" d="M162 347 L242 338 V283"/>
+    <!-- junction → ring (left) -->
+    <path class="link" d="M244 283 H305"/>
+    <!-- Consumer Generated Data → ring (top) -->
+    <path class="link" d="M400 154 V188"/>
+    <!-- Haematology Analyser → ring (upper right) -->
+    <path class="link" d="M488 250 L631 215"/>
+    <!-- Medical Devices → ring (lower right) -->
+    <path class="link" d="M488 311 L631 349"/>
+    <!-- Radiology → ring (bottom) -->
+    <path class="link" d="M400 378 V415"/>
+    <circle class="led" cx="245" cy="283" r="3"/>
+  </g>
+  <!-- packets travel each connector both ways: the connectors carry no direction in the source -->
+  <g id="iomt-packets" aria-hidden="true">
+    <circle class="pkt" r="3.2" style="offset-path: path('M165 213 L246 231 V283 H305'); animation-delay: 0s"/>
+    <circle class="pkt back" r="3.2" style="offset-path: path('M165 213 L246 231 V283 H305'); animation-delay: -1.8s"/>
+    <circle class="pkt" r="3.2" style="offset-path: path('M162 347 L242 338 V283 H305'); animation-delay: -0.9s"/>
+    <circle class="pkt back" r="3.2" style="offset-path: path('M162 347 L242 338 V283 H305'); animation-delay: -2.7s"/>
+    <circle class="pkt" r="3.2" style="offset-path: path('M400 154 V188'); animation-delay: -0.4s"/>
+    <circle class="pkt back" r="3.2" style="offset-path: path('M400 154 V188'); animation-delay: -2.2s"/>
+    <circle class="pkt" r="3.2" style="offset-path: path('M631 215 L488 250'); animation-delay: -1.3s"/>
+    <circle class="pkt back" r="3.2" style="offset-path: path('M631 215 L488 250'); animation-delay: -3.1s"/>
+    <circle class="pkt" r="3.2" style="offset-path: path('M631 349 L488 311'); animation-delay: -0.6s"/>
+    <circle class="pkt back" r="3.2" style="offset-path: path('M631 349 L488 311'); animation-delay: -2.4s"/>
+    <circle class="pkt" r="3.2" style="offset-path: path('M400 415 V378'); animation-delay: -1.5s"/>
+    <circle class="pkt back" r="3.2" style="offset-path: path('M400 415 V378'); animation-delay: -3.3s"/>
+  </g>
+
+  <!-- ══ Hospital Server ══ -->
+  <g id="n-server" transform="translate(71 110)">
+    <g class="ic">
+      <rect class="ic-fill" x="0" y="0" width="66" height="14" rx="3"/><rect class="ic-fill" x="0" y="22" width="66" height="14" rx="3"/><rect class="ic-fill" x="0" y="44" width="66" height="14" rx="3"/>
+      <path class="ic-soft ic-g" d="M8 7h34M8 29h34M8 51h34"/>
+      <path class="ic-soft ic-g" d="M33 14v8M33 36v8"/>
+    </g>
+    <circle class="led" cx="56" cy="7" r="1.8"/><circle class="led" cx="56" cy="29" r="1.8" style="animation-delay: -0.7s"/><circle class="led" cx="56" cy="51" r="1.8" style="animation-delay: -1.4s"/>
+    <text class="lbl" x="33" y="90" text-anchor="middle">Hospital</text>
+    <text class="lbl" x="33" y="112" text-anchor="middle">Server</text>
+  </g>
+  <text class="or" x="104" y="282" text-anchor="middle">OR</text>
+
+  <!-- ══ Cloud ══ -->
+  <g id="n-cloud" transform="translate(62 318)">
+    <path class="ic ic-fill" d="M18 44h46a13 13 0 0 0 1-26a17 17 0 0 0-33-4a12 12 0 0 0-14 30z"/>
+    <g class="ic ic-g ic-soft">
+      <path d="M22 44v12h-8M36 44v18M50 44v18M62 44v10h8"/>
+      <circle cx="10" cy="56" r="4"/><circle cx="36" cy="66" r="4"/><circle cx="50" cy="66" r="4"/><circle cx="74" cy="54" r="4"/>
+    </g>
+    <text class="lbl" x="42" y="106" text-anchor="middle">Cloud</text>
+  </g>
+
+  <!-- ══ IoMT Device (isometric slab) ══ -->
+  <g id="n-device" transform="translate(340 236)">
+    <path class="ic ic-fill" d="M0 40l60-30 60 30-60 30z"/>
+    <path class="ic ic-fill" d="M0 40v12l60 30 60-30V40L60 70z"/>
+    <path class="fill-g ic ic-g ic-soft" d="M22 34l30-15 14 7-30 15z"/>
+    <g class="core" style="fill: var(--gb)">
+      <path d="M76 44l6-3 4 2-6 3 4 2-6 3-4-2 6-3-4-2 6-3z" opacity="0.9"/>
+    </g>
+    <text class="lbl" x="60" y="90" text-anchor="middle">IoMT</text>
+    <text class="lbl" x="60" y="112" text-anchor="middle">Device</text>
+  </g>
+
+  <!-- ══ Consumer Generated Data (smartwatch) ══ -->
+  <g id="n-consumer" transform="translate(377 26)">
+    <path class="ic ic-fill" d="M16 2h20l6 12-6 12H16l-6-12z" transform="rotate(-20 26 14)"/>
+    <rect class="ic ic-fill fill-g" x="14" y="14" width="30" height="30" rx="7"/>
+    <text class="bpm" x="29" y="34" text-anchor="middle" style="fill: var(--ink); font-size: 11px; font-weight: 700">85</text>
+    <path class="ic ic-fill" d="M18 44h22l-4 12H22z"/>
+    <text class="lbl" x="23" y="78" text-anchor="middle">Consumer</text>
+    <text class="lbl" x="23" y="100" text-anchor="middle">Generated Data</text>
+    <text class="sub" x="23" y="122" text-anchor="middle">Smart Bands, Smart Shoes</text>
+  </g>
+
+  <!-- ══ Haematology Analyser ══ -->
+  <g id="n-haem" transform="translate(677 80)">
+    <path class="ic ic-fill" d="M0 10a10 10 0 0 1 10-10h56a6 6 0 0 1 6 6v70a6 6 0 0 1-6 6H10A10 10 0 0 1 0 72z"/>
+    <rect class="ic ic-fill fill-g" x="22" y="10" width="34" height="24" rx="2"/>
+    <path class="ic ic-soft" d="M22 44h34a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H22a4 4 0 0 1-4-4V48a4 4 0 0 1 4-4z"/>
+    <g class="slip"><path class="ic ic-fill" d="M6 46h12v22L6 74z"/><path class="ic ic-soft" d="M9 52h6M9 58h6M9 64h6"/></g>
+    <circle class="led" cx="62" cy="56" r="2"/>
+    <text class="lbl" x="36" y="102" text-anchor="middle">Haematology</text>
+    <text class="lbl" x="36" y="124" text-anchor="middle">Analyser</text>
+  </g>
+
+  <!-- ══ Medical Devices (heart + ECG) ══ -->
+  <g id="n-medical" transform="translate(683 328)">
+    <path class="ic ic-fill heart" d="M26 48C10 36 2 28 2 17A11 11 0 0 1 26 12a11 11 0 0 1 24 5c0 11-8 19-24 31z"/>
+    <path class="ic ic-g pulse-line" d="M40 30h12l4-10 6 20 5-14 3 4h20"/>
+    <text class="lbl" x="45" y="76" text-anchor="middle">Medical Devices</text>
+    <text class="sub" x="45" y="100" text-anchor="middle">IV Pumps, Vital signs</text>
+  </g>
+
+  <!-- ══ Radiology (patient with chest X-ray) ══ -->
+  <g id="n-radiology" transform="translate(379 420)">
+    <circle class="ic ic-fill" cx="20" cy="7" r="7"/>
+    <path class="ic ic-fill" d="M6 24a7 7 0 0 1 7-7h14a7 7 0 0 1 7 7v12H6z"/>
+    <rect class="ic ic-fill fill-g" x="8" y="18" width="24" height="20" rx="2"/>
+    <path class="ic ic-soft" d="M20 21v14M12 24c4 2 12 2 16 0M12 29c4 2 12 2 16 0M12 34c4 2 12 2 16 0"/>
+    <path class="ic" d="M12 38v34M28 38v34M6 36h28"/>
+    <text class="lbl" x="21" y="98" text-anchor="middle">Radiology</text>
+    <text class="sub" x="21" y="122" text-anchor="middle">CT Scans, X-Ray</text>
+  </g>
+</svg>
+          </div>
+          <figcaption style="--i:1">Raster IoMT — device connectivity. The dotted connectors carry no arrowheads in the original, so the moving dots run both ways.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="features" aria-labelledby="s2-h">
+      <div>
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>How it works</p>
+          <h2 id="s2-h" style="--i:1">How Raster's IoMT device works</h2>
+          <p class="section-sub" style="--i:2">The analyser reads the sample identification number from the barcode, requests the tests to perform from the LIS, runs them, and transfers only the relevant, required results back to the LIS.</p>
+        </div>
+        <figure class="schematic diagram" data-reveal>
+          <div class="glass diagram-card" style="--i:0">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="60 15 730 445" role="img" aria-labelledby="how-schem-title how-schem-desc" class="schem">
+  <title id="how-schem-title">How Raster's IoMT device works</title>
+  <desc id="how-schem-desc">Along the top, a barcoded test tube, the analyser, the Raster IoMT device and the laboratory information system laptop with its server are joined by dotted lines without arrowheads. Below, five numbered steps chained by arrows: 1, the analyser reads the sample identification number from the barcode on the tube; 2, it requests the LIS for the tests to be performed; 3, the LIS responds with the test to be done for that SID number; 4, the analyser conducts the specified tests; 5, when complete, only the relevant and required result values are transferred to the LIS.</desc>
+  <style>
+    .schem { --ink: var(--text-hi, #f2f7f5); --ink-2: var(--text-mid, #b9c6c1); --ink-3: var(--text-low, #7f8d88); --g: var(--green, #00A87B); --gb: var(--green-bright, #00CF97); --on-g: var(--on-green, #03110c); font-family: inherit; }
+    .schem .ic { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .schem .ic-fill { fill: rgba(255, 255, 255, 0.07); }
+    .schem .ic-soft { stroke-width: 1.6; opacity: 0.7; }
+    .schem .ic-g { stroke: var(--gb); }
+    .schem .fill-g { fill: rgba(0, 168, 123, 0.28); }
+    .schem .screen { fill: rgba(0, 168, 123, 0.22); stroke: none; }
+    .schem .txt { fill: var(--ink-2); font-size: 12.5px; font-weight: 500; }
+    .schem .bus { fill: none; stroke: var(--g); stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 1.5 6; }
+    .schem .arrow { fill: none; stroke: var(--g); stroke-width: 1.8; stroke-linecap: round; }
+    .schem .head { fill: var(--g); }
+    .schem .pkt { fill: var(--gb); filter: drop-shadow(0 0 4px rgba(0, 207, 151, 0.9)); offset-rotate: 0deg; animation: schem-pkt 3.6s linear infinite; }
+    .schem .pkt.back { animation-direction: reverse; }
+    /* the step packets run 1→2→3→4→5 in sequence over one 8s cycle */
+    .schem .pkt.seq { animation: schem-seq 8s linear infinite; }
+    .schem .step { fill: var(--g); stroke: rgba(255, 255, 255, 0.35); stroke-width: 1.5; }
+    .schem .step-n { fill: var(--on-g); font-size: 14px; font-weight: 700; }
+    .schem .step-ring { fill: none; stroke: var(--gb); stroke-width: 1.5; opacity: 0; transform-box: fill-box; transform-origin: 50% 50%; animation: schem-ping 8s ease-out infinite; }
+    .schem .led { fill: var(--gb); animation: schem-blink 2.2s ease-in-out infinite; }
+    .schem .core { transform-box: fill-box; transform-origin: 50% 50%; animation: schem-core 2.4s ease-in-out infinite; }
+    .schem .scan { stroke: var(--gb); stroke-width: 1.4; opacity: 0.9; animation: schem-scan 2.4s ease-in-out infinite; }
+    .schem .slip { transform-box: fill-box; transform-origin: 50% 0%; animation: schem-print 4s ease-in-out infinite; }
+    @keyframes schem-pkt { 0% { offset-distance: 0%; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+    @keyframes schem-seq { 0% { offset-distance: 0%; opacity: 0; } 2% { opacity: 1; } 18% { opacity: 1; } 20% { offset-distance: 100%; opacity: 0; } 100% { offset-distance: 100%; opacity: 0; } }
+    @keyframes schem-ping { 0% { transform: scale(1); opacity: 0.8; } 14%, 100% { transform: scale(2.1); opacity: 0; } }
+    @keyframes schem-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    @keyframes schem-core { 0%, 100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.06); } }
+    @keyframes schem-scan { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(18px); } }
+    @keyframes schem-print { 0%, 15% { transform: scaleY(0); } 45%, 80% { transform: scaleY(1); } 100% { transform: scaleY(0); } }
+    @media (prefers-reduced-motion: reduce) {
+      .schem .step-ring, .schem .led, .schem .core, .schem .scan, .schem .slip { animation: none; }
+      .schem .pkt { display: none; }
+    }
+  </style>
+  <defs>
+    <marker id="how-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path class="head" d="M1 1.5 L9 5 L1 8.5 Z"/>
+    </marker>
+  </defs>
+
+  <!-- ══ Top line: dotted connectors with no arrowheads in the source ══ -->
+  <g id="how-bus">
+    <path class="bus" d="M192 104 H283"/>
+    <path class="bus" d="M421 106 H461"/>
+    <path class="bus" d="M537 106 H583"/>
+  </g>
+  <g aria-hidden="true">
+    <circle class="pkt" r="3.2" style="offset-path: path('M192 104 H283'); animation-delay: 0s"/>
+    <circle class="pkt back" r="3.2" style="offset-path: path('M192 104 H283'); animation-delay: -1.8s"/>
+    <circle class="pkt" r="3.2" style="offset-path: path('M421 106 H461'); animation-delay: -0.6s"/>
+    <circle class="pkt back" r="3.2" style="offset-path: path('M421 106 H461'); animation-delay: -2.4s"/>
+    <circle class="pkt" r="3.2" style="offset-path: path('M537 106 H583'); animation-delay: -1.2s"/>
+    <circle class="pkt back" r="3.2" style="offset-path: path('M537 106 H583'); animation-delay: -3s"/>
+  </g>
+
+  <!-- ══ Test tube with barcode ══ -->
+  <g id="n-tube" transform="translate(150 70) rotate(-35 40 50)">
+    <path class="ic ic-fill" d="M28 0h24M32 0v78a8 8 0 0 1-16 0V0"/>
+    <path class="fill-g" d="M18 60v18a6 6 0 0 0 12 0V60z" style="stroke: none"/>
+    <rect class="ic ic-fill" x="15" y="26" width="18" height="22" rx="1" style="fill: rgba(255,255,255,0.12)"/>
+    <path class="ic" style="stroke-width: 1.2" d="M18 30v14M21 30v14M23 30v14M26 30v14M28 30v14M30 30v14"/>
+    <line class="scan" x1="15" y1="28" x2="33" y2="28"/>
+  </g>
+
+  <!-- ══ Analyser ══ -->
+  <g id="n-analyser" transform="translate(286 26)">
+    <path class="ic ic-fill" d="M0 22a22 22 0 0 1 22-22h96a8 8 0 0 1 8 8v138a8 8 0 0 1-8 8H22a22 22 0 0 1-22-22z"/>
+    <rect class="ic ic-fill screen" x="42" y="18" width="62" height="44" rx="2"/>
+    <path class="ic ic-soft" d="M42 80h62a5 5 0 0 1 5 5v44a5 5 0 0 1-5 5H42a5 5 0 0 1-5-5V85a5 5 0 0 1 5-5z"/>
+    <g class="slip"><path class="ic ic-fill" d="M12 84h16v40l-16 12z"/><path class="ic ic-soft" d="M16 92h8M16 100h8M16 108h8"/></g>
+    <circle class="led" cx="112" cy="100" r="2.2"/>
+  </g>
+
+  <!-- ══ IoMT device ══ -->
+  <g id="n-device" transform="translate(463 80)">
+    <path class="ic ic-fill" d="M0 28l36-18 36 18-36 18z"/>
+    <path class="ic ic-fill" d="M0 28v8l36 18 36-18v-8L36 46z"/>
+    <path class="fill-g ic ic-g ic-soft" d="M12 24l18-9 9 4-18 9z"/>
+    <g class="core" style="fill: var(--gb)"><path d="M44 30l4-2 3 1-4 2 3 1-4 2-3-1 4-2-3-1 4-2z" opacity="0.9"/></g>
+  </g>
+
+  <!-- ══ LIS laptop with server ══ -->
+  <g id="n-lis" transform="translate(585 30)">
+    <g class="ic" transform="translate(84 0)">
+      <rect class="ic-fill" x="0" y="0" width="52" height="12" rx="3"/><rect class="ic-fill" x="0" y="18" width="52" height="12" rx="3"/><rect class="ic-fill" x="0" y="36" width="52" height="12" rx="3"/>
+      <path class="ic-soft ic-g" d="M6 6h26M6 24h26M6 42h26M26 12v6M26 30v6"/>
+    </g>
+    <rect class="ic ic-fill" x="10" y="22" width="84" height="56" rx="4"/>
+    <rect class="screen" x="14" y="26" width="76" height="48" rx="2"/>
+    <path class="ic ic-fill" d="M0 78h104v8a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4z"/>
+    <circle class="led" cx="44" cy="84" r="1.8"/><circle class="led" cx="52" cy="84" r="1.8" style="animation-delay: -0.7s"/><circle class="led" cx="60" cy="84" r="1.8" style="animation-delay: -1.4s"/>
+    <rect class="ic ic-soft" x="72" y="81" width="18" height="6" rx="1"/>
+  </g>
+
+  <!-- ══ Step chain ══ -->
+  <g id="how-steps-arrows">
+    <path class="arrow" d="M179 323 L222 366" marker-end="url(#how-arrow)"/>
+    <path class="arrow" d="M252 360 L326 247" marker-end="url(#how-arrow)"/>
+    <path class="arrow" d="M388 292 L476 366" marker-end="url(#how-arrow)"/>
+    <path class="arrow" d="M508 360 L578 249" marker-end="url(#how-arrow)"/>
+  </g>
+  <g aria-hidden="true">
+    <circle class="pkt seq" r="3.4" style="offset-path: path('M179 323 L222 366'); animation-delay: -6.4s"/>
+    <circle class="pkt seq" r="3.4" style="offset-path: path('M252 360 L326 247'); animation-delay: -4.8s"/>
+    <circle class="pkt seq" r="3.4" style="offset-path: path('M388 292 L476 366'); animation-delay: -3.2s"/>
+    <circle class="pkt seq" r="3.4" style="offset-path: path('M508 360 L578 249'); animation-delay: -1.6s"/>
+  </g>
+
+  <g id="s1" transform="translate(90 225)">
+    <circle class="step-ring" r="15" style="animation-delay: 0s"/><circle class="step" r="15"/><text class="step-n" y="5" text-anchor="middle">1</text>
+    <text class="txt" x="29" y="4">The analyser reads the</text>
+    <text class="txt" x="29" y="21">Sample Identification</text>
+    <text class="txt" x="29" y="38">Number (SID No.)</text>
+    <text class="txt" x="29" y="55">from the barcode,</text>
+    <text class="txt" x="29" y="72">which is pasted on the</text>
+    <text class="txt" x="29" y="89">test tube</text>
+  </g>
+  <g id="s2" transform="translate(240 385)">
+    <circle class="step-ring" r="15" style="animation-delay: -6.4s"/><circle class="step" r="15"/><text class="step-n" y="5" text-anchor="middle">2</text>
+    <text class="txt" x="31" y="4">Then it requests the</text>
+    <text class="txt" x="31" y="21">LIS for the tests</text>
+    <text class="txt" x="31" y="38">which are to be</text>
+    <text class="txt" x="31" y="55">performed</text>
+  </g>
+  <g id="s3" transform="translate(333 225)">
+    <circle class="step-ring" r="15" style="animation-delay: -4.8s"/><circle class="step" r="15"/><text class="step-n" y="5" text-anchor="middle">3</text>
+    <text class="txt" x="23" y="4">The LIS responds with</text>
+    <text class="txt" x="23" y="21">the test to be done for</text>
+    <text class="txt" x="23" y="38">the specific SID No. to</text>
+    <text class="txt" x="23" y="55">the analyser</text>
+  </g>
+  <g id="s4" transform="translate(496 385)">
+    <circle class="step-ring" r="15" style="animation-delay: -3.2s"/><circle class="step" r="15"/><text class="step-n" y="5" text-anchor="middle">4</text>
+    <text class="txt" x="31" y="4">Analyser conducts</text>
+    <text class="txt" x="31" y="21">the specified tests</text>
+  </g>
+  <g id="s5" transform="translate(588 225)">
+    <circle class="step-ring" r="15" style="animation-delay: -1.6s"/><circle class="step" r="15"/><text class="step-n" y="5" text-anchor="middle">5</text>
+    <text class="txt" x="29" y="4">When the tests have</text>
+    <text class="txt" x="29" y="21">been completed, only the</text>
+    <text class="txt" x="29" y="38">relevant and required</text>
+    <text class="txt" x="29" y="55">result values are</text>
+    <text class="txt" x="29" y="72">transferred to Laboratory</text>
+    <text class="txt" x="29" y="89">Information system (LIS)</text>
+  </g>
+</svg>
+          </div>
+          <figcaption style="--i:1">Raster IoMT — analyser to LIS in five steps. The top line's dotted connectors carry no arrowheads in the original; the numbered arrows below run 1 to 5.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="features" aria-labelledby="s3-h">
+      <div>
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>Features and benefits</p>
+          <h2 id="s3-h" style="--i:1">Small box, big difference</h2>
+        </div>
+        <ul class="point-grid" data-reveal aria-label="Small box, big difference">
+          <li class="glass point" style="--i:0"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Inexpensive</strong>Raster’s IoMT devices are an efficient and inexpensive alternative to the expensive (and unsuitable) computers that are often used as interfacing equipment.</span></li>
+          <li class="glass point" style="--i:1"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Adaptable and easy-to-use</strong>Installing Raster IoMT devices are quick and easy, even if you want to connect multiple instruments across disciplines, sites and LIS.</span></li>
+          <li class="glass point" style="--i:2"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Power-efficient</strong>The Raster IoMT box eliminates the need for dedicated PC for interfacing for each analyser, saving power and space, while working reliably 24x7.</span></li>
+          <li class="glass point" style="--i:3"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Compliant</strong>All software solutions conform to international standards such as HL7 and ASTM.</span></li>
+          <li class="glass point" style="--i:4"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Beyond just lab analysers</strong>Raster IoMT devices can also connect to medical equipment like ventilators and patient monitors in the ICU/NICU and ward to the HIS and EMR.</span></li>
+          <li class="glass point" style="--i:5"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Platform / Tech-Agnostic</strong>In our experience, we have worked with nearly all lab information systems and diagnostic equipment manufacturers, making sure our IoMT box serves them all.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="solutions" aria-labelledby="related-h">
+      <div>
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>Interfacing Applications</p>
+          <h2 id="related-h" style="--i:1">Works alongside</h2>
+          <p class="section-sub" style="--i:2">IoMT &amp; Interfacing is one part of Raster's Interfacing Applications range. The rest plugs straight into it.</p>
+        </div>
+        <div class="vm-grid" data-reveal>
+          <article class="glass sol-card" style="--i:0">
+            <span class="sol-icon"><svg class="icon" aria-hidden="true"><use href="#i-plug"/></svg></span>
+            <h3>Lab Equipment Interfacing</h3>
+            <p>Uni- and bi-directional analyser integration from a portfolio of 230+ instruments.</p>
+            <a class="card-link" href="lab-equipment-interfacing.html">Explore the solution<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="glass sol-card" style="--i:1">
+            <span class="sol-icon"><svg class="icon" aria-hidden="true"><use href="#i-interface"/></svg></span>
+            <h3>Electronic Charting</h3>
+            <p>Centralised ICU monitoring with inline data from ventilators and monitors.</p>
+            <a class="card-link" href="electronic-charting.html">Explore the solution<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+      </div><!-- /.solution-main -->
+    </div><!-- /.solution-layout -->
+
+    <section class="cta-band" aria-labelledby="cta-h">
+      <div class="container">
+        <div class="glass cta-card" data-reveal>
+          <div style="--i:0">
+            <h2 id="cta-h">See IoMT &amp; Interfacing at your institute</h2>
+            <p>Tell us about your departments, workflow and existing systems, and we'll map IoMT &amp; Interfacing to them — or send you the brochure to start.</p>
+          </div>
+          <div class="cta-actions" style="--i:1">
+            <a class="btn btn-primary" href="contact.html" data-demo-open data-demo-solution="iomt-interfacing">Request a demo<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="https://www.raster.in/downloads/brochure/raster-iomt.pdf" target="_blank" rel="noopener">Download brochure<svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════ Footer ═══════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/img/logo-white.webp" alt="Raster" width="200" height="43">
+          <p>Integrated healthcare technology — software, interfacing and hardware engineered around patient care.</p>
+        </div>
+        <nav aria-label="Footer — Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Footer — Solutions">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="healthcare-solutions.html#radiology">Radiology</a></li>
+            <li><a href="healthcare-solutions.html#hospital-management">Hospital Management</a></li>
+            <li><a href="healthcare-solutions.html#interfacing">Interfacing Applications</a></li>
+            <li><a href="healthcare-solutions.html#other-applications">Other Applications</a></li>
+            <li><a href="hardware-products.html">Hardware Products</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Footer — Resources">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="news-events.html">News &amp; Events</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Raster. All rights reserved.</p>
+        <p class="footer-pulse" aria-hidden="true">
+          <svg viewBox="0 0 120 24" class="pulse-mini"><path d="M0,12 h34 l6,-8 8,16 6,-12 4,4 h62" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════ Demo request dialog ═══════════
+       Opened by any [data-demo-open] control (the header button, the product
+       pages' "Request a demo"); a native <dialog> gives the focus trap, Escape
+       and inertness for free. The form shares the [data-form] handler and, with
+       no mail endpoint, falls back to the phone/email line. -->
+  <dialog class="demo-dialog" id="demoDialog" aria-labelledby="demo-title">
+    <div class="demo-card">
+      <button class="demo-close" type="button" data-demo-close aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <p class="eyebrow"><span class="dot"></span>Request a demo</p>
+      <h2 id="demo-title">See it working at your institute</h2>
+      <p class="demo-lede">Tell us who you are and what you would like to see. We will arrange a walkthrough at a time that suits you.</p>
+      <form id="demoForm" data-form data-endpoint="" novalidate
+            data-fallback="This form is not connected to a mail handler yet. Please email info@raster.in or call +91 427 4033100 and we will arrange your demo."
+            data-success="Thank you — your demo request has been sent. We will be in touch shortly to fix a time.">
+        <input type="hidden" name="subject" value="Demo request">
+        <div class="demo-grid">
+          <div class="field">
+            <label for="df-name">Full name <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-org">Hospital / organisation <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-org" name="organisation" type="text" autocomplete="organization" placeholder="Institute name" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-email">E-mail ID <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-email" name="email" type="email" autocomplete="email" placeholder="you@hospital.org" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-mobile">Mobile number <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-mobile" name="mobile" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-role">Your role</label>
+            <select id="df-role" name="role">
+              <option value="">Choose a role</option>
+              <option>Doctor / Radiologist</option>
+              <option>Hospital administrator</option>
+              <option>IT / Biomedical</option>
+              <option>Laboratory</option>
+              <option>Purchase / Management</option>
+              <option>Other</option>
+            </select>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-solution">Solution of interest <span class="req" aria-hidden="true">*</span></label>
+            <select id="df-solution" name="solution" required>
+              <option value="">Choose a solution</option>
+                  <optgroup label="Radiology">
+                    <option value="pacs">PACS</option>
+                    <option value="ris">RIS</option>
+                    <option value="teleradiology">Teleradiology</option>
+                    <option value="dicom-burner">DICOM Burner</option>
+                    <option value="dicom-camera">DICOM Camera</option>
+                  </optgroup>
+                  <optgroup label="Hospital Management">
+                    <option value="ihms">IHMS</option>
+                    <option value="pharmacy-management">Pharmacy Management</option>
+                    <option value="blood-bank-management">Blood Bank Management</option>
+                    <option value="emr">EMR</option>
+                    <option value="lis">Lab Information System</option>
+                    <option value="neopead-emr">Neopead EMR &amp; Charting</option>
+                    <option value="asset-management">Asset Management</option>
+                  </optgroup>
+                  <optgroup label="Interfacing Applications">
+                    <option value="lab-equipment-interfacing">Lab Equipment Interfacing</option>
+                    <option value="iomt-interfacing">IoMT &amp; Interfacing</option>
+                    <option value="electronic-charting">Electronic Charting</option>
+                  </optgroup>
+                  <optgroup label="Other Applications">
+                    <option value="ot-video-broadcasting">OT – Video Broadcasting</option>
+                    <option value="telemedicine">Telemedicine</option>
+                    <option value="patient-id-wristbands">Patient ID Wristbands</option>
+                  </optgroup>
+              <option value="hardware">Hardware products</option>
+              <option value="not-sure">Not sure yet — advise me</option>
+            </select>
+            <p class="err" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="df-message">Anything we should know?</label>
+          <textarea id="df-message" name="message" placeholder="Departments, bed count, existing systems, preferred dates…"></textarea>
+          <p class="err" aria-live="polite"></p>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Send request<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <span class="contact-line"><a href="tel:+914274033100">or call +91 427 4033100</a></span>
+        </div>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </dialog>
+
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

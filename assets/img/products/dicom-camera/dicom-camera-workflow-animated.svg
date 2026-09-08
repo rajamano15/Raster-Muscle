@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="130 30 770 680" role="img" aria-labelledby="dc-schem-title dc-schem-desc" class="schem">
+  <title id="dc-schem-title">DICOM Camera Workflow</title>
+  <desc id="dc-schem-desc">HIS / RIS and PACS both feed the worklist. From the worklist the user either goes to Patient Search and then to Capture Images, or takes the alternative route through Barcode Scan and then to Capture Images. Captured images go to the Photo Library, and the Photo Library uploads to PACS. Every arrow is one-way.</desc>
+  <style>
+    .schem { --ink: var(--text-hi, #f2f7f5); --ink-2: var(--text-mid, #b9c6c1); --ink-3: var(--text-low, #7f8d88); --g: var(--green, #00A87B); --gb: var(--green-bright, #00CF97); font-family: inherit; }
+    .schem .ic { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .schem .ic-fill { fill: rgba(255, 255, 255, 0.07); }
+    .schem .ic-soft { stroke-width: 1.6; opacity: 0.7; }
+    .schem .screen { fill: rgba(4, 12, 10, 0.75); }
+    .schem .ui { fill: rgba(255, 255, 255, 0.09); stroke: none; }
+    .schem .ui-line { fill: none; stroke: rgba(255, 255, 255, 0.35); stroke-width: 1.4; stroke-linecap: round; }
+    .schem .ui-t { fill: var(--ink); font-size: 6.5px; font-weight: 600; }
+    .schem .ui-t2 { fill: var(--ink-3); font-size: 5px; }
+    .schem .ui-g { fill: var(--g); stroke: none; }
+    .schem .title { fill: var(--ink); font-size: 24px; font-weight: 600; letter-spacing: -0.01em; }
+    .schem .lbl { fill: var(--ink-2); font-size: 14px; font-weight: 500; letter-spacing: 0.01em; }
+    .schem .mon-t { fill: var(--ink-2); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; }
+    .schem .link { fill: none; stroke: var(--g); stroke-width: 2.4; stroke-linecap: round; }
+    .schem .link.alt { stroke-dasharray: 2 7; animation: schem-march 1.4s linear infinite; }
+    .schem .head { fill: var(--g); }
+    .schem .pkt { fill: var(--gb); filter: drop-shadow(0 0 4px rgba(0, 207, 151, 0.9)); offset-rotate: 0deg; animation: schem-pkt 3.6s linear infinite; }
+    .schem .led { fill: var(--gb); animation: schem-blink 2.2s ease-in-out infinite; }
+    .schem .scanline { stroke: var(--gb); stroke-width: 1.2; opacity: 0.9; animation: schem-scan 2.2s ease-in-out infinite; }
+    .schem .shutter { transform-box: fill-box; transform-origin: 50% 50%; animation: schem-shutter 2.8s ease-in-out infinite; }
+    .schem .focus { transform-box: fill-box; transform-origin: 50% 50%; animation: schem-focus 2.8s ease-in-out infinite; }
+    @keyframes schem-march { to { stroke-dashoffset: -18; } }
+    @keyframes schem-pkt { 0% { offset-distance: 0%; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+    @keyframes schem-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+    @keyframes schem-scan { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(26px); } }
+    @keyframes schem-shutter { 0%, 80%, 100% { transform: scale(1); } 90% { transform: scale(0.82); } }
+    @keyframes schem-focus { 0%, 80%, 100% { transform: scale(1); opacity: 0.6; } 90% { transform: scale(0.9); opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) {
+      .schem .link.alt, .schem .led, .schem .scanline, .schem .shutter, .schem .focus { animation: none; }
+      .schem .pkt { display: none; }
+    }
+  </style>
+  <defs>
+    <marker id="dc-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path class="head" d="M1 1.5 L9 5 L1 8.5 Z"/>
+    </marker>
+  </defs>
+
+  <text class="title" x="512" y="74" text-anchor="middle">DICOM Camera Workflow</text>
+
+  <!-- ══ Arrows — every one is one-way; dashed = the barcode route ══ -->
+  <g id="dc-links">
+    <!-- a  HIS / RIS → Worklist -->
+    <path class="link" d="M333 206 C282 214 232 250 210 296" marker-end="url(#dc-arrow)"/>
+    <!-- b  PACS → Worklist -->
+    <path class="link" d="M562 262 C480 286 322 302 230 319" marker-end="url(#dc-arrow)"/>
+    <!-- c  Worklist → Barcode Scan (alternative route) -->
+    <path class="link alt" d="M230 362 C300 334 432 336 506 384" marker-end="url(#dc-arrow)"/>
+    <!-- d  Worklist → Patient Search -->
+    <path class="link" d="M226 378 C254 402 268 432 278 470" marker-end="url(#dc-arrow)"/>
+    <!-- e  Patient Search → Capture Images -->
+    <path class="link" d="M337 630 C420 666 600 668 682 632" marker-end="url(#dc-arrow)"/>
+    <!-- f  Barcode Scan → Capture Images (alternative route) -->
+    <path class="link alt" d="M573 510 C610 494 652 494 682 506" marker-end="url(#dc-arrow)"/>
+    <!-- g  Capture Images → Photo Library -->
+    <path class="link" d="M792 478 C816 452 836 430 850 400" marker-end="url(#dc-arrow)"/>
+    <!-- h  Photo Library → PACS -->
+    <path class="link" d="M829 300 C802 252 742 222 696 206" marker-end="url(#dc-arrow)"/>
+  </g>
+
+  <!-- ══ Packets: one per arrow, travelling the way it points ══ -->
+  <g id="dc-packets" aria-hidden="true">
+    <circle class="pkt" r="3.6" style="offset-path: path('M333 206 C282 214 232 250 210 296'); animation-delay: 0s"/>
+    <circle class="pkt" r="3.6" style="offset-path: path('M562 262 C480 286 322 302 230 319'); animation-delay: -1.2s"/>
+    <circle class="pkt" r="3.6" style="offset-path: path('M230 362 C300 334 432 336 506 384'); animation-delay: -2.4s"/>
+    <circle class="pkt" r="3.6" style="offset-path: path('M226 378 C254 402 268 432 278 470'); animation-delay: -0.6s"/>
+    <circle class="pkt" r="3.6" style="offset-path: path('M337 630 C420 666 600 668 682 632'); animation-delay: -1.8s"/>
+    <circle class="pkt" r="3.6" style="offset-path: path('M573 510 C610 494 652 494 682 506'); animation-delay: -3s"/>
+    <circle class="pkt" r="3.6" style="offset-path: path('M792 478 C816 452 836 430 850 400'); animation-delay: -0.9s"/>
+    <circle class="pkt" r="3.6" style="offset-path: path('M829 300 C802 252 742 222 696 206'); animation-delay: -2.1s"/>
+  </g>
+
+  <!-- ══ HIS / RIS ══ -->
+  <g id="n-his" transform="translate(350 158)">
+    <rect class="ic ic-fill" x="0" y="0" width="126" height="76" rx="5"/>
+    <rect class="screen" x="5" y="5" width="116" height="60" rx="2"/>
+    <text class="mon-t" x="63" y="40" text-anchor="middle">HIS / RIS</text>
+    <circle class="led" cx="63" cy="70" r="1.6"/>
+    <path class="ic" d="M63 76v12M46 90h34"/>
+  </g>
+
+  <!-- ══ PACS ══ -->
+  <g id="n-pacs" transform="translate(548 158)">
+    <rect class="ic ic-fill" x="0" y="0" width="126" height="76" rx="5"/>
+    <rect class="screen" x="5" y="5" width="116" height="60" rx="2"/>
+    <text class="mon-t" x="63" y="40" text-anchor="middle">PACS</text>
+    <circle class="led" cx="63" cy="70" r="1.6" style="animation-delay: -1.1s"/>
+    <path class="ic" d="M63 76v12M46 90h34"/>
+  </g>
+
+  <!-- ══ Worklist ══ -->
+  <g id="n-worklist" transform="translate(154 314)">
+    <g class="ic">
+      <circle class="ui-g" cx="6" cy="6" r="3.2"/><path d="M18 6h44"/>
+      <circle class="ui-g" cx="6" cy="26" r="3.2"/><path d="M18 26h44"/>
+      <circle class="ui-g" cx="6" cy="46" r="3.2"/><path d="M18 46h44"/>
+    </g>
+    <text class="lbl" x="32" y="70" text-anchor="middle">Worklist</text>
+  </g>
+
+  <!-- ══ Photo Library ══ -->
+  <g id="n-library" transform="translate(806 312)">
+    <rect class="ic ic-fill" x="10" y="0" width="54" height="42" rx="5"/>
+    <rect class="ic ic-fill" x="0" y="12" width="54" height="42" rx="5"/>
+    <circle class="ic" cx="36" cy="26" r="5"/>
+    <path class="ic" d="M4 48l16-14 10 8 8-6 12 12"/>
+    <text class="lbl" x="32" y="74" text-anchor="middle">Photo Library</text>
+  </g>
+
+  <!-- ══ Patient Search (phone) ══ -->
+  <g id="n-search" transform="translate(237 478)">
+    <rect class="ic ic-fill" x="0" y="0" width="92" height="181" rx="14"/>
+    <rect class="screen" x="5" y="5" width="82" height="171" rx="10"/>
+    <rect class="ui" x="32" y="8" width="28" height="5" rx="2.5"/>
+    <text class="ui-t2" x="10" y="24">‹ New Search</text>
+    <text class="ui-t" x="10" y="36">Patients</text>
+    <g class="ui">
+      <rect x="10" y="42" width="72" height="13" rx="2"/><rect x="10" y="58" width="72" height="13" rx="2"/>
+      <rect x="10" y="74" width="72" height="13" rx="2"/><rect x="10" y="90" width="72" height="13" rx="2"/>
+      <rect x="10" y="106" width="72" height="13" rx="2"/><rect x="10" y="122" width="72" height="13" rx="2"/>
+      <rect x="10" y="138" width="72" height="13" rx="2"/>
+    </g>
+    <path class="ui-line" d="M14 47h22M14 51h12M14 63h26M14 67h12M14 79h20M14 83h12M14 95h24M14 99h12M14 111h22M14 115h12M14 127h26M14 131h12M14 143h20M14 147h12"/>
+    <path class="ui-line" d="M22 168h.1M42 168h.1M62 168h.1" style="stroke-width:4"/>
+    <rect class="ui-g" x="20" y="164" width="6" height="6" rx="1"/>
+    <text class="lbl" x="46" y="200" text-anchor="middle">Patient Search</text>
+  </g>
+
+  <!-- ══ Barcode Scan (phone) ══ -->
+  <g id="n-barcode" transform="translate(467 397)">
+    <rect class="ic ic-fill" x="0" y="0" width="92" height="181" rx="14"/>
+    <rect class="screen" x="5" y="5" width="82" height="171" rx="10"/>
+    <rect class="ui" x="32" y="8" width="28" height="5" rx="2.5"/>
+    <text class="ui-t2" x="10" y="24">‹ Back</text>
+    <text class="ui-t" x="46" y="25" text-anchor="middle">New Search</text>
+    <text class="ui-t2" x="10" y="40">PATIENT SEARCH</text>
+    <rect class="ui" x="10" y="44" width="72" height="12" rx="2"/>
+    <text class="ui-t2" x="14" y="52">Patient ID</text>
+    <rect class="ui-g" x="10" y="60" width="72" height="12" rx="3" opacity="0.85"/>
+    <text class="ui-t" x="46" y="68.5" text-anchor="middle" style="fill: var(--on-green, #03110c)">Search</text>
+    <!-- barcode in the viewfinder -->
+    <rect class="ui" x="14" y="86" width="64" height="44" rx="3"/>
+    <path class="ui-line" style="stroke: var(--ink); stroke-width: 1.2; opacity: 0.85" d="M20 94v28M23 94v28M27 94v28M32 94v28M34 94v28M39 94v28M43 94v28M45 94v28M50 94v28M54 94v28M56 94v28M61 94v28M65 94v28M68 94v28M72 94v28"/>
+    <path class="ic" style="stroke: var(--gb); stroke-width: 1.6" d="M14 92v-6h6M72 86h6v6M14 124v6h6M78 124v6h-6"/>
+    <line class="scanline" x1="16" y1="92" x2="76" y2="92"/>
+    <path class="ui-line" d="M22 168h.1M42 168h.1M62 168h.1" style="stroke-width:4"/>
+    <text class="lbl" x="46" y="200" text-anchor="middle">Barcode Scan</text>
+  </g>
+
+  <!-- ══ Capture Images (phone) ══ -->
+  <g id="n-capture" transform="translate(694 476)">
+    <rect class="ic ic-fill" x="0" y="0" width="92" height="181" rx="14"/>
+    <rect class="screen" x="5" y="5" width="82" height="171" rx="10"/>
+    <rect class="ui" x="32" y="8" width="28" height="5" rx="2.5"/>
+    <text class="ui-t2" x="10" y="24">‹ Back</text>
+    <text class="ui-t" x="46" y="25" text-anchor="middle">Capture Images</text>
+    <!-- viewfinder -->
+    <rect class="ui" x="8" y="31" width="76" height="112" rx="3"/>
+    <path class="ui-line" style="opacity: 0.55" d="M30 80c8-14 22-16 34-10M22 112c14-10 30-8 48 6M40 58c6 10 4 26-6 40"/>
+    <path class="ic" style="stroke: var(--gb); stroke-width: 1.6" d="M16 44v-8h8M68 36h8v8M16 130v8h8M76 130v8h-8"/>
+    <circle class="focus" cx="46" cy="87" r="10" fill="none" stroke="var(--gb, #00CF97)" stroke-width="1.4"/>
+    <!-- controls -->
+    <rect class="ui" x="14" y="152" width="14" height="14" rx="3"/>
+    <circle class="ui-g" cx="24" cy="152" r="2.4" style="fill: #ff5d5d"/>
+    <circle class="shutter" cx="46" cy="159" r="9" fill="var(--text-hi, #f2f7f5)"/>
+    <circle cx="46" cy="159" r="11.5" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
+    <circle class="ui" cx="72" cy="159" r="6.5"/>
+    <path class="ui-line" d="M69 159h6M72 156v6"/>
+    <text class="lbl" x="46" y="200" text-anchor="middle">Capture Images</text>
+  </g>
+</svg>

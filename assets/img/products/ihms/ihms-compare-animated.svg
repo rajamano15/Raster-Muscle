@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 417" role="img" aria-labelledby="ihms-schem-title ihms-schem-desc" class="schem">
+  <title id="ihms-schem-title">Out of the Box HMS versus Raster iHMS</title>
+  <desc id="ihms-schem-desc">Five requirements sit in the middle: different user goals and needs, design and usability, documents, reports and MIS, system integrations, and change in workflow. On the left, an out-of-the-box HMS, marked with a cross, points to each requirement. On the right, Raster iHMS, marked with a tick, points to each requirement. All ten arrows run from the two systems into the requirements.</desc>
+  <style>
+    .schem { --ink: var(--text-hi, #f2f7f5); --ink-2: var(--text-mid, #b9c6c1); --ink-3: var(--text-low, #7f8d88); --g: var(--green, #00A87B); --gb: var(--green-bright, #00CF97); --bad: #e0533f; font-family: inherit; }
+    .schem .hd { fill: var(--ink); font-size: 19px; font-weight: 600; letter-spacing: -0.005em; }
+    .schem .panel { fill: rgba(255, 255, 255, 0.05); stroke: rgba(255, 255, 255, 0.1); stroke-width: 1; }
+    .schem .box { fill: rgba(0, 168, 123, 0.16); stroke: rgba(0, 168, 123, 0.42); stroke-width: 1.2; }
+    .schem .box-t { fill: var(--ink); font-size: 17px; font-weight: 600; }
+    .schem .hub { fill: var(--ink-3); }
+    .schem .link { fill: none; stroke-width: 1.6; stroke-linecap: round; }
+    .schem .link.bad { stroke: rgba(224, 83, 63, 0.55); }
+    .schem .link.good { stroke: var(--g); }
+    .schem .head-bad { fill: rgba(224, 83, 63, 0.75); }
+    .schem .head-good { fill: var(--g); }
+    .schem .pkt { offset-rotate: 0deg; animation: schem-pkt 2.6s linear infinite; }
+    .schem .pkt.bad { fill: var(--bad); filter: drop-shadow(0 0 3px rgba(224, 83, 63, 0.8)); }
+    .schem .pkt.good { fill: var(--gb); filter: drop-shadow(0 0 4px rgba(0, 207, 151, 0.9)); }
+    /* the box lights green as each iHMS packet lands, and flinches as the HMS one does */
+    .schem .box-glow { fill: none; stroke: var(--gb); stroke-width: 2; opacity: 0; animation: schem-land 2.6s linear infinite; }
+    .schem .box-flinch { fill: none; stroke: var(--bad); stroke-width: 2; opacity: 0; animation: schem-flinch 2.6s linear infinite; }
+    .schem .cross { fill: none; stroke: var(--bad); stroke-width: 14; stroke-linecap: round; stroke-dasharray: 100; animation: schem-draw 5.2s ease-in-out infinite; }
+    .schem .tick { fill: none; stroke: var(--gb); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 140; filter: drop-shadow(0 0 8px rgba(0, 207, 151, 0.55)); animation: schem-draw-tick 5.2s ease-in-out infinite; }
+    @keyframes schem-pkt { 0% { offset-distance: 0%; opacity: 0; } 10% { opacity: 1; } 88% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+    @keyframes schem-land { 0%, 86% { opacity: 0; } 92% { opacity: 0.9; } 100% { opacity: 0; } }
+    @keyframes schem-flinch { 0%, 86% { opacity: 0; } 92% { opacity: 0.55; } 100% { opacity: 0; } }
+    @keyframes schem-draw { 0% { stroke-dashoffset: 100; } 30%, 100% { stroke-dashoffset: 0; } }
+    @keyframes schem-draw-tick { 0% { stroke-dashoffset: 140; } 30%, 100% { stroke-dashoffset: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .schem .cross, .schem .tick { animation: none; stroke-dashoffset: 0; }
+      .schem .pkt, .schem .box-glow, .schem .box-flinch { display: none; }
+    }
+  </style>
+  <defs>
+    <marker id="ihms-arrow-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path class="head-bad" d="M1 1.5 L9 5 L1 8.5 Z"/>
+    </marker>
+    <marker id="ihms-arrow-good" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path class="head-good" d="M1 1.5 L9 5 L1 8.5 Z"/>
+    </marker>
+  </defs>
+
+  <!-- ══ Headings ══ -->
+  <text class="hd" x="197" y="52" text-anchor="middle">Out of the Box</text>
+  <text class="hd" x="197" y="77" text-anchor="middle">HMS</text>
+  <text class="hd" x="810" y="52" text-anchor="middle">Raster</text>
+  <text class="hd" x="810" y="77" text-anchor="middle">iHMS</text>
+
+  <!-- ══ Requirements panel ══ -->
+  <rect class="panel" x="320" y="44" width="360" height="338" rx="26"/>
+  <g id="boxes">
+    <g transform="translate(332 66)">
+      <rect class="box" width="336" height="44" rx="10"/><rect class="box-flinch" width="336" height="44" rx="10" style="animation-delay: 0s"/><rect class="box-glow" width="336" height="44" rx="10" style="animation-delay: 0s"/>
+      <text class="box-t" x="168" y="29" text-anchor="middle">Different user goals and needs</text>
+    </g>
+    <g transform="translate(332 128)">
+      <rect class="box" width="336" height="44" rx="10"/><rect class="box-flinch" width="336" height="44" rx="10" style="animation-delay: -0.5s"/><rect class="box-glow" width="336" height="44" rx="10" style="animation-delay: -0.5s"/>
+      <text class="box-t" x="168" y="29" text-anchor="middle">Design &amp; usability</text>
+    </g>
+    <g transform="translate(332 190)">
+      <rect class="box" width="336" height="44" rx="10"/><rect class="box-flinch" width="336" height="44" rx="10" style="animation-delay: -1s"/><rect class="box-glow" width="336" height="44" rx="10" style="animation-delay: -1s"/>
+      <text class="box-t" x="168" y="29" text-anchor="middle">Documents, Reports &amp; MIS</text>
+    </g>
+    <g transform="translate(332 252)">
+      <rect class="box" width="336" height="44" rx="10"/><rect class="box-flinch" width="336" height="44" rx="10" style="animation-delay: -1.5s"/><rect class="box-glow" width="336" height="44" rx="10" style="animation-delay: -1.5s"/>
+      <text class="box-t" x="168" y="29" text-anchor="middle">System Integrations</text>
+    </g>
+    <g transform="translate(332 314)">
+      <rect class="box" width="336" height="44" rx="10"/><rect class="box-flinch" width="336" height="44" rx="10" style="animation-delay: -2s"/><rect class="box-glow" width="336" height="44" rx="10" style="animation-delay: -2s"/>
+      <text class="box-t" x="168" y="29" text-anchor="middle">Change in workflow</text>
+    </g>
+  </g>
+
+  <!-- ══ Arrows: from each hub into every requirement ══ -->
+  <g id="links">
+    <circle class="hub" cx="226" cy="212" r="4"/>
+    <path class="link bad" d="M230 210 L306 90" marker-end="url(#ihms-arrow-bad)"/>
+    <path class="link bad" d="M230 211 L306 152" marker-end="url(#ihms-arrow-bad)"/>
+    <path class="link bad" d="M230 212 L306 212" marker-end="url(#ihms-arrow-bad)"/>
+    <path class="link bad" d="M230 213 L306 272" marker-end="url(#ihms-arrow-bad)"/>
+    <path class="link bad" d="M230 214 L306 334" marker-end="url(#ihms-arrow-bad)"/>
+    <circle class="hub" cx="758" cy="212" r="4"/>
+    <path class="link good" d="M754 210 L694 90" marker-end="url(#ihms-arrow-good)"/>
+    <path class="link good" d="M754 211 L694 152" marker-end="url(#ihms-arrow-good)"/>
+    <path class="link good" d="M754 212 L694 212" marker-end="url(#ihms-arrow-good)"/>
+    <path class="link good" d="M754 213 L694 272" marker-end="url(#ihms-arrow-good)"/>
+    <path class="link good" d="M754 214 L694 334" marker-end="url(#ihms-arrow-good)"/>
+  </g>
+  <g id="packets" aria-hidden="true">
+    <circle class="pkt bad" r="3.2" style="offset-path: path('M230 210 L306 90'); animation-delay: 0s"/>
+    <circle class="pkt bad" r="3.2" style="offset-path: path('M230 211 L306 152'); animation-delay: -0.5s"/>
+    <circle class="pkt bad" r="3.2" style="offset-path: path('M230 212 L306 212'); animation-delay: -1s"/>
+    <circle class="pkt bad" r="3.2" style="offset-path: path('M230 213 L306 272'); animation-delay: -1.5s"/>
+    <circle class="pkt bad" r="3.2" style="offset-path: path('M230 214 L306 334'); animation-delay: -2s"/>
+    <circle class="pkt good" r="3.4" style="offset-path: path('M754 210 L694 90'); animation-delay: 0s"/>
+    <circle class="pkt good" r="3.4" style="offset-path: path('M754 211 L694 152'); animation-delay: -0.5s"/>
+    <circle class="pkt good" r="3.4" style="offset-path: path('M754 212 L694 212'); animation-delay: -1s"/>
+    <circle class="pkt good" r="3.4" style="offset-path: path('M754 213 L694 272'); animation-delay: -1.5s"/>
+    <circle class="pkt good" r="3.4" style="offset-path: path('M754 214 L694 334'); animation-delay: -2s"/>
+  </g>
+
+  <!-- ══ Verdict marks ══ -->
+  <path class="cross" d="M152 180 L208 244 M208 180 L152 244"/>
+  <path class="tick" d="M780 214 L806 242 L852 178"/>
+</svg>

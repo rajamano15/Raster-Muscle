@@ -1,0 +1,2461 @@
+[
+ {
+  "slug": "pacs",
+  "short": "PACS",
+  "title": "Picture Archiving &amp; Communication System",
+  "grad": "Communication System",
+  "category": "radiology",
+  "eyebrow": "Raster iPACS",
+  "lede": "A single-vendor RIS/PACS solution built on DICOM and HL7 — a robust, intuitive viewer, a vendor-neutral archive, and the loading performance radiologists need to read faster.",
+  "brochure": "https://www.raster.in/downloads/brochure/raster-ipacs.pdf",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "The heart of the imaging enterprise",
+    "paragraphs": [
+     "If a hospital is to thrive in the healthcare marketplace of the future, it has to put a premium on IT investment. Image archives and data storage are increasingly a <strong>“must-have”</strong>. While putting fully operational electronic health records and PACS enterprise archives in place remains the top priority for the hospital, adopting a corresponding strategy for managing these systems is an issue that has to be addressed. Images make up a critical part of the diagnostic process, and a comprehensive image exchange reduces administrative workload and enables faster treatment.",
+     "The data storage system is the heart of a PACS. A reliable, high-capacity store that provides immediate access to the entire imaging archive with minimal operator intervention forms the foundation of every PACS installation.",
+     "With <strong>Raster iPACS</strong>, radiologists complete procedures faster, saving time through rapid image access and high-performance loading. iPACS features a variety of applications to master a broad range of clinical challenges, and can be tailored to suit personal preferences.",
+     "It is easy to service, with low implementation effort and high remote serviceability. The modular, scalable design opens up new possibilities for integration and future growth — protecting your investment and saving cost by reusing existing infrastructure. Deployed alongside other Raster products and any imaging hardware, you benefit from a <strong>single-vendor solution</strong> of the highest quality."
+    ]
+   },
+   {
+    "type": "figure",
+    "eyebrow": "Schematic diagram",
+    "heading": "How iPACS fits together",
+    "sub": "The PACS / RIS server sits at the centre: modalities send studies in, workstations and mobile devices read them, and archives, printers, disc burners and remote sites connect around it — on site and over the internet through a firewall.",
+    "src": "assets/img/products/pacs-schematic.webp",
+    "w": 850,
+    "h": 400,
+    "alt": "Schematic of a PACS deployment: DICOM modalities, DICOM workstations, a CD/DVD burner, a DICOM printer and a vendor neutral archive connect to the central PACS / RIS server; a firewall links it through the internet to an offsite archive, a remote hospital via a DICOM router, and remote DICOM workstations.",
+    "caption": "Picture Archiving and Communication System — typical hospital deployment. Arrowheads mark the direction of exchange; the moving dots follow it.",
+    "svg": "assets/img/products/pacs/pacs-schematic-animated.svg"
+   },
+   {
+    "type": "features",
+    "eyebrow": "Benefits for radiologists",
+    "heading": "Built around the reading room",
+    "sub": "Every part of iPACS is designed to shorten the path from study arrival to signed report.",
+    "items": [
+     [
+      "i-badge",
+      "Complete procedures faster",
+      "Radiologists finish reads sooner, saving time at every step of the workflow."
+     ],
+     [
+      "i-cloud",
+      "Fast image access",
+      "High-performance loading delivers studies rapidly, even large multi-series exams."
+     ],
+     [
+      "i-layers",
+      "Quick access to mark-ups",
+      "Annotations and measurements are a click away, so nothing is re-drawn."
+     ],
+     [
+      "i-interface",
+      "Robust, intuitive interface",
+      "A viewer that is stable under load and needs little training to master."
+     ],
+     [
+      "i-apps",
+      "Personalised tools &amp; layouts",
+      "Tools and display layouts tailored to each reader's individual preferences."
+     ],
+     [
+      "i-radiology",
+      "Full reading capability",
+      "A complete feature set, including advanced applications, for every modality."
+     ],
+     [
+      "i-plug",
+      "Off-site comfort, on-site speed",
+      "Low-bandwidth caching and work-list features keep remote reading responsive."
+     ],
+     [
+      "i-hospital",
+      "Comprehensive work-list filtering",
+      "Filter and prioritise the reading list, including studies that arrive through RIS."
+     ]
+    ]
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "Salient features",
+    "heading": "Open standards, end to end",
+    "sub": "Non-proprietary storage, open interfaces and a viewer that runs anywhere — and much more.",
+    "items": [
+     "DICOM standards",
+     "Vendor neutral archive",
+     "Interoperable",
+     "HL7 integration",
+     "Scalability",
+     "Single-vendor RIS/PACS solution",
+     "Linux-based server",
+     "Cross-platform: Linux / Windows / macOS",
+     "Zero-footprint viewer",
+     "Support for DAS / SAN / NAS storage",
+     "Non-proprietary lossless compression",
+     "Audit log",
+     "Multi-monitor support",
+     "Non-DICOM to DICOM conversion",
+     "MPPS",
+     "Report template designer",
+     "Voice recording &amp; transcription",
+     "MIS reports",
+     "Third-party system integration",
+     "Mobile access",
+     "Teleradiology",
+     "ECG waveforms",
+     "Support for ophthalmology"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "ris",
+  "short": "RIS",
+  "title": "Radiology Information System",
+  "grad": "Information System",
+  "category": "radiology",
+  "eyebrow": "Raster RIS",
+  "lede": "Complete computerisation of the radiology department — registration, scheduling, tracking, billing and reporting in one system, integrated with iPACS for the business data behind the images.",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "Run the department, not the paperwork",
+    "paragraphs": [
+     "RIS has always been crucial to managing critical imaging business functions such as order entry; patient scheduling, tracking and billing; and inventory control. But an integrated RIS/PACS gives IT managers access to more complex data that can be used for advanced business planning, such as which modalities are most profitable, which referring physicians are most active, employee productivity levels, which periods are the busiest, and patient throughput rates.",
+     "Raster’s Radiological Information System (RIS) provides complete computerisation and modernisation of the work of the radiology department. RIS optimises the imaging process by integrating the various functions involved in managing patient information into one comprehensive system. Raster’s RIS facilitates patient management such as patient registration and scheduling. The time needed for patient registration and organising schedules is greatly reduced by eliminating the need for paper-based documentation. Booking appointments is made much simpler and much less time-consuming.",
+     "Another benefit that a system like Raster RIS provides is that it enables practices to focus more of their efforts around patient care. The time saved with reduced paperwork and the streamlining of several tasks can be devoted to offering a more comprehensive system of services for patients."
+    ]
+   },
+   {
+    "type": "figure",
+    "eyebrow": "How it works",
+    "heading": "From HIS order to signed report",
+    "sub": "An order raised in the hospital information system flows to the RIS, the DICOM modalities acquire against it, the study lands in PACS and the radiologist reports from the workstation — with the report uploaded back into the RIS.",
+    "src": "assets/img/products/ris/radiology-information-system.webp",
+    "w": 850,
+    "h": 563,
+    "alt": "RIS workflow: the Hospital Information System sends the order to the Radiology Information System, DICOM modalities acquire the study into PACS, and the radiologist reports at a reporting workstation with the report uploaded back into the RIS.",
+    "caption": "Radiology Information System — order-to-report workflow. Every link exchanges data both ways; the moving dots follow the arrowheads.",
+    "svg": "assets/img/products/ris/ris-schematic-animated.svg"
+   }
+  ]
+ },
+ {
+  "slug": "teleradiology",
+  "short": "Teleradiology",
+  "title": "Teleradiology",
+  "grad": "Teleradiology",
+  "category": "radiology",
+  "eyebrow": "iPACS Teleradiology module",
+  "lede": "Referrers and radiologists securely access images and reports from a standard web browser or a mobile device — reporting from anywhere without compromising patient safety or data security.",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "Read from anywhere",
+    "paragraphs": [
+     "With Raster iPACS Teleradiology module, referrers and radiologists can securely access images and reports from a standard web browser or on a mobile device. Teleradiology allows access to patient data anywhere, at virtually any device. Patient involvement becomes effortless and general practitioners can show images and explain the diagnosis even at home visits."
+    ]
+   },
+   {
+    "type": "figure",
+    "eyebrow": "How it works",
+    "heading": "Many sites, one archive",
+    "sub": "Studies acquired at each hospital are routed through DICOM routers to the central PACS / RIS server, where the radiologist reports; the report is uploaded to the archive and the referring doctor views image and report at the hospital.",
+    "src": "assets/img/products/teleradiology/teleradiology.webp",
+    "w": 800,
+    "h": 500,
+    "alt": "Teleradiology workflow: three hospitals send studies through DICOM routers over the internet to a central PACS / RIS server and vendor neutral archive; a radiologist reports the study from a DICOM workstation and doctors at the hospitals view images and reports.",
+    "caption": "Teleradiology — multi-site reporting on a central iPACS. Every link exchanges data both ways; the moving dots follow the arrowheads and the numbers mark the five steps.",
+    "svg": "assets/img/products/teleradiology/teleradiology-schematic-animated.svg"
+   },
+   {
+    "type": "points",
+    "eyebrow": "Benefits",
+    "heading": "Why departments go remote",
+    "items": [
+     {
+      "lead": null,
+      "text": "Teleradiology module allows radiologists to report from remote locations in an effective manner without compromising on patient safety and data security."
+     },
+     {
+      "lead": null,
+      "text": "Customisable templates makes it possible to deliver high quality reports quickly (low turnaround time) by reducing the reporting time."
+     },
+     {
+      "lead": null,
+      "text": "It can be hosted on a cloud to reduce investment and maintenance of hardware / software costs."
+     },
+     {
+      "lead": null,
+      "text": "Studies can be automatically assigned based on rules and e-mail / SMS alerts can be sent to the radiologist. And also reports / impression can be sent to patients and referring physicians."
+     },
+     {
+      "lead": null,
+      "text": "Emergency cases can be marked for Radiologists attention and listed on top of their worklist. Time based one time authentication for referring physicians and second opinions."
+     }
+    ]
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "Features",
+    "heading": "What the module includes",
+    "items": [
+     "Intuitive User Interface",
+     "Diagnostic Quality HTML5 Viewer",
+     "Template Based Reporting",
+     "Direct OsiriX launch support",
+     "Multilingual Support",
+     "Key Image on report",
+     "Integrated Workstation"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "dicom-burner",
+  "short": "DICOM Burner",
+  "title": "CD/DVD DICOM Burner",
+  "grad": "DICOM Burner",
+  "category": "radiology",
+  "eyebrow": "Patient media on demand",
+  "lede": "An easy-to-use disc recorder that concurrently records and labels CDs and DVDs on demand — advanced robotics, a touch-screen interface and an embedded DICOM viewer on every disc.",
+  "brochure": "https://www.raster.in/downloads/brochure/raster-dicom-burner.pdf",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "Records, labels and delivers",
+    "paragraphs": [
+     "Raster CD/DVD DICOM Burner is an easy to use disc recorder that concurrently records and labels CDs and DVDs on demand. Raster DICOM Burner has advanced robotics which comes with a user-friendly touch screen interface. Equipped with dual CD/DVD drives and a built-in colour printer. Raster DICOM Burner seamlessly records patient information, reports and DICOM images to the CD/DVD while at the same time automatically labelling the disc with the facility logo and study descriptions. Raster DICOM Burner is capable of processing multiple jobs simultaneously. With the embedded DICOM viewer, recipients can access the contents from any standard PC."
+    ]
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "Features",
+    "heading": "Built for the front desk",
+    "sub": "No training required — novices become expert users in minutes.",
+    "items": [
+     "Intuitive Touch Screen Interface",
+     "Advanced Robotics for automation",
+     "Customisable modality-specific labels",
+     "In-built DICOM viewer",
+     "Easy to use interface, no training required",
+     "Intuitive touchscreen option turns novices into expert users in minutes",
+     "Visual selection of studies",
+     "Integrates with PACS, imaging modalities or viewer",
+     "Remote server query & retrieval",
+     "Create custom labels",
+     "Cost-effective portable media solution",
+     "Built-in DICOM viewer to read and reconcile",
+     "No user intervention required",
+     "Job scheduler for uninterrupted recording of studies",
+     "Industry standards including DICOM Part 10",
+     "Audit Log",
+     "Remote administration through the web interface",
+     "Supports Blu-ray"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "dicom-camera",
+  "short": "DICOM Camera",
+  "title": "DICOM Camera",
+  "grad": "Camera",
+  "category": "radiology",
+  "eyebrow": "Mobile app · iOS &amp; Android",
+  "lede": "Your advanced medical imaging solution right in your pocket: capture, store and share high-quality DICOM-compliant clinical photographs from a smartphone, straight into PACS.",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "A DICOM-compatible camera in every pocket",
+    "paragraphs": [
+     "Introducing DICOM Camera - your advanced medical imaging solution right in your pocket. This innovative app seamlessly integrates with medical imaging systems, allowing healthcare professionals to capture, store, and share high-quality DICOM-compliant images using their iOS devices. DICOM Camera is a revolutionary medical imaging app that transforms your smartphone into a powerful DICOM-compatible camera, bringing convenience and efficiency to healthcare professionals and patients alike. With its advanced features and seamless integration with medical systems, DICOM Camera enables easy capture, storage, and sharing of high-quality medical images."
+    ],
+    "badges": [
+     {
+      "href": "https://apps.apple.com/in/app/dicom-camera/id6459410698",
+      "src": "assets/img/products/dicom-camera/Download_on_the_App_Store_Badge.svg",
+      "alt": "Download on the App Store",
+      "w": 120,
+      "h": 40
+     },
+     {
+      "href": "https://play.google.com/store/apps/details?id=com.raster.dicomcamera",
+      "src": "assets/img/products/dicom-camera/Google-Play.svg",
+      "alt": "Get it on Google Play",
+      "w": 135,
+      "h": 40
+     }
+    ]
+   },
+   {
+    "type": "figure",
+    "eyebrow": "Workflow",
+    "heading": "From worklist to PACS",
+    "sub": "Search the patient, scan the barcode, capture the images and they are uploaded to PACS and the photo library against the right patient — with the worklist coming straight from HIS / RIS.",
+    "src": "assets/img/products/dicom-camera/DICOM-Camera-worklist.webp",
+    "w": 1024,
+    "h": 768,
+    "narrow": true,
+    "alt": "DICOM Camera workflow diagram: HIS / RIS worklist and PACS on the left and right, with the app's patient search, barcode scan and image capture steps in between and a photo library.",
+    "caption": "DICOM Camera — worklist-driven capture. Every arrow is one-way; the dashed pair is the barcode route, and the moving dots follow the arrowheads.",
+    "svg": "assets/img/products/dicom-camera/dicom-camera-workflow-animated.svg"
+   },
+   {
+    "type": "screenshots",
+    "eyebrow": "Screenshots",
+    "heading": "The app on every device",
+    "groups": [
+     {
+      "label": "iPhone",
+      "images": [
+       "assets/img/products/dicom-camera/screenshot/iphone/1.webp",
+       "assets/img/products/dicom-camera/screenshot/iphone/2.webp",
+       "assets/img/products/dicom-camera/screenshot/iphone/3.webp",
+       "assets/img/products/dicom-camera/screenshot/iphone/4.webp",
+       "assets/img/products/dicom-camera/screenshot/iphone/5.webp",
+       "assets/img/products/dicom-camera/screenshot/iphone/6.webp",
+       "assets/img/products/dicom-camera/screenshot/iphone/7.webp",
+       "assets/img/products/dicom-camera/screenshot/iphone/8.webp",
+       "assets/img/products/dicom-camera/screenshot/iphone/9.webp",
+       "assets/img/products/dicom-camera/screenshot/iphone/10.webp"
+      ],
+      "w": 230,
+      "h": 500
+     },
+     {
+      "label": "iPad",
+      "images": [
+       "assets/img/products/dicom-camera/screenshot/ipad/1.webp",
+       "assets/img/products/dicom-camera/screenshot/ipad/2.webp",
+       "assets/img/products/dicom-camera/screenshot/ipad/3.webp",
+       "assets/img/products/dicom-camera/screenshot/ipad/4.webp",
+       "assets/img/products/dicom-camera/screenshot/ipad/5.webp",
+       "assets/img/products/dicom-camera/screenshot/ipad/6.webp",
+       "assets/img/products/dicom-camera/screenshot/ipad/7.webp"
+      ],
+      "w": 313,
+      "h": 418
+     },
+     {
+      "label": "Android",
+      "images": [
+       "assets/img/products/dicom-camera/screenshot/android/1.webp",
+       "assets/img/products/dicom-camera/screenshot/android/2.webp",
+       "assets/img/products/dicom-camera/screenshot/android/3.webp",
+       "assets/img/products/dicom-camera/screenshot/android/4.webp",
+       "assets/img/products/dicom-camera/screenshot/android/5.webp"
+      ],
+      "w": 166,
+      "h": 296
+     }
+    ]
+   },
+   {
+    "type": "points",
+    "eyebrow": "Key features",
+    "heading": "What the app does",
+    "items": [
+     {
+      "lead": "DICOM-Enabled Imaging",
+      "text": "Capture medical images directly in DICOM format, ensuring compatibility with various Picture Archiving and Communication Systems (PACS) used in hospitals and clinics. Capture medical images directly from your iOS device, ensuring they adhere to the DICOM standard."
+     },
+     {
+      "lead": "High-Quality Imaging",
+      "text": "Utilise your smartphone's advanced camera capabilities to produce crystal-clear medical images."
+     },
+     {
+      "lead": "Patient Data Integration",
+      "text": "Seamlessly link patient information to each captured image, including patient ID, name, date of birth, and other relevant metadata, making it easier to manage and identify images in the medical records."
+     },
+     {
+      "lead": "Annotation and Markup",
+      "text": "Annotate images with markers, and text to highlight specific areas of interest or provide additional information for diagnosis and treatment planning."
+     },
+     {
+      "lead": "Offline Mode",
+      "text": "Capture DICOM images even in areas with limited internet connectivity. The app will sync and upload the data once the connection is restored."
+     },
+     {
+      "lead": "Customised Workflows",
+      "text": "Multiple ways to fit your specific medical workflow. Query patient ID and upload images or capture images and upload against patient ID or upload from photos to patient ID."
+     },
+     {
+      "lead": "Advanced Image Processing",
+      "text": "Enhance and optimise the images using built-in image processing tools, allowing you to adjust brightness, contrast, and other parameters for better visualisation."
+     },
+     {
+      "lead": "Multi-Platform Compatibility",
+      "text": "DICOM Camera seamlessly integrates with existing medical systems, including Electronic Health Record (EHR) systems and radiology information systems (RIS), ensuring a smooth transition and enhanced productivity."
+     }
+    ]
+   },
+   {
+    "type": "prose",
+    "heading": null,
+    "paragraphs": [
+     "With DICOM Camera, medical professionals can rely on a versatile and user-friendly solution to capture and manage medical images efficiently, improving patient care, and enhancing the overall healthcare experience. Enhance your clinical practice with the power of DICOM Camera. Empower healthcare providers with a portable, efficient, and secure solution for capturing and managing medical images, fostering collaboration, and improving patient care."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "ihms",
+  "short": "IHMS",
+  "title": "Integrated Hospital Management System",
+  "grad": "Management System",
+  "category": "hospital-management",
+  "eyebrow": "Raster iHMS",
+  "lede": "A hybrid application — a feature-rich desktop for transaction entry and a web application for daily statistics, dashboards and a web-based EMR — built on open source and scalable from an entry-level hospital to an enterprise.",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "Built for hospitals of every size",
+    "paragraphs": [
+     "Raster iHMS is a hybrid application which boasts of a feature-rich desktop version for transaction entry and a web application for daily stats and dashboard. The EHR/EMR (Electronic Medical Record) is also web-based allowing doctors to securely access patient information literally from anywhere across the globe.",
+     "Built from free and open source technology, Raster iHMS supports the integration of any third-party application via HL7 messaging. The application is platform-independent and works across all operating systems via, Windows, Mac and Linux. Raster recommends Linux. Clients save lakhs of rupees while implementing Raster iHMS when compared to legacy or any upfront application available in the market without compromising of features and user-friendliness.",
+     "Raster iHMS is developed for hospitals of all ranges. The application is scalable to handle an entry-level hospital up to an enterprise setup. Modules can be split into multiple servers to handle large transactions when the need arises. Installations can be done with high availability and fail-safe setup for demanding clients. Setting up of disaster recovery and off-site backup solutions are available for clients who require high data security."
+    ]
+   },
+   {
+    "type": "points",
+    "eyebrow": "Benefits for the management",
+    "heading": "Control, time and foresight",
+    "items": [
+     {
+      "lead": "Financially",
+      "text": "Better control on finance and management of resources"
+     },
+     {
+      "lead": "Control",
+      "text": "Better control on the purchase, expenditure and overall day to day affairs"
+     },
+     {
+      "lead": "Time",
+      "text": "Management saves a lot of time with the built-in dashboard which gives the required projections and analysis"
+     },
+     {
+      "lead": "Forecast",
+      "text": "With advanced data analysis, management can forecast business"
+     }
+    ]
+   },
+   {
+    "type": "figure",
+    "eyebrow": "Why Raster iHMS",
+    "heading": "Fitted to you, not the other way round",
+    "sub": "Out-of-the-box HMS products force a hospital to change user goals, usability, documents, integrations and workflow to suit the software. Raster iHMS is configured around yours.",
+    "src": "assets/img/products/ihms/raster-ihms.webp",
+    "w": 1000,
+    "h": 417,
+    "alt": "Comparison graphic: an out-of-the-box HMS fails on different user goals and needs, design and usability, documents and MIS, system integrations and change in workflow, while Raster iHMS ticks every one.",
+    "caption": "Off-the-shelf HMS versus Raster iHMS. Both point at the same five requirements; only one meets them.",
+    "svg": "assets/img/products/ihms/ihms-compare-animated.svg"
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "Other features",
+    "heading": "Modules across the hospital",
+    "sub": "Front office to theatre — and many more.",
+    "items": [
+     "Front Office",
+     "OPD, IPD",
+     "Claim Management",
+     "Ward Management",
+     "OT Management"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pharmacy-management",
+  "short": "Pharmacy Management",
+  "title": "Pharmacy Management System",
+  "grad": "Management System",
+  "category": "hospital-management",
+  "eyebrow": "Raster PMS",
+  "lede": "Streamlines the drug supply and stock management with detailed information — barcoded, automated inventory processes and error-free e-prescribing, dispensing and billing.",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "Inventory that runs itself",
+    "paragraphs": [
+     "One of the most amazing features of Raster PMS is dealing with inventory. Managing inventory ideally can help reduce issues such as ineffective management, excess stocking of material, pilferages and other inventory-related issues. When inventory is automatically tracked, there is no requirement of employing additional labour to do a similar job. It thus saves additional expenses.",
+     "Pharmacy Management Software streamlines the drug supply and stock management with detailed information. Automation techniques are deployed toward efficient inventory management through the incorporation of barcodes that meet compliance requirements. Inventory processes are built with efficiency through process-flow automation of stocking of inventory balances, monitoring and tracking, warehouse stock levels, and sales updates. The entire process of managing inventory is accelerated and increased in terms of productivity.",
+     "This e-prescribing procedure empowers the entire process flow of the pharmacy’s system and increases patient satisfaction due to error-free dispensing and billing."
+    ]
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "Features",
+    "heading": "Stock, batches and alerts",
+    "items": [
+     "Support for search using codes",
+     "Maintain inventory in batches via FIFO, LIFO, expiry of products and manual selection of batches",
+     "Alerts on inventory level",
+     "Effective stock management with 2 level checks",
+     "Reporting of stock inventory"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "blood-bank-management",
+  "short": "Blood Bank Management",
+  "title": "Blood Bank Management System",
+  "grad": "Management System",
+  "category": "hospital-management",
+  "eyebrow": "Raster BBMS",
+  "lede": "A web-based system for donors, blood camps, bag inventories and transfusion services — from donor screening and blood ordering to usage review and compatibility testing.",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "Safer supply, better logistics",
+    "paragraphs": [
+     "Blood banks play an important role in the process of collecting blood and managing blood stocks, approving blood requests, updating donations and updating available blood types. Raster’s web-based BBMS will address the issues and problems encountered in collecting information about donors, blood camps, inventories of blood bags, and blood transfusion services, etc., including donor screening, inventory management, blood ordering, blood usage review and compatibility testing. Blood Bank Management system will greatly increase the safety and quality of the blood supply as well as provide logistics data for the optimal supply chain management."
+    ]
+   },
+   {
+    "type": "figure",
+    "eyebrow": "How it works",
+    "heading": "Donor to beneficiary",
+    "sub": "Donation camps and individual donors feed the blood bank; hospitals draw from it and beneficiaries receive matched units.",
+    "src": "assets/img/products/blood-bank/blood-bank-management-system.webp",
+    "w": 850,
+    "h": 411,
+    "alt": "Blood bank flow: a blood donation camp and blood donor supply the blood bank, which serves the hospital and the blood beneficiary.",
+    "caption": "Blood Bank Management System — flow of units. Every arrow is one-way; the drops travel the way the units move.",
+    "svg": "assets/img/products/blood-bank/blood-bank-flow-animated.svg"
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "Features",
+    "heading": "From camp to crossmatch",
+    "sub": "Everything the bank needs to keep stocks healthy — and many more.",
+    "items": [
+     "Ensures hospitals have good supply or inventories of blood bags.",
+     "List the availability of blood bags at any given time.",
+     "Ability to manage the information of its blood donor.",
+     "Alerts for blood requirement from registered donors.",
+     "Auto-check if the person donated blood in the last 3 months.",
+     "Allows good documentation about the donor and their blood donation activities.",
+     "Support fast searching to find match blood bags for the right person",
+     "Effectively manage blood camps"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "emr",
+  "short": "EMR",
+  "title": "Electronic Medical Record",
+  "grad": "Medical Record",
+  "category": "hospital-management",
+  "eyebrow": "Raster EMR",
+  "lede": "A standards-based, interoperable EMR with SNOMED CT embedded — comprehensive case summaries, e-prescriptions and investigation orders with the on-demand patient record as its prime focus.",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "Standards first, patients involved",
+    "paragraphs": [
+     "Always prefer an EMR that supports standards and interoperability. An effective EMR should be one that gives you meaningful reimbursement. Apart from the doctors and staff, your patients should also be actively involved in the usage of the EMR. The EMR system should facilitate better workflow and improve the quality of patient care and patient safety. The on-demand patient record should be the prime focus of an EMR. Raster’s EMR provides comprehensive, clearly written, case summaries, e-prescriptions and investigation orders and others."
+    ]
+   },
+   {
+    "type": "points",
+    "eyebrow": "What it gives you",
+    "heading": "Access for doctors, staff and patients",
+    "items": [
+     {
+      "lead": null,
+      "text": "Doctors can access patient data, such as diagnoses, allergies, lab results, and medications."
+     },
+     {
+      "lead": null,
+      "text": "Access to new and past test results among fellow doctors in multi speciality hospital."
+     },
+     {
+      "lead": null,
+      "text": "Secure electronic communication for both doctors and patients."
+     },
+     {
+      "lead": null,
+      "text": "Patient access to health records, disease management tools, and health information resources."
+     },
+     {
+      "lead": null,
+      "text": "Standards-based electronic data storage and reporting for patient safety."
+     }
+    ]
+   },
+   {
+    "type": "points",
+    "eyebrow": "SNOMED CT",
+    "heading": "Clinical terminology that works behind the scenes",
+    "sub": "Raster’s SNOMED CT embedded in EMR works behind the scenes to support the encoding of clinical information in a meaningful way. SNOMED CT enables the following:",
+    "items": [
+     {
+      "lead": null,
+      "text": "Improvements in the quality of data available to doctors and the measurement of clinical outcomes"
+     },
+     {
+      "lead": null,
+      "text": "Improvements in the completeness, accuracy, and consistency of health record documentation"
+     },
+     {
+      "lead": null,
+      "text": "Development of richer computer-aided clinical alert and reminder systems, with the greater detail available"
+     },
+     {
+      "lead": null,
+      "text": "Improved critical care monitoring via the Raster’s IIMMS such as vital signs, symptoms, medications and interventions"
+     },
+     {
+      "lead": null,
+      "text": "Improved communication among doctors because the SNOMED CT concepts are defined"
+     },
+     {
+      "lead": null,
+      "text": "Increased efficiency and consistency in clinical data collection"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "lis",
+  "short": "Lab Information System",
+  "title": "Laboratory Information System",
+  "grad": "Information System",
+  "category": "hospital-management",
+  "eyebrow": "Raster LIS",
+  "lede": "Manage the flow of samples and patient data to improve lab efficiency — standardised workflows, accurate process controls and equipment integrated through Raster IoMT.",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "Accurate, timely, platform-independent",
+    "paragraphs": [
+     "Laboratory Information System (LIS) allows you to effectively manage the flow of samples and patient data to improve lab efficiency. It improves access to quality diagnostic testing and provides accurate, timely information for patient care. Raster LIS helps in standardising workflows, tests and procedures while providing accurate controls of the process. Laboratory equipment (both unidirectional and bi-directional) may be integrated via Raster IoMT with Raster LIS to automate the collection of test data, ensuring they are properly calibrated. The fully integrated configuration tools help in adapting the software to end-user requirements without compromising on support or future upgrades. A key attribute of Raster LIS is the avoidance of platform dependencies."
+    ]
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "Salient features",
+    "heading": "What Raster LIS delivers",
+    "items": [
+     "Automated laboratory administration",
+     "Reduced risk of error occurrence",
+     "Integration of instruments and equipment",
+     "Regulatory standards compliance",
+     "Increase efficiency through better management"
+    ]
+   },
+   {
+    "type": "figure",
+    "eyebrow": "How it works",
+    "heading": "Sample to report",
+    "sub": "The LIS sends the worklist to the analyser through Raster Lab Link, samples are barcoded, results come back into the LIS and the report is printed.",
+    "src": "assets/img/products/lis/laboratory-information-system.webp",
+    "w": 850,
+    "h": 665,
+    "narrow": true,
+    "alt": "LIS workflow: Raster Lab Link exchanges worklist and results with the lab analyser, sampling and barcode printing happen at the bench, results update in the LIS and a report is printed.",
+    "caption": "Laboratory Information System — analyser integration. Arrowheads mark the direction of each exchange; the plain grey line between the printer and the LIS is a connection with no direction in the original.",
+    "svg": "assets/img/products/lis/lis-workflow-animated.svg"
+   }
+  ]
+ },
+ {
+  "slug": "neopead-emr",
+  "short": "Neopead EMR &amp; Charting",
+  "title": "Neopead EMR &amp; Charting",
+  "grad": "EMR &amp; Charting",
+  "category": "hospital-management",
+  "eyebrow": "Created by doctors, for doctors",
+  "lede": "Your paperless neonatal and paediatric practice is here — baby registration, admission records, ward rounds, growth charts, calculators and instant discharge summaries.",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "Your paperless medical practice is here",
+    "paragraphs": [
+     "Neopead is an electronic medical record and charting application for neonatal and paediatric units, created by <strong>“Doctors For Doctors”</strong>. It replaces paper registers and observation charts with structured, searchable records that work on PCs, laptops, tablets and phones."
+    ]
+   },
+   {
+    "type": "points",
+    "eyebrow": "Existing features",
+    "heading": "In the current version 2",
+    "items": [
+     {
+      "lead": null,
+      "text": "Electronic baby registration, admission records, daily ward round entries, digital entry of neonatal problems and nurses data entry made easy with in-built intelligent navigation"
+     },
+     {
+      "lead": null,
+      "text": "Data entry made easy and error free by enhanced user interface and automated pre-filled field menus with options to choose"
+     },
+     {
+      "lead": "Scalable layouts",
+      "text": "ease of use with PCs, laptops, tablets and mobile phones"
+     },
+     {
+      "lead": null,
+      "text": "Instantly generated NICU and postnatal discharge summaries, OP consultation records and scan reports"
+     },
+     {
+      "lead": null,
+      "text": "Automated plotting of growth charts"
+     },
+     {
+      "lead": null,
+      "text": "Salient Neonatal and Paediatric Calculators"
+     },
+     {
+      "lead": null,
+      "text": "One-step generation of weekly, monthly and annual reports with provisions to compare different time periods"
+     },
+     {
+      "lead": null,
+      "text": "Advanced search features including combination searches to assist physicians with audits and research"
+     }
+    ]
+   },
+   {
+    "type": "points",
+    "eyebrow": "Upcoming features",
+    "heading": "Coming in version 3",
+    "items": [
+     {
+      "lead": null,
+      "text": "Automated data capture from monitors, ventilators, syringe pumps and other devices"
+     },
+     {
+      "lead": null,
+      "text": "Automated data capture would significantly reduce doctor’s and nurse’s data entry time - No more vitals observation paper charts"
+     },
+     {
+      "lead": null,
+      "text": "Graphical timeline display of all vital parameters and clinical observations"
+     },
+     {
+      "lead": null,
+      "text": "Integration with Hospital laboratory and imaging systems"
+     },
+     {
+      "lead": null,
+      "text": "Benchmark your practice with other participating National and International hospitals by health quality indicators"
+     },
+     {
+      "lead": null,
+      "text": "Algorithms to avoid clinical untoward incidences -Patient safety initiative"
+     },
+     {
+      "lead": null,
+      "text": "Research tool for future validation and implementation - Predictive algorithms to forecast clinical deterioration"
+     },
+     {
+      "lead": null,
+      "text": "Will be compliant with Indian Government’s digital information security in health care act 2018"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "asset-management",
+  "short": "Asset Management",
+  "title": "Asset Management",
+  "grad": "Management",
+  "category": "hospital-management",
+  "eyebrow": "Hospital assets",
+  "lede": "Track the hospital's equipment and infrastructure through its lifecycle — location, ownership, maintenance and value — alongside the rest of the Raster iHMS suite.",
+  "note": "The legacy asset-management.php page carries a title only, so this overview copy was written for this site from the iHMS context — confirm the feature set with Raster before publishing.",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "Every asset, accounted for",
+    "paragraphs": [
+     "Asset Management is the module of the Raster hospital management suite that keeps a register of the institution's equipment and infrastructure — biomedical devices, IT hardware, furniture and fixtures — with each item's location, custodian, purchase details and service history.",
+     "Maintenance schedules, calibration due dates and warranty periods are tracked against every asset so that nothing lapses unnoticed, and depreciation and current value are available to the finance team from the same record. Because it shares the iHMS platform, purchase and store transactions flow into the register without re-entry.",
+     "Talk to us for the current feature list and a demonstration alongside <a href=\"ihms.html\">Raster iHMS</a>."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "lab-equipment-interfacing",
+  "short": "Lab Equipment Interfacing",
+  "title": "Lab Equipment Interfacing",
+  "grad": "Interfacing",
+  "category": "interfacing",
+  "eyebrow": "Raster Lab Link",
+  "lede": "Integrate uni- and bi-directional laboratory analysers with the LIS — higher productivity, better data quality, and a portfolio of over 230 interfaced instruments from 70+ manufacturers.",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "Interfacing made reasonable",
+    "paragraphs": [
+     "Effective integration of laboratory equipment is crucial to improving the productivity and efficiency in a hospital's laboratory environment. Integration of laboratory equipment with LIS was once a daunting task, until recent years with the development of laboratory equipment. With Raster’s advanced Lab Link application, equipment integration is very reasonable and doable undertaking. The bottom line is that the LIS implementation project should include a prioritised plan to integrate as many laboratory equipments with the system."
+    ]
+   },
+   {
+    "type": "figure",
+    "eyebrow": "Uni-directional equipment",
+    "heading": "Results out",
+    "sub": "These equipment are able to output a data report and results file but do not have a facility to import information. Interfacing these equipment is done by the Lab Interface software picking up the data and updating the information/results into the LIS.",
+    "src": "assets/img/products/lei/uni-directional-equipment-interface.webp",
+    "w": 850,
+    "h": 352,
+    "alt": "Uni-directional interface: barcoded samples go into the lab analyser, results are picked up by the interface and passed to the LIS / HIS, which produces reports.",
+    "caption": "Uni-directional equipment interface. Every arrow runs one way, left to right; the numbers mark the three steps.",
+    "svg": "assets/img/products/lei/uni-directional-animated.svg"
+   },
+   {
+    "type": "figure",
+    "eyebrow": "Bi-directional equipment",
+    "heading": "Worklists in, results out",
+    "sub": "These equipment are able to both output data reports and results files. They can import data, information, worklists, commands/function calls, etc by reading the information on the barcode. The results are updated in the LIS without any human intervention.",
+    "src": "assets/img/products/lei/bi-directional-equipment-interface.webp",
+    "w": 850,
+    "h": 352,
+    "alt": "Bi-directional interface: the LIS / HIS sends the worklist to the lab analyser, barcoded samples are run, and results return to the LIS for reporting.",
+    "caption": "Bi-directional equipment interface. Each arrow runs one way; the work list is the only one travelling back from the LIS / HIS to the analyser.",
+    "svg": "assets/img/products/lei/bi-directional-animated.svg"
+   },
+   {
+    "type": "points",
+    "eyebrow": "Why interface",
+    "heading": "Reasons to interface your equipment to the LIS",
+    "items": [
+     {
+      "lead": "Increase Productivity & Effectiveness",
+      "text": "One of the best reasons to interface your instruments to your LIS is the increase in lab productivity and effectiveness it yields. Removing the manual entering of data, from the instrument to the LIS, saves a ton of time and effort. With bi-directional equipment, users will also eliminate the time required to enter the test information (Worklist), parameters, etc. into the equipment. Thus increasing productivity and sample throughput which play a key role in all quality controls and testing labs."
+     },
+     {
+      "lead": "Better Data Quality & Integrity",
+      "text": "Another key reason to interface your instruments to your LIS is the increase in data quality and integrity that it yields. By removing the “human element” from the data transfer and entry equation, a huge source of error is removed. This removes transcription errors and will significantly increase the quality of your data."
+     }
+    ]
+   },
+   {
+    "type": "table",
+    "eyebrow": "Portfolio",
+    "heading": "Interfaced lab equipment",
+    "sub": "This is a non-exhaustive list and we are constantly adding new equipment. Talk to us if you cannot find your make and model below.",
+    "columns": [
+     "Make / manufacturer",
+     "Analyser",
+     "Department"
+    ],
+    "rows": [
+     [
+      "77 ELEKTRONIKA",
+      "Doc U Reader 2",
+      "Urine Analyser"
+     ],
+     [
+      "77 ELEKTRONIKA",
+      "Doc U Reader 2 Pro",
+      "Urine Analyser"
+     ],
+     [
+      "77 ELEKTRONIKA",
+      "Lab U Reader Plus 2",
+      "Urine Analyser"
+     ],
+     [
+      "77 ELEKTRONIKA",
+      "Urised mini",
+      "Urine Analyser"
+     ],
+     [
+      "Abbott",
+      "Abbott i1000",
+      "Biochemistry"
+     ],
+     [
+      "Abbott",
+      "Abbott i2000",
+      "Biochemistry"
+     ],
+     [
+      "Abbott",
+      "Abbott i4000",
+      "Biochemistry"
+     ],
+     [
+      "Abbott",
+      "Abbott Ci 8200",
+      "Biochemistry"
+     ],
+     [
+      "Abbott",
+      "Abott iSTAT",
+      "Biochemistry"
+     ],
+     [
+      "Abbott",
+      "Cell Dyn Ruby",
+      "Hematology"
+     ],
+     [
+      "Accurex Biomedical",
+      "AccuLab Enlite",
+      "Electrolyte Analyser"
+     ],
+     [
+      "Adaltis",
+      "Personal Lab",
+      "Micro Biology"
+     ],
+     [
+      "Agappe",
+      "BioLIS 30i",
+      "Biochemistry"
+     ],
+     [
+      "Agappe",
+      "BioLIS 50i",
+      "Biochemistry"
+     ],
+     [
+      "Agappe",
+      "Mispa Nano",
+      "Biochemistry"
+     ],
+     [
+      "Agappe",
+      "Mispa Nano Plus",
+      "Biochemistry"
+     ],
+     [
+      "Agappe",
+      "Mispa i2",
+      "Protein Analysers"
+     ],
+     [
+      "Agappe",
+      "Mispa i3",
+      "Protein Analysers"
+     ],
+     [
+      "AliFax",
+      "Rolle Test 1",
+      "Hematology"
+     ],
+     [
+      "AliFax",
+      "Roller 20",
+      "Hematology"
+     ],
+     [
+      "AliFax",
+      "Roller 20 LC",
+      "Hematology"
+     ],
+     [
+      "AliFax",
+      "Roller 20 MC",
+      "Hematology"
+     ],
+     [
+      "ARK Diagnostics",
+      "Ckk24",
+      "Biochemistry"
+     ],
+     [
+      "Arkray",
+      "Arkray HA-8180V",
+      "Glycohemoglobin"
+     ],
+     [
+      "Assel s.r.l",
+      "Assel AS830",
+      "Biochemistry"
+     ],
+     [
+      "Avantor",
+      "BeneSphera H-31",
+      "Hematology"
+     ],
+     [
+      "Beckman Coulter",
+      "Beckman Coulter Access2",
+      "Biochemistry"
+     ],
+     [
+      "Beckman Coulter",
+      "Beckman Coulter AU480",
+      "Biochemistry"
+     ],
+     [
+      "Beckman Coulter",
+      "Beckman Coulter AU5800",
+      "Biochemistry"
+     ],
+     [
+      "Beckman Coulter",
+      "Beckman Coulter AU680",
+      "Biochemistry"
+     ],
+     [
+      "Beckman Coulter",
+      "Beckman Coulter DxC 800",
+      "Biochemistry"
+     ],
+     [
+      "Beckman Coulter",
+      "Beckman Coulter Olympus AU 400",
+      "Biochemistry"
+     ],
+     [
+      "Beckman Coulter",
+      "Beckman Coulter DxC 700 AU",
+      "Clinical Chemistry"
+     ],
+     [
+      "Beckman Coulter",
+      "Ac.t 5Diff CP(Cap Pierce)",
+      "Hematology"
+     ],
+     [
+      "Beckman Coulter",
+      "Beckman Coulter AcT3",
+      "Hematology"
+     ],
+     [
+      "Beckman Coulter",
+      "Beckman Coulter AcT5",
+      "Hematology"
+     ],
+     [
+      "Beckman Coulter",
+      "Beckman Coulter DxH 560",
+      "Hematology"
+     ],
+     [
+      "Beckman Coulter",
+      "Beckman Coulter LH 750",
+      "Hematology"
+     ],
+     [
+      "Beckman Coulter",
+      "Beckmen Coulter DxH 500",
+      "Hematology"
+     ],
+     [
+      "Beckman Coulter",
+      "Beckmen Coulter DxH 800",
+      "Hematology"
+     ],
+     [
+      "Beckmen Coulter",
+      "Beckmen Coulter iChemVELOCITY",
+      "Urine Analyser"
+     ],
+     [
+      "Beckman Coulter",
+      "Beckman Coulter Unicel DxI 600",
+      "Immunoassay"
+     ],
+     [
+      "Bio-Rad",
+      "Saxo ID-Reader",
+      "Blood Bank Analyser"
+     ],
+     [
+      "Biomerieux",
+      "Vidas",
+      "Immunoassay"
+     ],
+     [
+      "Biomerieux",
+      "Vidas KUBE",
+      "Immunoassay"
+     ],
+     [
+      "Biomerieux",
+      "BacT Alert 3D",
+      "Micro Biology"
+     ],
+     [
+      "Biomerieux",
+      "Mini Vidas",
+      "Micro Biology"
+     ],
+     [
+      "Biomerieux",
+      "Vitek 2",
+      "Micro Biology"
+     ],
+     [
+      "BioRad",
+      "BioRad D10",
+      "Hematology"
+     ],
+     [
+      "BioRad",
+      "BioRad D100",
+      "Hematology"
+     ],
+     [
+      "BioRad",
+      "Biorad Variant Turbo",
+      "Hematology"
+     ],
+     [
+      "BioSystem",
+      "BioSystem A15",
+      "Biochemistry"
+     ],
+     [
+      "BioSystem",
+      "BioSystem A25",
+      "Biochemistry"
+     ],
+     [
+      "BioSystem",
+      "BioSystem BA200",
+      "Biochemistry"
+     ],
+     [
+      "BioSystem",
+      "BioSystem Coax",
+      "Hematology"
+     ],
+     [
+      "Boditech",
+      "ichroma II",
+      "Immunoassay"
+     ],
+     [
+      "Boule",
+      "Swelab Alfa",
+      "Hematology"
+     ],
+     [
+      "Caretium",
+      "Caretium XI-921 Series A,B,C,D,E,F",
+      "Electrolyte Analyser"
+     ],
+     [
+      "Cepheid",
+      "Gene Xpert",
+      "Molecular diagnostics"
+     ],
+     [
+      "Concepta",
+      "Concepta HA1",
+      "Hematology"
+     ],
+     [
+      "Cormay Diagnostics",
+      "Mythic 18 CellCounter",
+      "Hematology"
+     ],
+     [
+      "CPC Diagnostics",
+      "Turbo Chem 100",
+      "Biochemistry"
+     ],
+     [
+      "CPC Diagnostics",
+      "Turbo Chem 240",
+      "Biochemistry"
+     ],
+     [
+      "CPC Diagnostics",
+      "Turbo Chem Magna",
+      "Biochemistry"
+     ],
+     [
+      "CPC Diagnostics",
+      "Turbo Chem Prime",
+      "Biochemistry"
+     ],
+     [
+      "Diagast",
+      "Qwalys 3 EVO",
+      "Blood Bank Analyser"
+     ],
+     [
+      "DIALAB",
+      "DIALAB Autolyser",
+      "Biochemistry"
+     ],
+     [
+      "Diasorin",
+      "Diasorin Liaison",
+      "Immunoassay"
+     ],
+     [
+      "Diasorin",
+      "Diasorin Liaison XL",
+      "Immunoassay"
+     ],
+     [
+      "DiaSys",
+      "DiaSys Response 910",
+      "Biochemistry"
+     ],
+     [
+      "DiaSys",
+      "DiaSys Sys 400",
+      "Biochemistry"
+     ],
+     [
+      "DiaSys",
+      "DiaSys Sys 400Pro",
+      "Biochemistry"
+     ],
+     [
+      "Diatron",
+      "Abacus380",
+      "Hematology"
+     ],
+     [
+      "DIESSE Diagnostica Senese",
+      "Vesmatic 20",
+      "Hematology"
+     ],
+     [
+      "DIESSE Diagnostica Senese",
+      "Vesmatic 60",
+      "Hematology"
+     ],
+     [
+      "DIESSE Diagnostica Senese",
+      "VesMatic Easy",
+      "Hematology"
+     ],
+     [
+      "DIRUI",
+      "DIRUI CS300B",
+      "Biochemistry"
+     ],
+     [
+      "Elite Touch Group",
+      "Selectra Touch Pro",
+      "Biochemistry"
+     ],
+     [
+      "Elite Touch Group",
+      "Selectra Touch Pro 2",
+      "Biochemistry"
+     ],
+     [
+      "Eschweiler",
+      "Combiline",
+      "Blood-Gas-Electrolyte-Metabolite Analyser"
+     ],
+     [
+      "Gen Store",
+      "Auto Chem Xpert",
+      "Biochemistry"
+     ],
+     [
+      "Getein Biotech",
+      "Getein 1100",
+      "Immunofluorescence Quantitative Analyser"
+     ],
+     [
+      "GS",
+      "Biomic",
+      "Micro Biology"
+     ],
+     [
+      "High Technology Inc",
+      "HTI CL-50 PLUS",
+      "Urine Analyser"
+     ],
+     [
+      "Hitachi",
+      "Elecsys 2010",
+      "Immunoassay"
+     ],
+     [
+      "Horiba Medical",
+      "Yumizen G800",
+      "Coagulation Analyser"
+     ],
+     [
+      "Horiba Medical",
+      "Horiba APX Pentra XL80",
+      "Hematology"
+     ],
+     [
+      "Horiba Medical",
+      "Horiba Pentra MS CRP",
+      "Hematology"
+     ],
+     [
+      "Horiba Medical",
+      "Horiba Pentra XLR",
+      "Hematology"
+     ],
+     [
+      "Horiba Medical",
+      "Micros 60",
+      "Hematology"
+     ],
+     [
+      "Horiba Medical",
+      "Micros 60 ABX",
+      "Hematology"
+     ],
+     [
+      "Horiba Medical",
+      "Pentra ES 60",
+      "Hematology"
+     ],
+     [
+      "Horiba Medical",
+      "Yumizen H500",
+      "Hematology"
+     ],
+     [
+      "Horiba Medical",
+      "Yumizen H550",
+      "Hematology"
+     ],
+     [
+      "Human",
+      "HumaStar 200",
+      "Biochemistry"
+     ],
+     [
+      "Humasis",
+      "Humasis UAQSmart",
+      "Urine Analyser"
+     ],
+     [
+      "Immucor",
+      "Immucor Galileo Echo",
+      "Blood Bank Analyser"
+     ],
+     [
+      "Immucor",
+      "Immucor Galileo Neo",
+      "Blood Bank Analyser"
+     ],
+     [
+      "Ions",
+      "Ions",
+      "Electrolyte Analyser"
+     ],
+     [
+      "Iris",
+      "Iris iCount3",
+      "Hematology"
+     ],
+     [
+      "Lab Life",
+      "Noble III",
+      "Hematology"
+     ],
+     [
+      "LifeLab Foundation",
+      "Erba EC90",
+      "Electrolyte Analyser"
+     ],
+     [
+      "Medica",
+      "EasyLyte",
+      "Electrolyte Analyser"
+     ],
+     [
+      "Medica",
+      "EasyLyte Plus",
+      "Electrolyte Analyser"
+     ],
+     [
+      "Medica Corporation",
+      "Medica EasyRA",
+      "Clinical Chemistry"
+     ],
+     [
+      "Medical Electronics Systems",
+      "SQA Vision",
+      "Semen Analyser"
+     ],
+     [
+      "Melet Schloesing",
+      "MS-4s",
+      "Hematology"
+     ],
+     [
+      "Melet Schloesing",
+      "MS9-5s",
+      "Hematology"
+     ],
+     [
+      "Meril Life",
+      "Merilyzer Auto Quant 200",
+      "Biochemistry"
+     ],
+     [
+      "Meril Life",
+      "Merilyzer Gluquant A1C",
+      "Hematology"
+     ],
+     [
+      "Mindray",
+      "Mindray BS-200E",
+      "Biochemistry"
+     ],
+     [
+      "Mindray",
+      "Mindray BS-240",
+      "Biochemistry"
+     ],
+     [
+      "Mindray",
+      "Mindray BS-380",
+      "Biochemistry"
+     ],
+     [
+      "Mindray",
+      "Mindray BC-5000 5-part diff",
+      "Hematology"
+     ],
+     [
+      "Mindray",
+      "Mindray BC-5100 5-part diff",
+      "Hematology"
+     ],
+     [
+      "Mindray",
+      "Mindray BC-5130 5-part diff",
+      "Hematology"
+     ],
+     [
+      "Mindray",
+      "Mindray BC-5150 5-part diff",
+      "Hematology"
+     ],
+     [
+      "Mindray",
+      "Mindray BC-5300 5-part diff",
+      "Hematology"
+     ],
+     [
+      "Mindray",
+      "Mindray BC-5380 5-part diff",
+      "Hematology"
+     ],
+     [
+      "Mindray",
+      "Mindray BC-6200 5-part diff",
+      "Hematology"
+     ],
+     [
+      "Mindray",
+      "Mindray BC-760 5-part diff",
+      "Hematology"
+     ],
+     [
+      "Mindray",
+      "Mindray CL 1000i",
+      "Immunoassay"
+     ],
+     [
+      "Mindray",
+      "Mindray CL 900i",
+      "Immunoassay"
+     ],
+     [
+      "Neo Medica",
+      "Neo Medica Phoenix NCC-51 AL",
+      "Hematology"
+     ],
+     [
+      "Neo Medica",
+      "Neo Medica Naissa",
+      "Immunoassay"
+     ],
+     [
+      "Neo Medica",
+      "Neo Medica NUA 150",
+      "Urine Analyser"
+     ],
+     [
+      "Nihon Kohden",
+      "Nihon Kohden MEK6510 Cell Counter",
+      "Hematology"
+     ],
+     [
+      "Olympus",
+      "Olympus AU400",
+      "Biochemistry"
+     ],
+     [
+      "Ortho Clinical Diagnostics",
+      "Vitros 250",
+      "Clinical Chemistry"
+     ],
+     [
+      "Ortho Clinical Diagnostics",
+      "Vitros 350",
+      "Clinical Chemistry"
+     ],
+     [
+      "Ortho Clinical Diagnostics",
+      "Vitros 3600",
+      "Clinical Chemistry"
+     ],
+     [
+      "Ortho Clinical Diagnostics",
+      "Vitros 4600",
+      "Clinical Chemistry"
+     ],
+     [
+      "Ortho Clinical Diagnostics",
+      "Vitros 5_1FS",
+      "Clinical Chemistry"
+     ],
+     [
+      "Ortho Clinical Diagnostics",
+      "Vitros5600",
+      "Clinical Chemistry"
+     ],
+     [
+      "Ortho Clinical Diagnostics",
+      "Vitros EciQ",
+      "Immunoassay"
+     ],
+     [
+      "R & R Mechataronics",
+      "Starrsed ESR",
+      "Hematology"
+     ],
+     [
+      "Radiometer",
+      "ABL 80 Flex",
+      "Blood Gas Analyser"
+     ],
+     [
+      "Radiometer",
+      "ABL 800",
+      "Blood Gas Analyser"
+     ],
+     [
+      "Radiometer",
+      "ABL 9",
+      "Blood Gas Analyser"
+     ],
+     [
+      "Radiometer",
+      "ABL 90",
+      "Blood Gas Analyser"
+     ],
+     [
+      "Radiometer",
+      "ABL 90 Flex",
+      "Blood Gas Analyser"
+     ],
+     [
+      "Radiometer",
+      "ABL80",
+      "Blood Gas Analyser"
+     ],
+     [
+      "Radiometer",
+      "AQT90",
+      "Blood Gas Analyser"
+     ],
+     [
+      "Radiometer",
+      "AQT90 Flex",
+      "Blood Gas Analyser"
+     ],
+     [
+      "Randox",
+      "Randox Dayatona",
+      "Biochemistry"
+     ],
+     [
+      "Randox",
+      "Randox Daytona Plus",
+      "Biochemistry"
+     ],
+     [
+      "Randox",
+      "Randox Rx Monaco",
+      "Biochemistry"
+     ],
+     [
+      "Randox",
+      "Randox Imola",
+      "Clinical Chemistry"
+     ],
+     [
+      "Rapid Diagnostics",
+      "UriPlus 600",
+      "Urine Analyser"
+     ],
+     [
+      "Roche",
+      "Cobas 6000i",
+      "Biochemistry"
+     ],
+     [
+      "Roche",
+      "Cobas C111",
+      "Biochemistry"
+     ],
+     [
+      "Roche",
+      "Cobas C311",
+      "Biochemistry"
+     ],
+     [
+      "Roche",
+      "Cobas E411",
+      "Biochemistry"
+     ],
+     [
+      "Roche",
+      "Cobas Integra 400 Plus",
+      "Biochemistry"
+     ],
+     [
+      "Roche",
+      "Cobas Pure",
+      "Biochemistry"
+     ],
+     [
+      "Roche",
+      "Cobas B121",
+      "Blood Gas Analyser"
+     ],
+     [
+      "Roche",
+      "Cobas B221",
+      "Blood Gas Analyser"
+     ],
+     [
+      "Roche",
+      "Cobas C501",
+      "Clinical Chemistry"
+     ],
+     [
+      "Roche",
+      "Hitachi 902",
+      "Clinical Chemistry"
+     ],
+     [
+      "Roche",
+      "Hitachi Modular P800",
+      "Clinical Chemistry"
+     ],
+     [
+      "Roche",
+      "AVL 9180",
+      "Electrolyte Analyser"
+     ],
+     [
+      "Roche",
+      "Cobas U411",
+      "Urine Analyser"
+     ],
+     [
+      "Sebia",
+      "Minicap",
+      "Capillary electrophoresis system"
+     ],
+     [
+      "Sensa Core",
+      "ST Aqua 200",
+      "Electrolyte Analyser"
+     ],
+     [
+      "Siemens",
+      "Siemens Dimension ExL 200",
+      "Biochemistry"
+     ],
+     [
+      "Siemens",
+      "Siemens Dimension RxL",
+      "Biochemistry"
+     ],
+     [
+      "Siemens",
+      "RapidLab 348 EX",
+      "Blood Bank Analyser"
+     ],
+     [
+      "Siemens",
+      "RapidPoint 500",
+      "Blood Gas Analyser"
+     ],
+     [
+      "Siemens",
+      "Auto PAK 300",
+      "Clinical Chemistry"
+     ],
+     [
+      "Siemens",
+      "Dimension Xpand Plus",
+      "Clinical Chemistry"
+     ],
+     [
+      "Siemens",
+      "Siemens Advia 560",
+      "Hematology"
+     ],
+     [
+      "Siemens",
+      "Simense Advia 2120i",
+      "Hematology"
+     ],
+     [
+      "Siemens",
+      "Advia Centaur CP",
+      "Immunoassay"
+     ],
+     [
+      "Siemens",
+      "Advia Centaur XP",
+      "Immunoassay"
+     ],
+     [
+      "Siemens",
+      "Immulite 1000",
+      "Immunoassay"
+     ],
+     [
+      "Siemens",
+      "Siemens Atellica",
+      "Immunoassay"
+     ],
+     [
+      "Siemens",
+      "Siemens Clinitek Status",
+      "Urine Chemistry"
+     ],
+     [
+      "Siemens",
+      "Siemens Clinitek Status Plus",
+      "Urine Chemistry"
+     ],
+     [
+      "Siemens",
+      "Siemens Clinitek Advantus",
+      "Urine Chemistry"
+     ],
+     [
+      "Snibe",
+      "Maglumi 600",
+      "Immunoassay"
+     ],
+     [
+      "Snibe",
+      "Maglumi 800",
+      "Immunoassay"
+     ],
+     [
+      "Sperogenx Biosciences",
+      "Qualcyte 10",
+      "Hematology"
+     ],
+     [
+      "Stago",
+      "STA Compact",
+      "Coagulation Analyser"
+     ],
+     [
+      "Stago",
+      "STACompact Max",
+      "Coagulation Analyser"
+     ],
+     [
+      "Sysmex",
+      "Sysmex BX 3010",
+      "Clinical Chemistry"
+     ],
+     [
+      "Sysmex",
+      "Sysmex CA 1500",
+      "Coagulation Analyser"
+     ],
+     [
+      "Sysmex",
+      "Sysmex CA 500",
+      "Coagulation Analyser"
+     ],
+     [
+      "Sysmex",
+      "Sysmex CA 600",
+      "Coagulation Analyser"
+     ],
+     [
+      "Sysmex",
+      "Sysmex CA 620",
+      "Coagulation Analyser"
+     ],
+     [
+      "Sysmex",
+      "Sysmex CA 660",
+      "Coagulation Analyser"
+     ],
+     [
+      "Sysmex",
+      "Sysmex CA50",
+      "Coagulation Analyser"
+     ],
+     [
+      "Sysmex",
+      "Sysmex CS 2000i",
+      "Coagulation Analyser"
+     ],
+     [
+      "Sysmex",
+      "Sysmex KX21",
+      "Hematology"
+     ],
+     [
+      "Sysmex",
+      "Sysmex XE 2100",
+      "Hematology"
+     ],
+     [
+      "Sysmex",
+      "Sysmex XN 1000",
+      "Hematology"
+     ],
+     [
+      "Sysmex",
+      "Sysmex XN 2000",
+      "Hematology"
+     ],
+     [
+      "Sysmex",
+      "Sysmex XN 550",
+      "Hematology"
+     ],
+     [
+      "Sysmex",
+      "Sysmex XN 9000",
+      "Hematology"
+     ],
+     [
+      "Sysmex",
+      "Sysmex XN330",
+      "Hematology"
+     ],
+     [
+      "Sysmex",
+      "Sysmex XN350",
+      "Hematology"
+     ],
+     [
+      "Sysmex",
+      "Sysmex XP 100",
+      "Hematology"
+     ],
+     [
+      "Sysmex",
+      "Sysmex XP 300",
+      "Hematology"
+     ],
+     [
+      "Sysmex",
+      "Sysmex XS 1000i",
+      "Hematology"
+     ],
+     [
+      "Sysmex",
+      "Sysmex XS-800i",
+      "Hematology"
+     ],
+     [
+      "Sysmex",
+      "Sysmex XT 1800i",
+      "Hematology"
+     ],
+     [
+      "Sysmex",
+      "Sysmex UC 3500",
+      "Urine Analyser"
+     ],
+     [
+      "Thermo Fisher Scientific",
+      "Phadia 100",
+      "Allergy and autoimmunity"
+     ],
+     [
+      "Thermo Fisher Scientific",
+      "Phadia 250",
+      "Allergy and autoimmunity"
+     ],
+     [
+      "Thermo Fisher Scientific",
+      "Indiko",
+      "Clinical Chemistry"
+     ],
+     [
+      "Tosoh Bioscience",
+      "Tosoh G8",
+      "Hematology"
+     ],
+     [
+      "Tosoh Bioscience",
+      "AIA 360",
+      "Immunoassay"
+     ],
+     [
+      "Transasia Bio-Medicals Ltd",
+      "Erba LisaScan EM",
+      "Automated ELISA microplate reader"
+     ],
+     [
+      "Transasia Bio-Medicals Ltd",
+      "Erba EM200",
+      "Biochemistry"
+     ],
+     [
+      "Transasia Bio-Medicals Ltd",
+      "Erba XL1000",
+      "Biochemistry"
+     ],
+     [
+      "Transasia Bio-Medicals Ltd",
+      "Erba XL640",
+      "Biochemistry"
+     ],
+     [
+      "Transasia Bio-Medicals Ltd",
+      "Erba Em360",
+      "Clinical Chemistry"
+     ],
+     [
+      "Transasia Bio-Medicals Ltd",
+      "Erba ECL105",
+      "Coagulation Analyser"
+     ],
+     [
+      "Transasia Bio-Medicals Ltd",
+      "Erba EC90",
+      "Electrolyte Analyser"
+     ],
+     [
+      "Transasia Bio-Medicals Ltd",
+      "Erba Elite560",
+      "Hematology"
+     ],
+     [
+      "Transasia Bio-Medicals Ltd",
+      "Erba Elite580",
+      "Hematology"
+     ],
+     [
+      "Transasia Bio-Medicals Ltd",
+      "Laura SMART",
+      "Urine Analyser"
+     ],
+     [
+      "Trivitron",
+      "Nano H5",
+      "Biochemistry"
+     ],
+     [
+      "Trivitron",
+      "Nano Lab 200",
+      "Clinical Chemistry"
+     ],
+     [
+      "Trivitron",
+      "Trivitron Elite",
+      "Electrolyte Analyser"
+     ],
+     [
+      "Tulip Diagnostics",
+      "Turbodyne SC",
+      "Biochemistry"
+     ],
+     [
+      "Tulip Diagnostics",
+      "Tulip Matrix Gel System",
+      "Blood Bank Analyser"
+     ],
+     [
+      "Tulip Diagnostics",
+      "Hemostar XF2",
+      "Coagulation Analyser"
+     ],
+     [
+      "Werfen",
+      "GEM Premier 3000",
+      "Blood Gas Analyser"
+     ],
+     [
+      "Werfen",
+      "GEM Premier 3500",
+      "Blood Gas Analyser"
+     ],
+     [
+      "Werfen",
+      "GEM Premier 4000",
+      "Blood Gas Analyser"
+     ],
+     [
+      "Werfen",
+      "Acl Elite",
+      "Coagulation Analyser"
+     ],
+     [
+      "Werfen",
+      "Acl Elite Pro",
+      "Coagulation Analyser"
+     ],
+     [
+      "Werfen",
+      "Acl Top",
+      "Hematology"
+     ],
+     [
+      "Werfen",
+      "Acl Top 550",
+      "Hematology"
+     ],
+     [
+      "Wondfo",
+      "Finecare III Plus",
+      "Biochemistry"
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "iomt-interfacing",
+  "short": "IoMT &amp; Interfacing",
+  "title": "IoMT Interfacing",
+  "grad": "Interfacing",
+  "category": "interfacing",
+  "eyebrow": "Raster IoMT device",
+  "lede": "A small box that eliminates the dedicated PC for each analyser — direct connectivity between laboratory analysers, medical devices and the LIS / HIS, working reliably 24x7 and conforming to HL7 and ASTM.",
+  "brochure": "https://www.raster.in/downloads/brochure/raster-iomt.pdf",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "The end of manual transcription",
+    "paragraphs": [
+     "Even today, most clinical labs across the country, manually program tests into analysers, manually copy the results into a register and manually transcribe it once again into the LIS. This is inefficient for the labs, yes. But more importantly, it is error-prone and could be dangerous for the patient.",
+     "<strong>Raster’s IoMT devices</strong> provide direct connectivity and automation by interfacing laboratory analysers and Laboratory Information Systems (LIS) across locations."
+    ]
+   },
+   {
+    "type": "figure",
+    "eyebrow": "What it connects",
+    "heading": "One device, many sources",
+    "sub": "The IoMT device sits between the hospital server or cloud and everything that produces data — haematology analysers, medical devices such as IV pumps and vital-sign monitors, radiology and consumer-generated data.",
+    "src": "assets/img/products/iomt/iomt-interfacing.webp",
+    "w": 850,
+    "h": 571,
+    "narrow": true,
+    "alt": "Diagram of the Raster IoMT device at the centre, connected to a hospital server or cloud, consumer-generated data from smart bands and shoes, a haematology analyser, medical devices such as IV pumps and vital-sign monitors, and radiology CT and X-ray.",
+    "caption": "Raster IoMT — device connectivity. The dotted connectors carry no arrowheads in the original, so the moving dots run both ways.",
+    "svg": "assets/img/products/iomt/iomt-connectivity-animated.svg"
+   },
+   {
+    "type": "figure",
+    "eyebrow": "How it works",
+    "heading": "How Raster's IoMT device works",
+    "sub": "The analyser reads the sample identification number from the barcode, requests the tests to perform from the LIS, runs them, and transfers only the relevant, required results back to the LIS.",
+    "src": "assets/img/products/iomt/how-rasters-iomt-device-works.webp",
+    "w": 850,
+    "h": 479,
+    "alt": "Five-step flow: the analyser reads the sample ID from the barcode, requests the test list from the LIS, the LIS responds with the tests for that sample, the analyser runs them, and the required result values are transferred to the LIS.",
+    "caption": "Raster IoMT — analyser to LIS in five steps. The top line's dotted connectors carry no arrowheads in the original; the numbered arrows below run 1 to 5.",
+    "svg": "assets/img/products/iomt/iomt-how-it-works-animated.svg"
+   },
+   {
+    "type": "points",
+    "eyebrow": "Features and benefits",
+    "heading": "Small box, big difference",
+    "items": [
+     {
+      "lead": "Inexpensive",
+      "text": "Raster’s IoMT devices are an efficient and inexpensive alternative to the expensive (and unsuitable) computers that are often used as interfacing equipment."
+     },
+     {
+      "lead": "Adaptable and easy-to-use",
+      "text": "Installing Raster IoMT devices are quick and easy, even if you want to connect multiple instruments across disciplines, sites and LIS."
+     },
+     {
+      "lead": "Power-efficient",
+      "text": "The Raster IoMT box eliminates the need for dedicated PC for interfacing for each analyser, saving power and space, while working reliably 24x7."
+     },
+     {
+      "lead": "Compliant",
+      "text": "All software solutions conform to international standards such as HL7 and ASTM."
+     },
+     {
+      "lead": "Beyond just lab analysers",
+      "text": "Raster IoMT devices can also connect to medical equipment like ventilators and patient monitors in the ICU/NICU and ward to the HIS and EMR."
+     },
+     {
+      "lead": "Platform / Tech-Agnostic",
+      "text": "In our experience, we have worked with nearly all lab information systems and diagnostic equipment manufacturers, making sure our IoMT box serves them all."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "electronic-charting",
+  "short": "Electronic Charting",
+  "title": "Electronic Charting",
+  "grad": "Charting",
+  "category": "interfacing",
+  "eyebrow": "Centralised ICU monitoring",
+  "lede": "Centralised remote monitoring with instantaneous decision support — inline data from ventilators and monitors collected through Raster IoMT, so fewer healthcare workers need to be inside the ICU.",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "Monitor the ICU from a distance",
+    "paragraphs": [
+     "Electronic Charting is designed on the principle of communicating with devices on the centralised remote monitoring principle and instantaneous decision support system. This methodology of ICU monitoring ensures minimum healthcare workers presence inside the ICU specially designed for isolated patient scenarios. The centralised monitoring ensures the least footprint of nursing staff/doctors in ICU maintaining social distancing and reduced fatigue. This also ensures a minimum number of healthcare workers come in physical proximity of patients reducing the risk of infection. Electronic Charting comes with a unique capability of collecting instantaneous inline data from ventilators and monitors via our Internet of Medical Things device. (IoMT) connects and collects the information from patient connected devices."
+    ]
+   },
+   {
+    "type": "figure",
+    "eyebrow": "How it works",
+    "heading": "Bedside devices to a central station",
+    "sub": "The IoMT device collects all data from the devices connected to each ICU bed; the central monitoring station receives it into a unified database, and doctors can monitor and give instructions virtually from anywhere.",
+    "src": "assets/img/products/electronic-charting/electronic-charting.webp",
+    "w": 850,
+    "h": 432,
+    "alt": "Electronic charting diagram: IoMT devices at ICU beds 1 to 3 send patient device data to an ICU central monitoring station with a unified database, from which a doctor monitors and gives instructions remotely.",
+    "caption": "Electronic Charting — centralised remote monitoring. The beds feed the station one way; the station exchanges both ways with the unified database and the doctor.",
+    "svg": "assets/img/products/electronic-charting/electronic-charting-animated.svg"
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "Connected devices",
+    "heading": "The devices that can be connected to Raster IoMT",
+    "items": [
+     "Ventilators",
+     "Syringe Pumps"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "ot-video-broadcasting",
+  "short": "OT – Video Broadcasting",
+  "title": "OT – Video Broadcasting",
+  "grad": "Video Broadcasting",
+  "category": "other",
+  "eyebrow": "Raster OT Broadcast",
+  "lede": "Multiple HD video streams from cameras, microscopes, endoscopes and other theatre equipment — recorded, stored, streamed and monitored from one central video and image management system.",
+  "brochure": "https://www.raster.in/downloads/brochure/raster-otvb.pdf",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "Every procedure, captured and shared",
+    "paragraphs": [
+     "Digital video recordings are increasingly used across various medical and surgical disciplines for documentation for medical-legal cases, educational purposes, scientific presentations and publications. Raster OT Broadcast system is designed to be installed in operating theatres, conference halls and doctors’ offices and makes it possible to send multiple High Definition (HD) video streams coming from cameras, microscopes, endoscopes and other medical equipment. With its central video & image management system, it simplifies the acquisition of audio, video and multiple images, with simultaneous recording, storing, streaming, monitoring and control. Designed to support greater scale to education and remote collaboration tool for medical professionals allowing real-time audio-video communication and for the usage of specialised medical services.",
+     "Raster’s OT Broadcast is your choice when you need the best possible solution that has wide availability, scalability and performance when streaming video. Raster’s OT Broadcast is highly scalable and makes financial sense since you do not pay for additional servers and hardware or routing, should your network traffic increase or decrease. It can support future equipment upgrades. Advantages of Raster’s OT Broadcast are its flexibility, reliability, and open model which makes it the right choice for your operation theatre."
+    ]
+   },
+   {
+    "type": "figure",
+    "eyebrow": "Schematic diagram",
+    "heading": "Theatre to classroom",
+    "sub": "The control centre takes feeds from the operation theatre and doctors' office, records to the data archive, and streams over the internet to conference rooms and classrooms.",
+    "src": "assets/img/products/otvb/operation-theatre-video-broadcasting.webp",
+    "w": 850,
+    "h": 420,
+    "alt": "OT video broadcasting schematic: the operation theatre and doctors' office feed a control centre and data archive, which streams over the internet to conference rooms and classrooms.",
+    "caption": "Operation theatre video broadcasting — schematic. Every arrow is one-way; the two plain lines into the internet carry no arrowheads in the original.",
+    "svg": "assets/img/products/otvb/otvb-schematic-animated.svg"
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "Other features",
+    "heading": "Tailored to fit your theatre",
+    "items": [
+     "Tailored to fit your needs",
+     "Optional display sizes and technology",
+     "Variety of inputs and outputs",
+     "All contained in wall or on wall",
+     "“Zero Footprint” deployment",
+     "Touch screen controls",
+     "Display and capture all the sources in the Operating Theatre",
+     "Collaborative work on DICOM images",
+     "Video Streaming & Recordings",
+     "High Definition",
+     "User-friendly",
+     "Increased functionality",
+     "Convenient system operations",
+     "Live preview of images",
+     "Easy data exchange"
+    ]
+   },
+   {
+    "type": "points",
+    "eyebrow": "Benefits",
+    "heading": "Record, store, export",
+    "items": [
+     {
+      "lead": null,
+      "text": "Simultaneous recording of videos, sound and still images via analogue and digital signals (SD or HD)"
+     },
+     {
+      "lead": null,
+      "text": "Storage in PACS, SAN, NAS, USB stick or burn on CD / DVD"
+     },
+     {
+      "lead": null,
+      "text": "Export in multiple formats or DICOM format"
+     }
+    ]
+   },
+   {
+    "type": "figure",
+    "eyebrow": "Connectivity",
+    "heading": "What plugs in",
+    "sub": "For Hospitals and Medical College, there is a need to provide training programs and conferences for students and doctors. Operation theatres equipped with Raster video management system enables live viewing and recording of all surgical events.",
+    "src": "assets/img/products/otvb/operation-theatre-device-connectivity.webp",
+    "w": 850,
+    "h": 470,
+    "alt": "Device connectivity diagram: laparoscopy, PTZ camera, OT light camera and patient monitor feed the Raster OT Broadcast unit with microphone and touch-screen controller, which outputs to class room, internet streaming, conference, recording server, a multi-view screen and a full screen.",
+    "caption": "Raster OT Broadcast — device connectivity. Every arrow is one-way: five sources in, and outputs to the controller, the two screens and a streaming unit that feeds the four destinations.",
+    "svg": "assets/img/products/otvb/otvb-connectivity-animated.svg"
+   },
+   {
+    "type": "gallery",
+    "eyebrow": "Gallery",
+    "heading": "Installed in theatres",
+    "images": [
+     [
+      "assets/img/products/otvb/gallery/Vydehi-Medical-College.webp",
+      "Raster OT Broadcast installation at Vydehi Medical College"
+     ],
+     [
+      "assets/img/products/otvb/gallery/St-Marys-Hospital.webp",
+      "Operating theatre display at St Mary's Hospital"
+     ],
+     [
+      "assets/img/products/otvb/gallery/St-Marys-Hospital-2.webp",
+      "Control room at St Mary's Hospital"
+     ],
+     [
+      "assets/img/products/otvb/gallery/Dr-Shilpa-OT.webp",
+      "Dr Shilpa's operating theatre with live video feeds"
+     ],
+     [
+      "assets/img/products/otvb/gallery/ACU-BG-Nara.webp",
+      "ACU installation at BG Nara"
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "telemedicine",
+  "short": "Telemedicine",
+  "title": "Telemedicine",
+  "grad": "Telemedicine",
+  "category": "other",
+  "eyebrow": "e-Consultation platform",
+  "lede": "Video consultations, follow-ups and check-ups on a flexible schedule — a mobile app for patients and a web application for doctors that overcome the geographical barriers to care.",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "Care that crosses distance",
+    "paragraphs": [
+     "Telemedicine overcomes geographical barriers to providing healthcare. Doctors can now connect with patients on a more flexible schedule. Telemedicine can improve the quality of care for patients with both medical and mental health conditions. It's beneficial for patients in medically underserved communities and those in rural locations. Video conference gives the flexibility and convenience of seeing patients remotely for consultations, follow-ups, check-ups, and education. Patients love the convenience, flexibility and real-time care with their doctors. Usually, just a quick overview and reassuring words from doctors could save patients hassle, time, and money. Compliance with follow-up calls enables doctors to check in with their patients more frequently to ensure they are following orders. Telemedicine extends doctors hours and increases his availability for urgent care. It’s easy to squeeze a 10-15 minute e-Consultation to address a patient’s query."
+    ]
+   },
+   {
+    "type": "figure",
+    "eyebrow": "How it works",
+    "heading": "Patient to doctor in five steps",
+    "sub": "Book an appointment, make the payment, consult over voice, video or message, receive prescriptions and investigation orders — all through the hospital control centre.",
+    "src": "assets/img/products/telemedicine/telemedicine.webp",
+    "w": 850,
+    "h": 449,
+    "alt": "Telemedicine flow: a patient books an appointment and makes payment through the hospital control centre, consults the doctor by voice, video or message, and receives prescriptions and investigations.",
+    "caption": "Telemedicine — consultation workflow. Both hospital links and the voice, video and message channel exchange in both directions; the numbers mark the five steps.",
+    "svg": "assets/img/products/telemedicine/telemedicine-workflow-animated.svg"
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "For patients",
+    "heading": "Features of the mobile application",
+    "items": [
+     "Appointment booking",
+     "Digital payments",
+     "Prescriptions",
+     "Investigation orders",
+     "Photo uploads",
+     "Case summary"
+    ]
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "For doctors",
+    "heading": "Features of the web application",
+    "items": [
+     "Appointment schedules",
+     "Digital patient records",
+     "Online Prescription",
+     "Online Investigation Orders",
+     "Automatic Patient follow-ups",
+     "Payment Reports",
+     "Online Patient Referrals"
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "patient-id-wristbands",
+  "short": "Patient ID Wristbands",
+  "title": "Patient ID Wristbands",
+  "grad": "Wristbands",
+  "category": "other",
+  "eyebrow": "Idenpro range",
+  "lede": "Thermal, laser and RFID printable wristbands with superior image durability and antimicrobial coatings — BPA and latex free, supplied in rolls compatible with leading thermal printers.",
+  "sections": [
+   {
+    "type": "prose",
+    "eyebrow": "Overview",
+    "heading": "Durable, comfortable, printer-ready",
+    "paragraphs": [
+     "Patient ID wristbands have superior image durability and can resist damage due to moisture, hand sanitisers, soaps and other solutions that can cause fading. These wristbands come with a special anti-microbial coating for added protection.",
+     "Our wristbands are supplied in roll form and are compatible with leading thermal printers that are being offered by well-known printer manufacturer in the market. This ensures that the hospital does not have to keep changing its printers that already accept media in roll form.",
+     "These wristbands are BPA free and latex free and are designed for easy deployment, quick printing and securing onto the patient",
+     "Contact us to help you select the right wristband product that is compatible with your current printer, ensuring a hassle free deployment.",
+     "ProBand® series Direct thermal printable wristbands with adhesive closure require no assembly, which means printing and securing onto the patients is quick and easy. A tamper evident system ensures the adhesive area shreds on any attempt to peel open the band. These also feature superior image durability, which resists fading due to moisture, hand sanitiser, soaps and other solutions. ProBand series wristbands come with special antimicrobial properties for added protection.",
+     "Pliable extra soft Thermal wristbands for enhanced patient comfort. Designed specially for patients/infants with sensitive skin",
+     "SoftBand® extra soft range of Direct thermal & Thermal transfer printable wristbands provide enhanced levels of comfort to patients/infants without sacrificing on functionality.",
+     "In addition, wristbands have been designed with rounded corners to ensure there are no sharp edges causing patient discomfort.",
+     "The range includes Wristbands with clip or adhesive closure options and come in Adult/paediatric & infant sizes.",
+     "Featuring superior image durability, which resists fading due to moisture, hand sanitiser, soaps and other solutions. Extensively tested in labs, our wristbands come with special antimicrobial coatings for added protection.",
+     "CushionSoft is an easy to assemble ultra-soft cushioning foam sitting below a wristband to be used for patients with sensitive skin. Made from medical grade materials, CushionSoft is offered in standard sizes meant to be mounted on our range of Proband and SoftBand wristbands. Once the wristband is printed, the hospital staff has the choice to apply the wristband directly to the patient or to first apply it to the CushionSoft foam band. CushionSoft offers resistance to water, soaps, alcohol and all other common disinfectants used in the hospital environment.",
+     "This closed-cell structure foam is intended to be positioned between the wristband and the skin, avoiding any direct contact of the wristband and the skin. The foam has an adhesive strip running across its length aligned at the centre. A foam band is prepared by removing the liner (cover protecting the adhesive part), positioning the foam band flat on a table with the adhesive side up. The tail end of the printed wristband should be aligned with any end-side of the foam while mounting it on the foam. The backside (inside) of the printed wristband can then be applied to the foam while keeping its self-adhesive patch free and closed. The result of the ‘construction’ should be that the adhesive part of the foam band is completely covered while the self-adhesive patch of the wristband used to close it is intact and accessible to apply it to the patient.",
+     "I-Band® series RFID Direct thermal printable wristbands connect patients to hospital staff and IT infrastructure for improved patient administrative workflow, operational efficiency, and improved patient safety.",
+     "RFID wristbands reduce the need to disturb patients while sleeping, as no line of sight is needed to read the wristbands. Each RFID wristband comes with a unique identifier, which cannot be duplicated or replicated, offering enhanced security",
+     "Our Direct thermal RFID wristbands allow sites to print patient data and other variable data on-demand on the wristband and use it alongside RFID for greater efficiency. RFID wristbands can be used to access patient lockers as well.",
+     "Laser Printable Wristband + Patient chart labels in a single sheet construction empowers users to simultaneously print labels and wristbands, helping streamline patient admissions at speed.",
+     "Use the existing laser printer infrastructure to print colour-coded + barcode wristbands & labels. The use of latex free and extra soft materials paralleled with rounded corners provide for a fantastic user experience. Patient chart label can be used for application onto patient record, blood and specimen samples, medication, test reports, etc.",
+     "A tamper evident wristband closure ensures the adhesive area shreds on any attempt to peel open the band. Featuring superior image durability, which resists fading due to moisture, hand sanitiser, soaps and other solutions. Adult/paediatric and infant sizes available.",
+     "Tourni-S® is a single use disposable tourniquet designed for optimum comfort. It is safe and easy to use, its simple construction makes it lightweight, portable and easy to apply.",
+     "This tourniquet has been carefully designed using skin friendly materials that do not pinch the skin. The product is latex free and adheres to European health and environment standards. This cost effective product also helps prevent cross infections by being single use, thereby eliminating additional costs to treat these infections."
+    ]
+   },
+   {
+    "type": "figure",
+    "src": "assets/img/products/patient-id-wristbands/patient-id-wristband.webp",
+    "w": 1113,
+    "h": 387,
+    "alt": "A printed patient ID wristband on a patient's wrist being scanned with a handheld barcode reader.",
+    "photo": true
+   },
+   {
+    "type": "cards",
+    "eyebrow": "The range",
+    "heading": "Pick the band for the patient",
+    "items": [
+     {
+      "title": "ProBand<sup>®</sup>",
+      "sub": "Thermal patient ID wristbands with adhesive closure",
+      "src": "assets/img/products/patient-id-wristbands/ProBand.webp",
+      "w": 1113,
+      "h": 388,
+      "alt": "ProBand thermal wristband on a smiling patient in a hospital bed",
+      "text": [
+       "ProBand® series Direct thermal printable wristbands with adhesive closure require no assembly, which means printing and securing onto the patients is quick and easy. A tamper evident system ensures the adhesive area shreds on any attempt to peel open the band. These also feature superior image durability, which resists fading due to moisture, hand sanitiser, soaps and other solutions. ProBand series wristbands come with special antimicrobial properties for added protection."
+      ]
+     },
+     {
+      "title": "SoftBand<sup>®</sup>",
+      "sub": "Extra-soft thermal patient ID wristbands",
+      "src": "assets/img/products/patient-id-wristbands/SoftBand.webp",
+      "w": 1100,
+      "h": 388,
+      "alt": "SoftBand wristband on an infant",
+      "text": [
+       "Pliable extra soft Thermal wristbands for enhanced patient comfort. Designed specially for patients/infants with sensitive skin",
+       "SoftBand® extra soft range of Direct thermal & Thermal transfer printable wristbands provide enhanced levels of comfort to patients/infants without sacrificing on functionality.",
+       "In addition, wristbands have been designed with rounded corners to ensure there are no sharp edges causing patient discomfort.",
+       "The range includes Wristbands with clip or adhesive closure options and come in Adult/paediatric & infant sizes.",
+       "Featuring superior image durability, which resists fading due to moisture, hand sanitiser, soaps and other solutions. Extensively tested in labs, our wristbands come with special antimicrobial coatings for added protection."
+      ]
+     },
+     {
+      "title": "CushionSoft<sup>™</sup>",
+      "sub": "Soft cushioning foam for additional comfort",
+      "src": null,
+      "text": [
+       "CushionSoft is an easy to assemble ultra-soft cushioning foam sitting below a wristband to be used for patients with sensitive skin. Made from medical grade materials, CushionSoft is offered in standard sizes meant to be mounted on our range of Proband and SoftBand wristbands. Once the wristband is printed, the hospital staff has the choice to apply the wristband directly to the patient or to first apply it to the CushionSoft foam band. CushionSoft offers resistance to water, soaps, alcohol and all other common disinfectants used in the hospital environment.",
+       "This closed-cell structure foam is intended to be positioned between the wristband and the skin, avoiding any direct contact of the wristband and the skin. The foam has an adhesive strip running across its length aligned at the centre. A foam band is prepared by removing the liner (cover protecting the adhesive part), positioning the foam band flat on a table with the adhesive side up. The tail end of the printed wristband should be aligned with any end-side of the foam while mounting it on the foam. The backside (inside) of the printed wristband can then be applied to the foam while keeping its self-adhesive patch free and closed. The result of the ‘construction’ should be that the adhesive part of the foam band is completely covered while the self-adhesive patch of the wristband used to close it is intact and accessible to apply it to the patient."
+      ]
+     },
+     {
+      "title": "i-Band<sup>®</sup>",
+      "sub": "Direct thermal printable RFID wristbands",
+      "src": "assets/img/products/patient-id-wristbands/i-band.webp",
+      "w": 1108,
+      "h": 300,
+      "alt": "i-Band RFID wristbands with a tap-here contactless marking",
+      "text": [
+       "i-Band® series RFID Direct thermal printable wristbands connect patients to hospital staff and IT infrastructure for improved patient administrative workflow, operational efficiency, and improved patient safety.",
+       "RFID wristbands reduce the need to disturb patients while sleeping, as no line of sight is needed to read the wristbands. Each RFID wristband comes with a unique identifier, which cannot be duplicated or replicated, offering enhanced security",
+       "Our Direct thermal RFID wristbands allow sites to print patient data and other variable data on-demand on the wristband and use it alongside RFID for greater efficiency. RFID wristbands can be used to access patient lockers as well."
+      ]
+     },
+     {
+      "title": "Laser printable wristbands",
+      "sub": "Wristbands and patient chart labels on one sheet",
+      "src": "assets/img/products/patient-id-wristbands/laser-printable-wristbands.webp",
+      "w": 1200,
+      "h": 325,
+      "alt": "A laser-printed wristband being peeled from a sheet that also carries patient chart labels",
+      "text": [
+       "Laser Printable Wristband + Patient chart labels in a single sheet construction empowers users to simultaneously print labels and wristbands, helping streamline patient admissions at speed.",
+       "Use the existing laser printer infrastructure to print colour-coded + barcode wristbands & labels. The use of latex free and extra soft materials paralleled with rounded corners provide for a fantastic user experience. Patient chart label can be used for application onto patient record, blood and specimen samples, medication, test reports, etc.",
+       "A tamper evident wristband closure ensures the adhesive area shreds on any attempt to peel open the band. Featuring superior image durability, which resists fading due to moisture, hand sanitiser, soaps and other solutions. Adult/paediatric and infant sizes available."
+      ]
+     },
+     {
+      "title": "Tourni-S<sup>®</sup>",
+      "sub": "Single-use disposable tourniquet",
+      "src": "assets/img/products/patient-id-wristbands/Tourni-S.webp",
+      "w": 1400,
+      "h": 402,
+      "alt": "A green Tourni-S disposable tourniquet applied on a patient's arm during blood collection",
+      "text": [
+       "Tourni-S® is a single use disposable tourniquet designed for optimum comfort. It is safe and easy to use, its simple construction makes it lightweight, portable and easy to apply.",
+       "This tourniquet has been carefully designed using skin friendly materials that do not pinch the skin. The product is latex free and adheres to European health and environment standards. This cost effective product also helps prevent cross infections by being single use, thereby eliminating additional costs to treat these infections."
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

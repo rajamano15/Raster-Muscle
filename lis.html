@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab Information System — Laboratory Information System | Raster</title>
+  <meta name="description" content="Manage the flow of samples and patient data to improve lab efficiency — standardised workflows, accurate process controls and equipment integrated through Raster IoMT.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23041109'/%3E%3Ccircle cx='32' cy='32' r='15' fill='%2300A87B'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ═══════════ Icon sprite ═══════════ -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-radiology" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="12" cy="12" r="1.7" fill="currentColor"/>
+        <path d="M12 8.9V4.4M14.7 13.6l3.9 2.2M9.3 13.6l-3.9 2.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M8.6 6.1a6.9 6.9 0 0 1 6.8 0M17.9 14.4a6.9 6.9 0 0 1-3.4 5.9M6.1 14.4a6.9 6.9 0 0 0 3.4 5.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>
+      </symbol>
+      <symbol id="i-hospital" viewBox="0 0 24 24">
+        <path d="M4.5 20.5V6.8a1.5 1.5 0 0 1 1.5-1.5h12a1.5 1.5 0 0 1 1.5 1.5v13.7M2.5 20.5h19M9.7 20.5v-3.6a2.3 2.3 0 0 1 4.6 0v3.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 8v4.4M9.8 10.2h4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-interface" viewBox="0 0 24 24">
+        <circle cx="5.5" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="18.5" cy="5.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="18.5" cy="18.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M7.9 10.8l8.3-4.1M7.9 13.2l8.3 4.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-apps" viewBox="0 0 24 24">
+        <rect x="3.5" y="3.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="13.5" y="3.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="3.5" y="13.5" width="7" height="7" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M17 13.8v6.4M13.8 17h6.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-chip" viewBox="0 0 24 24">
+        <rect x="6" y="6" width="12" height="12" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="9.6" y="9.6" width="4.8" height="4.8" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M9 6V3M15 6V3M9 21v-3M15 21v-3M6 9H3M6 15H3M21 9h-3M21 15h-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24">
+        <path d="M6 9.4l6 5.6 6-5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M4.5 12h14M13 5.8l6.2 6.2L13 18.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h11" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="M12 2.8l7.5 3v5.4c0 4.8-3.2 8.4-7.5 10-4.3-1.6-7.5-5.2-7.5-10V5.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M8.8 11.8l2.3 2.3 4.1-4.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24">
+        <path d="M12 3.2L21 8l-9 4.8L3 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M3 12.4l9 4.8 9-4.8M3 16.6l9 4.8 9-4.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" opacity=".65"/>
+      </symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24">
+        <path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 11.2a3.7 3.7 0 0 1-.7 7.3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-badge" viewBox="0 0 24 24">
+        <path d="M12 2.6l2.3 1.7 2.8-.3 1 2.7 2.5 1.3-.6 2.8 1.6 2.4-1.9 2.1.1 2.9-2.7.9-1.5 2.5-2.8-.7-2.6 1.3-2-2.1-2.9-.2-.6-2.8-2.3-1.8 1-2.7-1.2-2.6 2.2-1.9.3-2.8 2.8-.4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M8.7 12l2.3 2.3 4.3-4.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-support" viewBox="0 0 24 24">
+        <path d="M4.5 13.6v-2a7.5 7.5 0 0 1 15 0v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <rect x="2.8" y="12.6" width="4.4" height="6.4" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="16.8" y="12.6" width="4.4" height="6.4" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M19 19.4a6 6 0 0 1-5.2 2.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-plug" viewBox="0 0 24 24">
+        <path d="M9 2.8v4.4M15 2.8v4.4M7 7.2h10v3.4a5 5 0 0 1-10 0z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 15.6v2.6a3 3 0 0 1-3 3H7.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <path d="M5 12.6l4.4 4.4L19 7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-download" viewBox="0 0 24 24">
+        <path d="M12 3.6v10.6M8.2 10.6l3.8 3.8 3.8-3.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4.4 16.4v2.2a1.8 1.8 0 0 0 1.8 1.8h11.6a1.8 1.8 0 0 0 1.8-1.8v-2.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+        <path d="M15.8 15.8L20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ═══════════ Header ═══════════ -->
+  <header class="site-header" id="siteHeader">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <p class="topbar-tag">Integrated Healthcare IT &amp; Hardware</p>
+        <nav aria-label="Secondary">
+          <ul class="topbar-links">
+            <li><a href="news-events.html">News &amp; Events</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="navbar">
+      <div class="container navbar-inner">
+        <a class="brand" href="index.html" aria-label="Raster — Home">
+          <img src="assets/img/logo-green.webp" alt="Raster" width="259" height="56">
+        </a>
+        <nav class="main-nav" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="has-mega">
+              <a href="healthcare-solutions.html" class="active" aria-describedby="megaSolutions">Healthcare Solutions<svg class="icon nav-caret" aria-hidden="true"><use href="#i-chevron"/></svg></a>
+            <div class="mega glass" id="megaSolutions">
+              <div class="mega-grid">
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#radiology"><svg class="icon" aria-hidden="true"><use href="#i-radiology"/></svg>Radiology</a>
+                <ul>
+                  <li><a href="pacs.html">PACS</a></li>
+                  <li><a href="ris.html">RIS</a></li>
+                  <li><a href="teleradiology.html">Teleradiology</a></li>
+                  <li><a href="dicom-burner.html">DICOM Burner</a></li>
+                  <li><a href="dicom-camera.html">DICOM Camera</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#hospital-management"><svg class="icon" aria-hidden="true"><use href="#i-hospital"/></svg>Hospital Management</a>
+                <ul>
+                  <li><a href="ihms.html">IHMS</a></li>
+                  <li><a href="pharmacy-management.html">Pharmacy Management</a></li>
+                  <li><a href="blood-bank-management.html">Blood Bank Management</a></li>
+                  <li><a href="emr.html">EMR</a></li>
+                  <li><a href="lis.html" aria-current="page">Lab Information System</a></li>
+                  <li><a href="neopead-emr.html">Neopead EMR &amp; Charting</a></li>
+                  <li><a href="asset-management.html">Asset Management</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#interfacing"><svg class="icon" aria-hidden="true"><use href="#i-interface"/></svg>Interfacing Applications</a>
+                <ul>
+                  <li><a href="lab-equipment-interfacing.html">Lab Equipment Interfacing</a></li>
+                  <li><a href="iomt-interfacing.html">IoMT &amp; Interfacing</a></li>
+                  <li><a href="electronic-charting.html">Electronic Charting</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href="healthcare-solutions.html#other-applications"><svg class="icon" aria-hidden="true"><use href="#i-apps"/></svg>Other Applications</a>
+                <ul>
+                  <li><a href="ot-video-broadcasting.html">OT – Video Broadcasting</a></li>
+                  <li><a href="telemedicine.html">Telemedicine</a></li>
+                  <li><a href="patient-id-wristbands.html">Patient ID Wristbands</a></li>
+                </ul>
+              </div>
+              </div>
+            </div>
+            </li>
+            <li><a href="hardware-products.html">Hardware Products</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn-primary nav-cta" href="contact.html" data-demo-open>Request Demo</a>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <svg class="icon icon-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <nav aria-label="Mobile primary">
+      <ul class="mobile-primary">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <details class="mobile-sub">
+            <summary>Healthcare Solutions<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="mobile-sub-body">
+            <h4>Radiology</h4>
+            <a href="pacs.html">PACS</a>
+            <a href="ris.html">RIS</a>
+            <a href="teleradiology.html">Teleradiology</a>
+            <a href="dicom-burner.html">DICOM Burner</a>
+            <a href="dicom-camera.html">DICOM Camera</a>
+            <h4>Hospital Management</h4>
+            <a href="ihms.html">IHMS</a>
+            <a href="pharmacy-management.html">Pharmacy Management</a>
+            <a href="blood-bank-management.html">Blood Bank Management</a>
+            <a href="emr.html">EMR</a>
+            <a href="lis.html" aria-current="page">Lab Information System</a>
+            <a href="neopead-emr.html">Neopead EMR &amp; Charting</a>
+            <a href="asset-management.html">Asset Management</a>
+            <h4>Interfacing Applications</h4>
+            <a href="lab-equipment-interfacing.html">Lab Equipment Interfacing</a>
+            <a href="iomt-interfacing.html">IoMT &amp; Interfacing</a>
+            <a href="electronic-charting.html">Electronic Charting</a>
+            <h4>Other Applications</h4>
+            <a href="ot-video-broadcasting.html">OT – Video Broadcasting</a>
+            <a href="telemedicine.html">Telemedicine</a>
+            <a href="patient-id-wristbands.html">Patient ID Wristbands</a>
+              <a class="btn btn-primary mobile-sub-all" href="healthcare-solutions.html">All healthcare solutions<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </details>
+        </li>
+        <li><a href="hardware-products.html">Hardware Products</a></li>
+        <li><a href="partners.html">Partners</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="mobile-secondary">
+        <li><a href="news-events.html">News &amp; Events</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="our-team.html">Our Team</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="main">
+    <!-- ═══════════ Page header ═══════════ -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <p class="eyebrow"><span class="dot"></span>Hospital Management · Raster LIS</p>
+        <h1 id="page-title">Laboratory <span class="grad">Information System</span></h1>
+        <p class="page-lede">Manage the flow of samples and patient data to improve lab efficiency — standardised workflows, accurate process controls and equipment integrated through Raster IoMT.</p>
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <a href="healthcare-solutions.html">Healthcare Solutions</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <a href="healthcare-solutions.html#hospital-management">Hospital Management</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span aria-current="page">Lab Information System</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ═══════════ Product side menu + content ═══════════ -->
+    <div class="container solution-layout">
+      <!-- Always open beside the content on desktop (summary hidden); main.js
+           collapses it to a toggle under 1024px. Mirrors the mega dropdown. -->
+      <details class="glass side-nav" open>
+        <summary>
+          <span><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg>All healthcare solutions</span>
+          <svg class="icon side-nav-caret" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </summary>
+        <nav class="side-nav-body" aria-label="Healthcare solutions">
+          <div class="side-nav-group">
+            <a class="side-nav-head" href="healthcare-solutions.html#radiology"><svg class="icon" aria-hidden="true"><use href="#i-radiology"/></svg>Radiology</a>
+            <ul>
+              <li><a href="pacs.html">PACS</a></li>
+              <li><a href="ris.html">RIS</a></li>
+              <li><a href="teleradiology.html">Teleradiology</a></li>
+              <li><a href="dicom-burner.html">DICOM Burner</a></li>
+              <li><a href="dicom-camera.html">DICOM Camera</a></li>
+            </ul>
+          </div>
+          <div class="side-nav-group">
+            <a class="side-nav-head" href="healthcare-solutions.html#hospital-management"><svg class="icon" aria-hidden="true"><use href="#i-hospital"/></svg>Hospital Management</a>
+            <ul>
+              <li><a href="ihms.html">IHMS</a></li>
+              <li><a href="pharmacy-management.html">Pharmacy Management</a></li>
+              <li><a href="blood-bank-management.html">Blood Bank Management</a></li>
+              <li><a href="emr.html">EMR</a></li>
+              <li><a href="lis.html" aria-current="page">Lab Information System</a></li>
+              <li><a href="neopead-emr.html">Neopead EMR &amp; Charting</a></li>
+              <li><a href="asset-management.html">Asset Management</a></li>
+            </ul>
+          </div>
+          <div class="side-nav-group">
+            <a class="side-nav-head" href="healthcare-solutions.html#interfacing"><svg class="icon" aria-hidden="true"><use href="#i-interface"/></svg>Interfacing Applications</a>
+            <ul>
+              <li><a href="lab-equipment-interfacing.html">Lab Equipment Interfacing</a></li>
+              <li><a href="iomt-interfacing.html">IoMT &amp; Interfacing</a></li>
+              <li><a href="electronic-charting.html">Electronic Charting</a></li>
+            </ul>
+          </div>
+          <div class="side-nav-group">
+            <a class="side-nav-head" href="healthcare-solutions.html#other-applications"><svg class="icon" aria-hidden="true"><use href="#i-apps"/></svg>Other Applications</a>
+            <ul>
+              <li><a href="ot-video-broadcasting.html">OT – Video Broadcasting</a></li>
+              <li><a href="telemedicine.html">Telemedicine</a></li>
+              <li><a href="patient-id-wristbands.html">Patient ID Wristbands</a></li>
+            </ul>
+          </div>
+        </nav>
+      </details>
+
+      <div class="solution-main">
+    <section class="features" aria-labelledby="s0-h">
+      <div>
+        <div class="prose solution-intro" data-reveal style="--i:0">
+            <p class="eyebrow"><span class="dot"></span>Overview</p>
+            <h2 id="s0-h">Accurate, timely, platform-independent</h2>
+            <p>Laboratory Information System (LIS) allows you to effectively manage the flow of samples and patient data to improve lab efficiency. It improves access to quality diagnostic testing and provides accurate, timely information for patient care. Raster LIS helps in standardising workflows, tests and procedures while providing accurate controls of the process. Laboratory equipment (both unidirectional and bi-directional) may be integrated via Raster IoMT with Raster LIS to automate the collection of test data, ensuring they are properly calibrated. The fully integrated configuration tools help in adapting the software to end-user requirements without compromising on support or future upgrades. A key attribute of Raster LIS is the avoidance of platform dependencies.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" aria-labelledby="s1-h">
+      <div>
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>Salient features</p>
+          <h2 id="s1-h" style="--i:1">What Raster LIS delivers</h2>
+        </div>
+        <ul class="spec-grid" data-reveal aria-label="What Raster LIS delivers">
+          <li class="glass spec" style="--i:0"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Automated laboratory administration</li>
+          <li class="glass spec" style="--i:1"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Reduced risk of error occurrence</li>
+          <li class="glass spec" style="--i:2"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Integration of instruments and equipment</li>
+          <li class="glass spec" style="--i:3"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Regulatory standards compliance</li>
+          <li class="glass spec" style="--i:4"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Increase efficiency through better management</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="features" aria-labelledby="s2-h">
+      <div>
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>How it works</p>
+          <h2 id="s2-h" style="--i:1">Sample to report</h2>
+          <p class="section-sub" style="--i:2">The LIS sends the worklist to the analyser through Raster Lab Link, samples are barcoded, results come back into the LIS and the report is printed.</p>
+        </div>
+        <figure class="schematic narrow diagram" data-reveal>
+          <div class="glass diagram-card" style="--i:0">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="50 25 750 585" role="img" aria-labelledby="lis-schem-title lis-schem-desc" class="schem">
+  <title id="lis-schem-title">Laboratory Information System — analyser integration</title>
+  <desc id="lis-schem-desc">Raster Lab Link sends the worklist to the lab analyser and the analyser returns results to Lab Link. Sampling and barcode printing feeds Lab Link, and is also connected to the LIS. Results are updated from Lab Link into the LIS, and the LIS prints the report.</desc>
+  <style>
+    .schem { --ink: var(--text-hi, #f2f7f5); --ink-2: var(--text-mid, #b9c6c1); --ink-3: var(--text-low, #7f8d88); --g: var(--green, #00A87B); --gb: var(--green-bright, #00CF97); --halo: #0e1a16; font-family: inherit; }
+    .schem .ic { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .schem .ic-fill { fill: rgba(255, 255, 255, 0.07); }
+    .schem .ic-soft { stroke-width: 1.6; opacity: 0.7; }
+    .schem .screen { fill: rgba(0, 168, 123, 0.22); stroke: none; }
+    .schem .ui { fill: var(--ink); stroke: none; opacity: 0.9; }
+    .schem .lbl { fill: var(--ink-2); font-size: 14px; font-weight: 500; letter-spacing: 0.01em; }
+    .schem .on-line { fill: var(--ink); font-size: 13.5px; font-weight: 600; paint-order: stroke; stroke: var(--halo); stroke-width: 9px; stroke-linejoin: round; }
+    .schem .link { fill: none; stroke: var(--g); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .schem .link.plain { stroke: var(--ink-3); stroke-width: 1.8; }
+    .schem .head { fill: var(--g); }
+    .schem .pkt { fill: var(--gb); filter: drop-shadow(0 0 4px rgba(0, 207, 151, 0.9)); offset-rotate: 0deg; animation: schem-pkt 4s linear infinite; }
+    .schem .led { fill: var(--gb); animation: schem-blink 2.2s ease-in-out infinite; }
+    .schem .bar { transform-box: fill-box; transform-origin: 0% 50%; animation: schem-grow 4s ease-in-out infinite; }
+    .schem .label-out { transform-box: fill-box; transform-origin: 50% 0%; animation: schem-print 4s ease-in-out infinite; }
+    .schem .spin { transform-box: fill-box; transform-origin: 50% 50%; animation: schem-spin 9s linear infinite; }
+    .schem .row { animation: schem-row 8s ease-in-out infinite; }
+    .schem .rep-t { fill: var(--ink-2); font-size: 6.5px; font-weight: 500; }
+    .schem .rep-h { fill: var(--ink); font-size: 8px; font-weight: 700; }
+    .schem .rep-b { fill: var(--gb); font-size: 6.5px; font-weight: 600; }
+    @keyframes schem-pkt { 0% { offset-distance: 0%; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+    @keyframes schem-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+    @keyframes schem-grow { 0%, 100% { transform: scaleX(0.55); } 50% { transform: scaleX(1); } }
+    @keyframes schem-print { 0%, 15% { transform: scaleY(0); } 45%, 80% { transform: scaleY(1); } 100% { transform: scaleY(0); } }
+    @keyframes schem-spin { to { transform: rotate(360deg); } }
+    @keyframes schem-row { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) {
+      .schem .led, .schem .bar, .schem .label-out, .schem .spin, .schem .row { animation: none; }
+      .schem .pkt { display: none; }
+    }
+  </style>
+  <defs>
+    <marker id="lis-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path class="head" d="M1 1.5 L9 5 L1 8.5 Z"/>
+    </marker>
+  </defs>
+
+  <!-- ══ Links ══ -->
+  <g id="lis-links">
+    <!-- a  Lab Link → Lab Analyser (Worklist) -->
+    <path class="link" d="M222 74 H526" marker-end="url(#lis-arrow)"/>
+    <!-- b  Lab Analyser → Lab Link (Results) -->
+    <path class="link" d="M526 107 H222" marker-end="url(#lis-arrow)"/>
+    <!-- c  Sampling and Barcode Printing → Lab Link -->
+    <path class="link" d="M285 252 V141 H222" marker-end="url(#lis-arrow)"/>
+    <!-- d  Lab Link → LIS (Result updated in LIS) -->
+    <path class="link" d="M128 237 V429" marker-end="url(#lis-arrow)"/>
+    <!-- e  Sampling and Barcode Printing — LIS (plain connector in the source: no arrowhead) -->
+    <path class="link plain" d="M285 348 V472 H222"/>
+    <!-- f  LIS → Report (Report Printing) -->
+    <path class="link" d="M222 500 H526" marker-end="url(#lis-arrow)"/>
+  </g>
+  <g id="lis-packets" aria-hidden="true">
+    <circle class="pkt" r="3.4" style="offset-path: path('M222 74 H526'); animation-delay: 0s"/>
+    <circle class="pkt" r="3.4" style="offset-path: path('M526 107 H222'); animation-delay: -2s"/>
+    <circle class="pkt" r="3.4" style="offset-path: path('M285 252 V141 H222'); animation-delay: -1s"/>
+    <circle class="pkt" r="3.4" style="offset-path: path('M128 237 V429'); animation-delay: -3s"/>
+    <circle class="pkt" r="3.4" style="offset-path: path('M222 500 H526'); animation-delay: -1.5s"/>
+  </g>
+  <!-- labels that sit on the lines (haloed so packets pass behind them) -->
+  <text class="on-line" x="374" y="79" text-anchor="middle">Worklist</text>
+  <text class="on-line" x="374" y="112" text-anchor="middle">Results</text>
+  <text class="on-line" x="128" y="364" text-anchor="middle">Result updated</text>
+  <text class="on-line" x="128" y="386" text-anchor="middle">in LIS</text>
+  <text class="on-line" x="374" y="505" text-anchor="middle">Report Printing</text>
+
+  <!-- ══ Raster LAB LINK ══ -->
+  <g id="n-lablink" transform="translate(70 65)">
+    <rect class="ic ic-fill" x="0" y="0" width="122" height="82" rx="5"/>
+    <rect class="screen" x="5" y="5" width="112" height="72" rx="2"/>
+    <path class="ic ic-soft" d="M28 14v54h68"/>
+    <g class="ui">
+      <rect class="bar" x="32" y="16" width="52" height="8" rx="1"/>
+      <rect class="bar" x="32" y="28" width="30" height="8" rx="1" style="animation-delay: -1s"/>
+      <rect class="bar" x="32" y="40" width="40" height="8" rx="1" style="animation-delay: -2s"/>
+      <rect class="bar" x="32" y="52" width="14" height="8" rx="1" style="animation-delay: -3s"/>
+    </g>
+    <path class="ic" d="M61 82v10M44 94h34"/>
+    <text class="lbl" x="58" y="128" text-anchor="middle">Raster</text>
+    <text class="lbl" x="58" y="150" text-anchor="middle">LAB LINK</text>
+  </g>
+
+  <!-- ══ Lab Analyser ══ -->
+  <g id="n-analyser" transform="translate(563 40)">
+    <!-- operator monitor on its arm -->
+    <rect class="ic ic-fill" x="148" y="0" width="46" height="34" rx="3"/>
+    <path class="ic ic-soft" d="M154 8h10M168 8h10M154 14h34M154 20h22"/>
+    <path class="ic" d="M171 34v8M160 42h22M150 56h48"/>
+    <!-- top deck with sample racks -->
+    <rect class="ic ic-fill" x="8" y="44" width="150" height="30" rx="4"/>
+    <g class="ic ic-soft">
+      <path d="M18 50v18M24 50v18M30 50v18M36 50v18M42 50v18M48 50v18"/>
+      <rect x="60" y="52" width="18" height="14" rx="2"/><rect x="84" y="52" width="18" height="14" rx="2"/>
+      <rect x="108" y="52" width="18" height="14" rx="2"/><rect x="132" y="52" width="18" height="14" rx="2"/>
+    </g>
+    <!-- cabinet -->
+    <rect class="ic ic-fill" x="0" y="74" width="200" height="90" rx="5"/>
+    <path class="ic ic-soft" d="M100 80v78M12 80h176"/>
+    <circle class="led" cx="188" cy="86" r="2.2"/>
+    <text class="lbl" x="100" y="184" text-anchor="middle">Lab Analyser</text>
+  </g>
+
+  <!-- ══ Sampling and Barcode Printing ══ -->
+  <g id="n-printer" transform="translate(259 270)">
+    <path class="ic ic-fill" d="M4 22l14-14h30l8 14v34a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/>
+    <path class="ic ic-soft" d="M12 22h36M42 14h.1"/>
+    <path class="ic" d="M20 38h22"/>
+    <g class="label-out">
+      <rect class="ic ic-fill" x="26" y="40" width="22" height="26" rx="2" transform="rotate(-18 37 40)"/>
+      <path class="ic ic-soft" d="M31 47v10M34 47v10M38 47v10M41 47v10M44 47v10" transform="rotate(-18 37 40)"/>
+    </g>
+    <text class="lbl" x="130" y="16" text-anchor="middle">Sampling and</text>
+    <text class="lbl" x="130" y="38" text-anchor="middle">Barcode Printing</text>
+  </g>
+
+  <!-- ══ LIS ══ -->
+  <g id="n-lis" transform="translate(61 444)">
+    <rect class="ic ic-fill" x="0" y="0" width="132" height="92" rx="5"/>
+    <rect class="screen" x="5" y="5" width="122" height="76" rx="2"/>
+    <g class="ui">
+      <rect x="14" y="18" width="56" height="5" rx="1"/><rect x="14" y="34" width="56" height="5" rx="1"/>
+      <rect x="14" y="50" width="56" height="5" rx="1"/><rect x="14" y="66" width="32" height="5" rx="1"/>
+    </g>
+    <!-- Raster asterisk mark -->
+    <g class="spin" style="fill: var(--ink)">
+      <path d="M96 30l4 10-4 10-4-10z"/>
+      <path d="M96 30l4 10-4 10-4-10z" transform="rotate(72 96 40)"/>
+      <path d="M96 30l4 10-4 10-4-10z" transform="rotate(144 96 40)"/>
+      <path d="M96 30l4 10-4 10-4-10z" transform="rotate(216 96 40)"/>
+      <path d="M96 30l4 10-4 10-4-10z" transform="rotate(288 96 40)"/>
+    </g>
+    <path class="ic" d="M66 92v10M48 104h36"/>
+  </g>
+
+  <!-- ══ Report ══ -->
+  <g id="n-report" transform="translate(535 366)">
+    <text class="lbl" x="127" y="-14" text-anchor="middle">Report</text>
+    <rect class="ic ic-fill" x="0" y="0" width="254" height="230" rx="3"/>
+    <text class="rep-h" x="12" y="18">SKS Hospital</text>
+    <text class="rep-h" x="12" y="29" style="fill: var(--gb)">Laboratory</text>
+    <circle class="ic ic-soft" cx="232" cy="20" r="11"/>
+    <path class="ic ic-soft" d="M228 16l4 6 4-6M232 22v5"/>
+    <text class="rep-t" x="127" y="42" text-anchor="middle" style="font-weight:700">REPORT</text>
+    <path class="ic ic-soft" d="M10 46h234"/>
+    <text class="rep-t" x="12" y="56">Lab No.  20/02/006993</text>
+    <text class="rep-t" x="12" y="65">Patient</text>
+    <text class="rep-t" x="12" y="74">Age / Sex</text>
+    <text class="rep-t" x="12" y="83">Ref. By</text>
+    <rect class="ui" x="46" y="59" width="66" height="26" rx="1" style="opacity: 0.25"/>
+    <text class="rep-t" x="112" y="56">MRN</text>
+    <text class="rep-t" x="112" y="65">IP/OP No</text>
+    <text class="rep-t" x="112" y="74">Bill No.  19196176</text>
+    <path class="ic" style="stroke-width: 1.3" d="M186 52v10M189 52v10M192 52v10M196 52v10M198 52v10M202 52v10M205 52v10M209 52v10M211 52v10M214 52v10M218 52v10M221 52v10M225 52v10M228 52v10M231 52v10M235 52v10M238 52v10M242 52v10"/>
+    <text class="rep-t" x="246" y="71" text-anchor="end" style="font-size: 5px">Collected 18/02/2020 7.05 AM</text>
+    <text class="rep-t" x="246" y="80" text-anchor="end" style="font-size: 5px">Reported 18/02/2020 8.34 AM</text>
+    <text class="rep-t" x="246" y="89" text-anchor="end" style="font-size: 5px">Printed 18/02/2020 1.51 PM</text>
+    <path class="ic ic-soft" d="M10 94h234"/>
+    <text class="rep-t" x="127" y="103" text-anchor="middle" style="font-weight:700">Final Report</text>
+    <text class="rep-t" x="12" y="115" style="font-weight:700">Specimen</text>
+    <text class="rep-t" x="52" y="115" style="font-weight:700">Test Description</text>
+    <text class="rep-t" x="140" y="115" style="font-weight:700">Result / Units</text>
+    <text class="rep-t" x="192" y="115" style="font-weight:700">Reference Range</text>
+    <path class="ic ic-soft" d="M10 119h234"/>
+    <g class="row" style="animation-delay: 0s">
+      <text class="rep-b" x="12" y="130">BIOCHEMISTRY</text>
+      <text class="rep-t" x="12" y="137" style="font-size: 5.6px">FLUORIDE</text>
+      <text class="rep-t" x="12" y="144" style="font-size: 5.6px">PLASMA</text>
+      <text class="rep-t" x="52" y="140">GLUCOSE - FASTING</text><text class="rep-t" x="140" y="140">109.8 mg/dL</text><text class="rep-t" x="192" y="140">70 - 100</text>
+    </g>
+    <g class="row" style="animation-delay: -1.3s">
+      <text class="rep-t" x="12" y="155">SERUM</text><text class="rep-t" x="52" y="155">UREA</text><text class="rep-t" x="140" y="155">30.5 mg/dL</text><text class="rep-t" x="192" y="155">10 - 50</text>
+    </g>
+    <g class="row" style="animation-delay: -2.6s">
+      <text class="rep-t" x="12" y="170">SERUM</text><text class="rep-t" x="52" y="170">CREATININE</text><text class="rep-t" x="140" y="170">1.25 mg/dL</text><text class="rep-t" x="192" y="170">0.7 - 1.3</text>
+    </g>
+    <g class="row" style="animation-delay: -3.9s">
+      <text class="rep-b" x="12" y="186">LIPID PROFILE</text>
+      <text class="rep-t" x="12" y="196">SERUM</text><text class="rep-t" x="52" y="196">CHOLESTEROL</text><text class="rep-t" x="140" y="196">214 mg/dL</text><text class="rep-t" x="192" y="196">Desirable &lt;200</text>
+    </g>
+    <g class="row" style="animation-delay: -5.2s">
+      <text class="rep-t" x="12" y="212">SERUM</text><text class="rep-t" x="52" y="212">TRIGLYCERIDES</text><text class="rep-t" x="140" y="212">218 mg/dL</text><text class="rep-t" x="192" y="212">Normal &lt;150</text>
+    </g>
+  </g>
+</svg>
+          </div>
+          <figcaption style="--i:1">Laboratory Information System — analyser integration. Arrowheads mark the direction of each exchange; the plain grey line between the printer and the LIS is a connection with no direction in the original.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="solutions" aria-labelledby="related-h">
+      <div>
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="--i:0"><span class="dot"></span>Hospital Management</p>
+          <h2 id="related-h" style="--i:1">Works alongside</h2>
+          <p class="section-sub" style="--i:2">Lab Information System is one part of Raster's Hospital Management range. The rest plugs straight into it.</p>
+        </div>
+        <div class="vm-grid" data-reveal>
+          <article class="glass sol-card" style="--i:0">
+            <span class="sol-icon"><svg class="icon" aria-hidden="true"><use href="#i-hospital"/></svg></span>
+            <h3>IHMS</h3>
+            <p>Desktop transaction entry plus a web dashboard and EMR, scalable from clinic to enterprise.</p>
+            <a class="card-link" href="ihms.html">Explore the solution<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="glass sol-card" style="--i:1">
+            <span class="sol-icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+            <h3>Pharmacy Management</h3>
+            <p>Barcoded, batch-aware inventory with alerts and error-free dispensing and billing.</p>
+            <a class="card-link" href="pharmacy-management.html">Explore the solution<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="glass sol-card" style="--i:2">
+            <span class="sol-icon"><svg class="icon" aria-hidden="true"><use href="#i-badge"/></svg></span>
+            <h3>Blood Bank Management</h3>
+            <p>Donors, camps, bag inventories and transfusion services in one web-based system.</p>
+            <a class="card-link" href="blood-bank-management.html">Explore the solution<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="glass sol-card" style="--i:3">
+            <span class="sol-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <h3>EMR</h3>
+            <p>Standards-based records with SNOMED CT embedded, open to doctors, staff and patients.</p>
+            <a class="card-link" href="emr.html">Explore the solution<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="glass sol-card" style="--i:4">
+            <span class="sol-icon"><svg class="icon" aria-hidden="true"><use href="#i-support"/></svg></span>
+            <h3>Neopead EMR &amp; Charting</h3>
+            <p>Paperless neonatal and paediatric records, growth charts and instant discharge summaries.</p>
+            <a class="card-link" href="neopead-emr.html">Explore the solution<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="glass sol-card" style="--i:5">
+            <span class="sol-icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+            <h3>Asset Management</h3>
+            <p>A lifecycle register of the hospital's equipment and infrastructure within the iHMS suite.</p>
+            <a class="card-link" href="asset-management.html">Explore the solution<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+      </div><!-- /.solution-main -->
+    </div><!-- /.solution-layout -->
+
+    <section class="cta-band" aria-labelledby="cta-h">
+      <div class="container">
+        <div class="glass cta-card" data-reveal>
+          <div style="--i:0">
+            <h2 id="cta-h">See Lab Information System at your institute</h2>
+            <p>Tell us about your departments, workflow and existing systems, and we'll map Lab Information System to them.</p>
+          </div>
+          <div class="cta-actions" style="--i:1">
+            <a class="btn btn-primary" href="contact.html" data-demo-open data-demo-solution="lis">Request a demo<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="healthcare-solutions.html">All healthcare solutions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════ Footer ═══════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/img/logo-white.webp" alt="Raster" width="200" height="43">
+          <p>Integrated healthcare technology — software, interfacing and hardware engineered around patient care.</p>
+        </div>
+        <nav aria-label="Footer — Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Footer — Solutions">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="healthcare-solutions.html#radiology">Radiology</a></li>
+            <li><a href="healthcare-solutions.html#hospital-management">Hospital Management</a></li>
+            <li><a href="healthcare-solutions.html#interfacing">Interfacing Applications</a></li>
+            <li><a href="healthcare-solutions.html#other-applications">Other Applications</a></li>
+            <li><a href="hardware-products.html">Hardware Products</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Footer — Resources">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="news-events.html">News &amp; Events</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Raster. All rights reserved.</p>
+        <p class="footer-pulse" aria-hidden="true">
+          <svg viewBox="0 0 120 24" class="pulse-mini"><path d="M0,12 h34 l6,-8 8,16 6,-12 4,4 h62" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════ Demo request dialog ═══════════
+       Opened by any [data-demo-open] control (the header button, the product
+       pages' "Request a demo"); a native <dialog> gives the focus trap, Escape
+       and inertness for free. The form shares the [data-form] handler and, with
+       no mail endpoint, falls back to the phone/email line. -->
+  <dialog class="demo-dialog" id="demoDialog" aria-labelledby="demo-title">
+    <div class="demo-card">
+      <button class="demo-close" type="button" data-demo-close aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <p class="eyebrow"><span class="dot"></span>Request a demo</p>
+      <h2 id="demo-title">See it working at your institute</h2>
+      <p class="demo-lede">Tell us who you are and what you would like to see. We will arrange a walkthrough at a time that suits you.</p>
+      <form id="demoForm" data-form data-endpoint="" novalidate
+            data-fallback="This form is not connected to a mail handler yet. Please email info@raster.in or call +91 427 4033100 and we will arrange your demo."
+            data-success="Thank you — your demo request has been sent. We will be in touch shortly to fix a time.">
+        <input type="hidden" name="subject" value="Demo request">
+        <div class="demo-grid">
+          <div class="field">
+            <label for="df-name">Full name <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-org">Hospital / organisation <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-org" name="organisation" type="text" autocomplete="organization" placeholder="Institute name" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-email">E-mail ID <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-email" name="email" type="email" autocomplete="email" placeholder="you@hospital.org" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-mobile">Mobile number <span class="req" aria-hidden="true">*</span></label>
+            <input id="df-mobile" name="mobile" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91" required>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-role">Your role</label>
+            <select id="df-role" name="role">
+              <option value="">Choose a role</option>
+              <option>Doctor / Radiologist</option>
+              <option>Hospital administrator</option>
+              <option>IT / Biomedical</option>
+              <option>Laboratory</option>
+              <option>Purchase / Management</option>
+              <option>Other</option>
+            </select>
+            <p class="err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="df-solution">Solution of interest <span class="req" aria-hidden="true">*</span></label>
+            <select id="df-solution" name="solution" required>
+              <option value="">Choose a solution</option>
+                  <optgroup label="Radiology">
+                    <option value="pacs">PACS</option>
+                    <option value="ris">RIS</option>
+                    <option value="teleradiology">Teleradiology</option>
+                    <option value="dicom-burner">DICOM Burner</option>
+                    <option value="dicom-camera">DICOM Camera</option>
+                  </optgroup>
+                  <optgroup label="Hospital Management">
+                    <option value="ihms">IHMS</option>
+                    <option value="pharmacy-management">Pharmacy Management</option>
+                    <option value="blood-bank-management">Blood Bank Management</option>
+                    <option value="emr">EMR</option>
+                    <option value="lis">Lab Information System</option>
+                    <option value="neopead-emr">Neopead EMR &amp; Charting</option>
+                    <option value="asset-management">Asset Management</option>
+                  </optgroup>
+                  <optgroup label="Interfacing Applications">
+                    <option value="lab-equipment-interfacing">Lab Equipment Interfacing</option>
+                    <option value="iomt-interfacing">IoMT &amp; Interfacing</option>
+                    <option value="electronic-charting">Electronic Charting</option>
+                  </optgroup>
+                  <optgroup label="Other Applications">
+                    <option value="ot-video-broadcasting">OT – Video Broadcasting</option>
+                    <option value="telemedicine">Telemedicine</option>
+                    <option value="patient-id-wristbands">Patient ID Wristbands</option>
+                  </optgroup>
+              <option value="hardware">Hardware products</option>
+              <option value="not-sure">Not sure yet — advise me</option>
+            </select>
+            <p class="err" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="df-message">Anything we should know?</label>
+          <textarea id="df-message" name="message" placeholder="Departments, bed count, existing systems, preferred dates…"></textarea>
+          <p class="err" aria-live="polite"></p>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Send request<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <span class="contact-line"><a href="tel:+914274033100">or call +91 427 4033100</a></span>
+        </div>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </dialog>
+
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
